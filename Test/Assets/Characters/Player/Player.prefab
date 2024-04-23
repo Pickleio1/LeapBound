@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1672659966912376370}
   - component: {fileID: 3843134738624767107}
-  - component: {fileID: 8320655874599808397}
-  - component: {fileID: 5203143906597861063}
-  - component: {fileID: 6826189163510497744}
-  - component: {fileID: 4427408915385034264}
+  - component: {fileID: 2921560155450063161}
+  - component: {fileID: 8490249162194471882}
+  - component: {fileID: 7036551882788791251}
+  - component: {fileID: 7783770570645898224}
+  - component: {fileID: 780715871307072635}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -30,9 +31,9 @@ Transform:
   m_GameObject: {fileID: 7637330436403069549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.97, y: -0.38, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -5.05, y: -0.97, z: 0}
+  m_LocalScale: {x: 0.7883, y: 0.8018, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a93c700b9d68f3646be249a2422abecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9cf863d73ccb89040b0758ad82e788db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8320655874599808397
+--- !u!50 &2921560155450063161
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -103,7 +104,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -115,7 +116,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5203143906597861063
+--- !u!114 &8490249162194471882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3e9797213526f40a9d8b6dec659275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 6
+  runSpeed: 14
+  jumpPower: 12
+--- !u!114 &7036551882788791251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +158,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6826189163510497744}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 8490249162194471882}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -154,62 +170,94 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 3311e0fe-9753-4075-8297-c8e6b931cbe2
+    m_ActionId: 09cd5e13-72ec-43c1-859a-9813ec8d9d16
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 25ec30e7-1993-4bfa-a6d4-fefde950e351
+    m_ActionId: 4c749cfa-9b94-409f-b636-441a1ec96bbc
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 1acdc875-e736-4d2b-a02c-a66be6492dfc
+    m_ActionId: 1f1fa9f4-9d14-438c-8074-8064cfc23905
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4a5893bd-cbfd-44fe-adb1-d43d122b7c3c
+    m_ActionId: bc4ccaac-ed43-4bac-8b8b-be11118b9355
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: b1af76f3-bb06-49cf-8e7f-590401fb4192
+    m_ActionId: fd7fd3eb-3557-4ad7-9251-99bdedcf8c88
     m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: dd781498-a404-4534-9129-3167ece3a676
+    m_ActionId: 7fee94a0-d423-4c98-8368-002fab796273
     m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 31c64bb8-ae3b-467d-b612-7a366bf51820
+    m_ActionId: 8f691285-b2af-418f-b583-71c1c7ae6142
     m_ActionName: UI/Point[/Mouse/position,/Pen/position]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c178c6e8-7678-468e-8692-896979bb0cfc
+    m_ActionId: 6d2317b9-51e3-4e66-8204-2a4f92fdb518
     m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cf07d7c4-d7c6-431d-a1b0-c6469fbd9292
+    m_ActionId: 9625ac44-e76a-438a-96ec-eaed4ad8afeb
     m_ActionName: UI/ScrollWheel[/Mouse/scroll]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 50aa0e58-b2a1-4080-829c-8eb84958fe50
+    m_ActionId: 50e68c2e-b224-4f75-828a-83bc41556cde
     m_ActionName: UI/MiddleClick[/Mouse/middleButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7f3eeab2-e372-431b-aef5-85bba59feaf9
+    m_ActionId: 9963e742-49b5-4293-8f6a-d6e563a64050
     m_ActionName: UI/RightClick[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 5c9f6ea3-2599-4daf-a5d3-fe8c1f6f4991
+    m_ActionId: 8a22c1a9-57da-463f-bc5b-b062c1d5725c
     m_ActionName: UI/TrackedDevicePosition
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: f9048f2b-6aa8-4622-add1-bdb9a2461953
+    m_ActionId: d97e1bd6-59a3-4daf-a3ae-182626d5584f
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8490249162194471882}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0925ee06-adf2-4dad-82d7-80431780cb2c
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8490249162194471882}
+        m_TargetAssemblyTypeName: playercontroller, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 13a5d8c3-88e3-469b-9c54-6c75df423b99
+    m_ActionName: Player/Run[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6826189163510497744
+--- !u!114 &7783770570645898224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -218,11 +266,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 7637330436403069549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77182cbd8e926034b9c1c83abd06ba0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 57b7593585e72524a96c8e9254db238a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
---- !u!70 &4427408915385034264
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 0
+--- !u!70 &780715871307072635
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,6 +319,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0040335655, y: -0.24201155}
-  m_Size: {x: 0.7290859, y: 1.8342717}
+  m_Offset: {x: 0.1300235, y: 0}
+  m_Size: {x: 1.143865, y: 2.6250002}
   m_Direction: 0
