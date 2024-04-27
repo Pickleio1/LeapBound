@@ -7,7 +7,6 @@ public class TouchingDirections : MonoBehaviour
 {
 
     CapsuleCollider2D touchingCol;
-    Rigidbody2D rb;
 
     public ContactFilter2D castFilter;
     
@@ -67,12 +66,11 @@ public class TouchingDirections : MonoBehaviour
     private void Awake()
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
         IsGrounded = touchingCol.Cast(UnityEngine.Vector2.down, castFilter, groundHits, groundDistance) > 0;
         IsOnWall = touchingCol.Cast(wallCheckDirection, castFilter, wallHits, wallDistance) > 0;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,33 +9,49 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
-    public float runSpeed = 8f;
+    public float runSpeed = 7f;
     public float jumpImpulse = 10f;
-    Vector2 moveInput;
+    public float airWalkSpeed = 3f;
+    public float smallJump = 0.7f;
+
+    private bool grounded;
+
     TouchingDirections touchingDirections;
+    Rigidbody2D rb;
+
+    Vector2 moveInput;
+    
+
 
     public float CurrentMoveSpeed
     {
         get
         {
-            if (IsMoving)
+            if (IsMoving && !touchingDirections.IsOnWall)
             {
-                if (IsRunning)
+                if (grounded)
                 {
-                    return runSpeed;
+                    if (IsRunning)
+                    {
+                        return runSpeed;
+                    }
+                    else
+                    {
+                        return walkSpeed;
+                    }
                 }
                 else
                 {
-                    return walkSpeed;
+                    return airWalkSpeed;
                 }
-
             }
             else
             {
-                return 0;
+                return walkSpeed;
             }
         }
     }
+
 
     private bool _isMoving = false;
     public bool IsMoving
@@ -49,6 +66,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     private bool _isRunning = false;
     public bool IsRunning
     {
@@ -62,9 +80,39 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool grounded;
 
-    Rigidbody2D rb;
+    private bool _isAttacking;
+    public bool IsAttacking
+    {
+        get
+        {
+            return _isAttacking;
+        }
+        private set
+        {
+            _isAttacking = value;
+        }
+    }
+
+
+    public bool _isFacingRight = false;
+    public bool IsFacingRight
+    {
+        get
+        { 
+            return _isFacingRight;
+        }
+        private set
+        {
+            if (_isFacingRight != value) 
+            {
+                transform.localScale *= new Vector2(-1,1);
+            }
+
+            _isFacingRight = value;
+        }
+    }
+
 
     private void Awake()
     {
@@ -72,11 +120,13 @@ public class PlayerController : MonoBehaviour
         touchingDirections = GetComponent<TouchingDirections>();
     }
 
+
     // Start is called before the first frame update
     void Start()
     {
 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -84,16 +134,34 @@ public class PlayerController : MonoBehaviour
 
     }
 
+
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
     }
+
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
         IsMoving = moveInput != Vector2.zero;
+
+        SetFacingDirections(moveInput);
+    }
+
+
+    private void SetFacingDirections(Vector2 moveInput)
+    {
+        if (moveInput.x > 0 && !IsFacingRight)
+        {
+            IsFacingRight = true;
+        }
+        else if (moveInput.x < 0 && IsFacingRight)
+        {
+            IsFacingRight = false;
+        }
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -102,7 +170,12 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
+        else if (context.canceled && rb.velocity.y > 0f)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse * smallJump);
+        }
     }
+
 
     public void OnRun(InputAction.CallbackContext context)
     {
@@ -116,6 +189,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -126,6 +200,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
@@ -134,4 +209,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public void OnAttack (InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            IsAttacking = true;
+        }
+    }
 }
