@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent (typeof(Rigidbody2D), typeof(TouchingDirections))]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 
-public class playercontroller : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed = 5F;
-    public float runSpeed = 8F;
-    public float jumpPower = 4F;
-
-    TouchingDirections touchingDirections;
-    Rigidbody2D rb;
-
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
+    public float jumpImpulse = 10f;
     Vector2 moveInput;
+    TouchingDirections touchingDirections;
 
-    private bool _isMoving = false;
-    private bool _isRunning = false;
-
-    public float CurrentMoveSpeed {  get
+    public float CurrentMoveSpeed
+    {
+        get
         {
             if (IsMoving)
             {
@@ -31,23 +27,29 @@ public class playercontroller : MonoBehaviour
                 {
                     return walkSpeed;
                 }
-            } else
-                {
-                    return 0;
-                }
+
+            }
+            else
+            {
+                return 0;
             }
         }
+    }
 
-    
-    public bool IsMoving { get
+    private bool _isMoving = false;
+    public bool IsMoving
+    {
+        get
         {
             return _isMoving;
-        } private set
+        }
+        private set
         {
             _isMoving = value;
         }
     }
 
+    private bool _isRunning = false;
     public bool IsRunning
     {
         get
@@ -60,21 +62,46 @@ public class playercontroller : MonoBehaviour
         }
     }
 
+    private bool grounded;
+
+    Rigidbody2D rb;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed , rb.velocity.y);
+        rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
+
         IsMoving = moveInput != Vector2.zero;
+    }
+
+    public void OnJump(InputAction.CallbackContext context)
+    {
+        if (context.started && grounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+        }
     }
 
     public void OnRun(InputAction.CallbackContext context)
@@ -82,22 +109,29 @@ public class playercontroller : MonoBehaviour
         if (context.started)
         {
             IsRunning = true;
-
-        } else if (context.canceled)  
+        }
+        else if (context.canceled)
         {
             IsRunning = false;
         }
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnCollisionEnter2D(Collision2D other)
     {
-        //make sure to check if alive
-        if (context.started)
+        if (other.gameObject.CompareTag("Ground"))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        }
 
+            grounded = true;
+
+        }
     }
 
-   
+    public void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            grounded = false;
+        }
+    }
+
 }
