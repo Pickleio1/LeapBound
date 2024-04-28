@@ -14,7 +14,7 @@ public class TouchingDirections : MonoBehaviour
     RaycastHit2D[] groundHits = new RaycastHit2D[5];
     RaycastHit2D[] wallHits = new RaycastHit2D[5];
     RaycastHit2D[] ceilingHits = new RaycastHit2D[5];
-    private bool _isGrounded;
+    [SerializeField]private bool _isGrounded;
     
     public bool IsGrounded { get {
         return _isGrounded;
