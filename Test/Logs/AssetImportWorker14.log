@@ -1,0 +1,960 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.22f1 (887be4894c44) revision 8944612'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit CoreSingleLanguage' Language: 'en' Physical Memory: 32620 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.22f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker14
+-projectPath
+C:/Users/mirfa/Projects/LeapBound/Test
+-logFile
+Logs/AssetImportWorker14.log
+-srvPort
+55320
+Successfully changed project path to: C:/Users/mirfa/Projects/LeapBound/Test
+C:/Users/mirfa/Projects/LeapBound/Test
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [18908] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 2001869788 [EditorId] 2001869788 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [18908] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 2001869788 [EditorId] 2001869788 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+Refreshing native plugins compatible for Editor in 13.20 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.22f1 (887be4894c44)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/mirfa/Projects/LeapBound/Test/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x24dd)
+    Vendor:   NVIDIA
+    VRAM:     8020 MB
+    Driver:   31.0.15.5212
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56708
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007820 seconds.
+- Loaded All Assemblies, in  0.403 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.293 seconds
+Domain Reload Profiling: 695ms
+	BeginReloadAssembly (145ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (33ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (156ms)
+		LoadAssemblies (143ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (154ms)
+			TypeCache.Refresh (152ms)
+				TypeCache.ScanAssembly (136ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (293ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (235ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (157ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.715 seconds
+Refreshing native plugins compatible for Editor in 4.80 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.878 seconds
+Domain Reload Profiling: 1589ms
+	BeginReloadAssembly (133ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (491ms)
+		LoadAssemblies (358ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (208ms)
+			TypeCache.Refresh (169ms)
+				TypeCache.ScanAssembly (155ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (879ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (723ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (82ms)
+			ProcessInitializeOnLoadAttributes (557ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 4.69 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6219 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (424.3 KB). Loaded Objects now: 6679.
+Memory consumption went from 236.1 MB to 235.7 MB.
+Total: 4.825600 ms (FindLiveObjects: 0.583500 ms CreateObjectMapping: 0.294300 ms MarkObjects: 3.705100 ms  DeleteObjects: 0.241500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 175515.490467 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_03b.png
+  artifactKey: Guid(8c6e76dfb9ac14a4d8620f0d5949132a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_03b.png using Guid(8c6e76dfb9ac14a4d8620f0d5949132a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eccde1789d0f4b7d09be1c754e8edd3e') in 0.097561 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01a.png
+  artifactKey: Guid(014b173901c6d8b41816a82ef6c9450e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01a.png using Guid(014b173901c6d8b41816a82ef6c9450e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b189f1efa1b5507951f83f7af482a2de') in 0.014933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01b.png
+  artifactKey: Guid(79a42a9ee69258642856d28ae2287264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01b.png using Guid(79a42a9ee69258642856d28ae2287264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b974a4b2ca246661657fd821c9d2f6c5') in 0.015098 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01d.png
+  artifactKey: Guid(7357f76fe1928b44bb1cbace2b086343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01d.png using Guid(7357f76fe1928b44bb1cbace2b086343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4eaca7ba54542ac54d4ffc5c592c578a') in 0.013841 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01e.png
+  artifactKey: Guid(0314279ba098307409ce96276074a625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01e.png using Guid(0314279ba098307409ce96276074a625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af0ded14bfeb7233865f7702e58d116b') in 0.013598 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01c.png
+  artifactKey: Guid(576ef871a5250a94e980506cc885cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/spellbook_01c.png using Guid(576ef871a5250a94e980506cc885cc6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe4f84ab16f7765cdc28ee897be03873') in 0.013779 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02b.png
+  artifactKey: Guid(9ef08e03c946671449a5b6d19959fc1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02b.png using Guid(9ef08e03c946671449a5b6d19959fc1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51d75425b76f2848d49daae92e9137e9') in 0.014876 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_03d.png
+  artifactKey: Guid(43a7c532b096888459f885273994a83f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_03d.png using Guid(43a7c532b096888459f885273994a83f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '424985ac8c2b35a48c59badba6fd89b7') in 0.023881 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.543289 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03a.png
+  artifactKey: Guid(6d85f03b196428848a49c5c2a3dfc42a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03a.png using Guid(6d85f03b196428848a49c5c2a3dfc42a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004e524ed2800e2dfe1ce9241f7a7659') in 0.015545 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.023378 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02d.png
+  artifactKey: Guid(31f28f8cde819df4cad08641417a4be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02d.png using Guid(31f28f8cde819df4cad08641417a4be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c87b0871b5ecdb12608326690dffedf0') in 0.014470 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.025807 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_02a.png
+  artifactKey: Guid(e39fb3c799fd8cb4f85050d047cc6cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_02a.png using Guid(e39fb3c799fd8cb4f85050d047cc6cdb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52946e469bfc4951002c8adae8506112') in 0.012853 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004623 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02b.png
+  artifactKey: Guid(7c11814336da47e4aa371d08c435f880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02b.png using Guid(7c11814336da47e4aa371d08c435f880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eaf46deceb139cd3d745556656a13b1') in 0.015000 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.406374 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shield_01d.png
+  artifactKey: Guid(d0bb3986209a4664ca98ca621edc24a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shield_01d.png using Guid(d0bb3986209a4664ca98ca621edc24a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '575fc986be08f80c62cf77641b55db98') in 0.016232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.025814 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shard_01i.png
+  artifactKey: Guid(de5600535f88248499475864de578cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shard_01i.png using Guid(de5600535f88248499475864de578cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e12c187477e6ab36bd635d4c5faa86c0') in 0.012995 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001779 seconds.
+  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Shield.png
+  artifactKey: Guid(5031c3b9fd092364798d7504b46455e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Shield.png using Guid(5031c3b9fd092364798d7504b46455e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c199c34d23658e4aafb009ea65ffc5a4') in 0.016669 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_01b.png
+  artifactKey: Guid(91ca0ff32f909df43a2f6e6b47093145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shield_01b.png using Guid(91ca0ff32f909df43a2f6e6b47093145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b1ca940d5445e252fc28fc85376205') in 0.013261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.036259 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shard_01f.png
+  artifactKey: Guid(011de00affb2d1645a447d5c357082ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shard_01f.png using Guid(011de00affb2d1645a447d5c357082ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb06ddfac14d16f50fa277ed024236eb') in 0.011675 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.005447 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shard_01g.png
+  artifactKey: Guid(53253bc2438c2df439f739b5a5ce08e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/shard_01g.png using Guid(53253bc2438c2df439f739b5a5ce08e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7d2ab6042ea01cf7cc4b62838e196f') in 0.014243 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.066917 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01d.png
+  artifactKey: Guid(ea2cd0c50613c5c45873349b082c2736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01d.png using Guid(ea2cd0c50613c5c45873349b082c2736) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '979c54dab442f8a2fe45f8d722c5609c') in 0.015055 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.028252 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/scroll_01h.png
+  artifactKey: Guid(b8082374d577289418e2aaec467c2059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/scroll_01h.png using Guid(b8082374d577289418e2aaec467c2059) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5e5c64e4860334b4891135533342dd1') in 0.012017 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003995 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/SetPivot32.png
+  artifactKey: Guid(2a637fd14bfd64d0e965e4c9e4a7d8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/SetPivot32.png using Guid(2a637fd14bfd64d0e965e4c9e4a7d8b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f44e52a4e5b710b1cb07386fe07b775') in 0.011800 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004818 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/SetPivot128.png
+  artifactKey: Guid(51e0c1c1bb4924d41bab2ecec79e8956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/SetPivot128.png using Guid(51e0c1c1bb4924d41bab2ecec79e8956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '506c8fb61673fff8687fabf0b7ff944d') in 0.015104 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002377 seconds.
+  path: Packages/com.unity.2d.common/Path/Editor/Handles/ShapeTool.png
+  artifactKey: Guid(2fd4f13c38edc483ba5fce64269a434a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.common/Path/Editor/Handles/ShapeTool.png using Guid(2fd4f13c38edc483ba5fce64269a434a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '003d749c51a80dc7e60bf7bc2ec74fcf') in 0.014188 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002711 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01a.png
+  artifactKey: Guid(03afd7f2e80e87d42b1a192259b13383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01a.png using Guid(03afd7f2e80e87d42b1a192259b13383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e702b1e4729c05e62c293bbface58e37') in 0.012407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003711 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shard_01c.png
+  artifactKey: Guid(52b9b344dc494fd4bb3ef164c6f36b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/shard_01c.png using Guid(52b9b344dc494fd4bb3ef164c6f36b81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f68b8bcf6d7110f632c5eec8ae131099') in 0.014971 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.025521 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/Rotation@2x.png
+  artifactKey: Guid(e9af78578671a3345b8cbf82f1f030b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/Rotation@2x.png using Guid(e9af78578671a3345b8cbf82f1f030b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31b370486d57e4ba808eee1737be070d') in 0.013705 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003798 seconds.
+  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Sardines.png
+  artifactKey: Guid(5bfdfc5f038e34446b5a50dde5817f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Sardines.png using Guid(5bfdfc5f038e34446b5a50dde5817f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a6d0687f0efb5229f010015a398c156') in 0.013414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001378 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01a.png
+  artifactKey: Guid(75860b30abf66274f8ca7013df38eb5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01a.png using Guid(75860b30abf66274f8ca7013df38eb5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fe862a960d2ac5b1acf5c34e9b446b3') in 0.012037 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003951 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01b.png
+  artifactKey: Guid(4804906f2542a9341b488a8edc331ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01b.png using Guid(4804906f2542a9341b488a8edc331ef9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3aee21a7953299540c75475815f49fa') in 0.012850 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003736 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/scroll_01d.png
+  artifactKey: Guid(1e78fa87069374e4bbd864f58ed2c678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/scroll_01d.png using Guid(1e78fa87069374e4bbd864f58ed2c678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddffca3de06cf933cee8e3553d81a2c7') in 0.013325 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004957 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01e.png
+  artifactKey: Guid(e755394f1ec79b4469781f3ae8c43ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01e.png using Guid(e755394f1ec79b4469781f3ae8c43ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4ee86ef61b0de5a83ac07644073bd00') in 0.013049 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003372 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/scroll_01f.png
+  artifactKey: Guid(086e1558d3b08c74caa20a7d118f5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/scroll_01f.png using Guid(086e1558d3b08c74caa20a7d118f5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '721c397abd1eb62ab8f44776949782b7') in 0.015072 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.356679 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_03e.png
+  artifactKey: Guid(8af1abdd9104a4a4bb8a1e0b839f93d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_03e.png using Guid(8af1abdd9104a4a4bb8a1e0b839f93d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e46718580a23c5e700e61cd53e53f38') in 0.015263 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.024393 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png
+  artifactKey: Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/RenderDoc@2x.png using Guid(89608b060fc7279479398a62e245a409) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4be70a2ab5f928f3c87d389288d8a3') in 0.012424 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003935 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_01a.png
+  artifactKey: Guid(f47d178f048c58a49b998af2a75f3833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_01a.png using Guid(f47d178f048c58a49b998af2a75f3833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '035b23344b50c6d7039c3817a1eae815') in 0.011646 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004409 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_01b.png
+  artifactKey: Guid(fe197fc20f3fa9b4b8a1434e6fad3135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_01b.png using Guid(fe197fc20f3fa9b4b8a1434e6fad3135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '193a0030383777a67f6b8e295ee6c5c0') in 0.012176 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003463 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_01c.png
+  artifactKey: Guid(4eb5fc0a6fc95f448ba322f72e9a63ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_01c.png using Guid(4eb5fc0a6fc95f448ba322f72e9a63ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f7e1920319503ae24bacf63a7ac7648') in 0.012641 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002791 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_01e.png
+  artifactKey: Guid(d26c6e28321eceb41bbbdf18c582ff69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_01e.png using Guid(d26c6e28321eceb41bbbdf18c582ff69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ec16b8d6ccde6ffea9606081003402e') in 0.012491 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004473 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_02a.png
+  artifactKey: Guid(b28345229826a9e48b9886ea129a47cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ring_02a.png using Guid(b28345229826a9e48b9886ea129a47cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3819d06a8e7d14849aa51decfeefee3a') in 0.012533 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003441 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02b.png
+  artifactKey: Guid(d700e932a4e901040b718e1b3b4e7ad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02b.png using Guid(d700e932a4e901040b718e1b3b4e7ad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c8a241d8a0310ffb61325ea677d9a1b') in 0.012664 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003110 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02d.png
+  artifactKey: Guid(ac3cc1d8731eab043acfafc705a6b834) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02d.png using Guid(ac3cc1d8731eab043acfafc705a6b834) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1ffa71be7471659458ad536d00adf46') in 0.012392 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003712 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02e.png
+  artifactKey: Guid(184fe80e43c51dd4a91f348261b29940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ring_02e.png using Guid(184fe80e43c51dd4a91f348261b29940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50bc714140c00683fa345aa784ff669') in 0.016058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.023157 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01b.png
+  artifactKey: Guid(f6edae88e602bab4aa9aa6e0e1055d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01b.png using Guid(f6edae88e602bab4aa9aa6e0e1055d99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d069edccd70580c5d58657eadadb771') in 0.013175 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002417 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_01c.png
+  artifactKey: Guid(c0fbb5d21b1e806418cf363e370c22a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_01c.png using Guid(c0fbb5d21b1e806418cf363e370c22a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9f6c3f48609d5b9d0667f7ee74468d1') in 0.013678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002841 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01d.png
+  artifactKey: Guid(edb4e9f7b583f624aaa6598fa93392fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01d.png using Guid(edb4e9f7b583f624aaa6598fa93392fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cdfd5566cfe975a88bb1e4fa6399f8d') in 0.012204 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003842 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_01f.png
+  artifactKey: Guid(08810b273f8019b4f92a8a5cfff4160c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_01f.png using Guid(08810b273f8019b4f92a8a5cfff4160c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a710abf9159af2f3b13d451c82e2fc71') in 0.015296 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_01g.png
+  artifactKey: Guid(c1350e460da52bd4686b6e0fb02bc412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_01g.png using Guid(c1350e460da52bd4686b6e0fb02bc412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '986d8580974f0b7482a186be50809a96') in 0.013318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001670 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01h.png
+  artifactKey: Guid(164d5207decac444582d6b16d5e72863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_01h.png using Guid(164d5207decac444582d6b16d5e72863) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcda4651db7e8327ca63103650d1d155') in 0.014195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001007 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_02b.png
+  artifactKey: Guid(241c5ff663834f544a0bc4d6fc900737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_02b.png using Guid(241c5ff663834f544a0bc4d6fc900737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '156d09ab4fe9a9725eea2b082f467b84') in 0.013656 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003447 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_02c.png
+  artifactKey: Guid(49385e3a5940a6e4cbdbddbca3136917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/potion_02c.png using Guid(49385e3a5940a6e4cbdbddbca3136917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf90941c42a7cf7a6baf90b131e22e7') in 0.013842 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001716 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_02d.png
+  artifactKey: Guid(7793776d767e5ce4da9fa3034422fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_02d.png using Guid(7793776d767e5ce4da9fa3034422fb89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e4c534309285146ddc3b71c3e2fabdc') in 0.013186 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003476 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_02f.png
+  artifactKey: Guid(e566d52343040ee4a9ae9e8b15b3ad11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_02f.png using Guid(e566d52343040ee4a9ae9e8b15b3ad11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fe005af3446a47e62ef979c3e88846c') in 0.013960 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001833 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_02g.png
+  artifactKey: Guid(4cfadcf45e78ed240b3b330f8abb4aa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/potion_02g.png using Guid(4cfadcf45e78ed240b3b330f8abb4aa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b4721ef4f0a04f11b908182383e3031') in 0.014090 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.036232 seconds.
+  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Idle.png
+  artifactKey: Guid(767be1c40b639b2468ba721e0079b8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Idle.png using Guid(767be1c40b639b2468ba721e0079b8ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6dee094a84c2e9839242c520e58f1c6') in 0.015759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ingot_01b.png
+  artifactKey: Guid(4053ddd4e25a85e47b6884410f771ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/ingot_01b.png using Guid(4053ddd4e25a85e47b6884410f771ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be4f84bd8cbec0b6dec93efcc6fc77f2') in 0.017582 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ingot_01c.png
+  artifactKey: Guid(a05b32ef94eba0a4aa42bc68a5470ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/ingot_01c.png using Guid(a05b32ef94eba0a4aa42bc68a5470ab0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5e0b8a68c60b7dc9534a2d6aed156f') in 0.013439 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000563 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ingot_01d.png
+  artifactKey: Guid(90f54b07e5b4aec41bf32bf409e0f9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ingot_01d.png using Guid(90f54b07e5b4aec41bf32bf409e0f9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '140ff834446bfac4d6098f02e4b5bade') in 0.013450 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003501 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/IsometricDiamond.png
+  artifactKey: Guid(045b15ec09bba42448d89db77fa6f20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/IsometricDiamond.png using Guid(045b15ec09bba42448d89db77fa6f20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03a1a50d55ce08b79d366625287a7479') in 0.014715 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002798 seconds.
+  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Jerky.png
+  artifactKey: Guid(64ab12e2260f05640b720a6cb7430a4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Jerky.png using Guid(64ab12e2260f05640b720a6cb7430a4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05c9479132ef6d19b3a3f73ae46e797e') in 0.013503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/key_01b.png
+  artifactKey: Guid(44d75026bd3869c45a50fa65b980475d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/key_01b.png using Guid(44d75026bd3869c45a50fa65b980475d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd0941ab4036fbca20a9cb4290642879') in 0.015433 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01c.png
+  artifactKey: Guid(f57c92b8631e99e4d909639a15e7d566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01c.png using Guid(f57c92b8631e99e4d909639a15e7d566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ae8f14efef5a06ddbbc75be999f002e') in 0.013414 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002939 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01d.png
+  artifactKey: Guid(95778fb5dee350642b5f7b13fb5b2d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01d.png using Guid(95778fb5dee350642b5f7b13fb5b2d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd576362bb85c1a7a94a5c048ee1ade65') in 0.013118 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004402 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/key_02a.png
+  artifactKey: Guid(4e4e91d15129d19488947ec0adc7f1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/key_02a.png using Guid(4e4e91d15129d19488947ec0adc7f1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb45d3ef62d7ade9fb0e748686dc9c1') in 0.013674 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002702 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/key_02b.png
+  artifactKey: Guid(8756a30b20a35af4387e46b63cf21e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/key_02b.png using Guid(8756a30b20a35af4387e46b63cf21e2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7609face2f4900fe2adae1694b00e6b') in 0.013075 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.033848 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_02d.png
+  artifactKey: Guid(cdb18973dc8977141805eeba6a1e20c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_02d.png using Guid(cdb18973dc8977141805eeba6a1e20c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b60a5e82dd9928b7d699669471add9') in 0.013258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004925 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_02f.png
+  artifactKey: Guid(ece60a2da3f69b1488140e1897ef8c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_02f.png using Guid(ece60a2da3f69b1488140e1897ef8c9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94dc145c1822608c47ee4cf6cb8545fb') in 0.013737 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004474 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Capsule.png
+  artifactKey: Guid(207ee8102dd4143d288186ef0be518ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Capsule.png using Guid(207ee8102dd4143d288186ef0be518ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e5d6be9cb0a5a90d5a0ccff1667678') in 0.016682 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001259 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/CenterLight@2x.png
+  artifactKey: Guid(8063050a249eef441beb8cbbd04c086c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/LookDev/Icons/CenterLight@2x.png using Guid(8063050a249eef441beb8cbbd04c086c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b5003d43b68606d3003fe3f8cd8ff1e') in 0.013147 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001560 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/character_Mode@2x.png
+  artifactKey: Guid(25096ce515c063c48a2bd6b108c95912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/character_Mode@2x.png using Guid(25096ce515c063c48a2bd6b108c95912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74540ac4eb7fb305d577789a3d270c40') in 0.015162 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001215 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/character_Mode@4x.png
+  artifactKey: Guid(748ae8b33df036b46a86e0387f1602cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/character_Mode@4x.png using Guid(748ae8b33df036b46a86e0387f1602cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7f8abfaaa35e7a3c401d0b002899e10') in 0.013910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/ChickenLeg.png
+  artifactKey: Guid(b0851162516b6244f9ab7679cdb66512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/ChickenLeg.png using Guid(b0851162516b6244f9ab7679cdb66512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7056d807d9809a924f3a8cf595f6ea90') in 0.013743 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/CircleWithBorder.png
+  artifactKey: Guid(4adeaf2d2b1c7417e89f026626d8264f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/CircleWithBorder.png using Guid(4adeaf2d2b1c7417e89f026626d8264f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea73a3d994705de9f7fc664348850603') in 0.015602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_01b.png
+  artifactKey: Guid(7dcfb64fba0b9174696905d08aeea016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_01b.png using Guid(7dcfb64fba0b9174696905d08aeea016) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5213e8289fab09670c69b824040c1d3a') in 0.014534 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.029843 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKLimb@256.png
+  artifactKey: Guid(4a3eebea80ac54fd3818f6a36c36168d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKLimb@256.png using Guid(4a3eebea80ac54fd3818f6a36c36168d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36507c417ecbad03da0c2a9d8d0ecc5d') in 0.015700 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKManager On@64.png
+  artifactKey: Guid(54ce89f1e912746ecb70ddf53bead1f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKManager On@64.png using Guid(54ce89f1e912746ecb70ddf53bead1f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5b616d4c1529d8fa1c2264271298d65') in 0.013736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001204 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKManager@64.png
+  artifactKey: Guid(0502e3e0c944a4f71948552166af7b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKManager@64.png using Guid(0502e3e0c944a4f71948552166af7b48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7504e80b19036d196b246a834110c0fc') in 0.014894 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001422 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary On.png
+  artifactKey: Guid(a86c61e5bed184ddc884003f0c947bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary On.png using Guid(a86c61e5bed184ddc884003f0c947bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfccf3db72af0729204c1f45ce709bc2') in 0.012782 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.003011 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary On@256.png
+  artifactKey: Guid(b2d98f54996544507ade581c727c1c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary On@256.png using Guid(b2d98f54996544507ade581c727c1c51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61f44ce0637fe82af0582d568f74aa0e') in 0.015191 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000901 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary@256.png
+  artifactKey: Guid(b6c49e41a57e648e9a16f44ce4b8d9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibrary@256.png using Guid(b6c49e41a57e648e9a16f44ce4b8d9b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ae76a3eaed14915b6e3ba1cc8db0e94') in 0.016244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryManager On@64.png
+  artifactKey: Guid(ac5de94053f294b929e8105eced63bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryManager On@64.png using Guid(ac5de94053f294b929e8105eced63bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a60b096eca25c7d163bcc327fe7124e') in 0.013981 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryManager@64.png
+  artifactKey: Guid(8018f7f22eae14c4b8c25d466fa0d8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryManager@64.png using Guid(8018f7f22eae14c4b8c25d466fa0d8e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '105f5c01ed34ff81ce94fcc975089d75') in 0.013355 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002914 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar On.png
+  artifactKey: Guid(18115dbbb843441ac95e0b3a372d9807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar On.png using Guid(18115dbbb843441ac95e0b3a372d9807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3e861a63cd08e31f2beebca7ead997f') in 0.014771 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001786 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar On@256.png
+  artifactKey: Guid(2af1a7323d104499d992be9a2d8dc933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar On@256.png using Guid(2af1a7323d104499d992be9a2d8dc933) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a890bfd856cb1a33391bc633cd955add') in 0.014395 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001932 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar@256.png
+  artifactKey: Guid(af04f3196abef440b94c03fbe3dab00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.SpriteLibraryVar@256.png using Guid(af04f3196abef440b94c03fbe3dab00f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91a40006a7cf31c4202944fcbe7e6b07') in 0.017367 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.029077 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKFabrik@256.png
+  artifactKey: Guid(8be64ad32582748f1965311ca0665f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKFabrik@256.png using Guid(8be64ad32582748f1965311ca0665f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '720d7c9125e9e8225a0bdc6db9292c46') in 0.015343 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKLimb On@64.png
+  artifactKey: Guid(b88a78d35a73e4a33bf6788d22e3cb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/ComponentIcons/Animation.IKLimb On@64.png using Guid(b88a78d35a73e4a33bf6788d22e3cb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2ad1b8a0ee3cb17dc0db121440b2d62') in 0.014494 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 1.881194 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/arrow_02d.png
+  artifactKey: Guid(40faa5101046b5d4bb21ddc4dc2c3a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/arrow_02d.png using Guid(40faa5101046b5d4bb21ddc4dc2c3a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28f5fdb070c16053957d02f780e44c32') in 0.012220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004383 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03a.png
+  artifactKey: Guid(73bdd85730d8db34a882f4abbb20c08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03a.png using Guid(73bdd85730d8db34a882f4abbb20c08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e73e4b0d780a5cf5a91c3d9c458c0928') in 0.013479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002692 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03c.png
+  artifactKey: Guid(185328b01dcd045429b13e1b3f76a323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03c.png using Guid(185328b01dcd045429b13e1b3f76a323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '548b19801acce309886bec672ebb45fa') in 0.012057 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.004017 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03e.png
+  artifactKey: Guid(135ae04e141e94547aae58d96564c8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/arrow_03e.png using Guid(135ae04e141e94547aae58d96564c8bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44458a97fada49a7a2810d9e2a72c42c') in 0.013801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001387 seconds.
+  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Mushroom/Attack.png
+  artifactKey: Guid(836b16b79b5680f48a422f1171ee32a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Mushroom/Attack.png using Guid(836b16b79b5680f48a422f1171ee32a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be57eea3f2b610eb46462eb7f70d9a1a') in 0.018061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000839 seconds.
+  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack2.png
+  artifactKey: Guid(968c808e483331a408d33a04a177f079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack2.png using Guid(968c808e483331a408d33a04a177f079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd58eac555388633df57d8605f69a2f6') in 0.017500 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000708 seconds.
+  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack3.png
+  artifactKey: Guid(6a4f3da2f9b29434e9a693369901c24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack3.png using Guid(6a4f3da2f9b29434e9a693369901c24e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae2893e771f525c0bbba7f1c88eb0604') in 0.016155 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.001913 seconds.
+  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Boar.png
+  artifactKey: Guid(d139b48a372802a42b221ad4a1f80911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Boar.png using Guid(d139b48a372802a42b221ad4a1f80911) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed4e7dbe3ef28c070faa649973126565') in 0.012294 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.005020 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/bone01a.png
+  artifactKey: Guid(8c1832d73dd4e524b827636878bacacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/bone01a.png using Guid(8c1832d73dd4e524b827636878bacacb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '180ac3eefd0d1c17d971db0e31994076') in 0.012611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.002481 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/Bone_Influence.png
+  artifactKey: Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Light/Bone_Influence.png using Guid(e92fc44f12c21dd44a49e390f39f7ffd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '599f983a8d42e296380f2df3d548e61f') in 0.014014 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.610910 seconds.
+  path: Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/Bone_Influence@4x.png
+  artifactKey: Guid(daf2ab606d4db0d4f9ecf4c02137d2a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation/Editor/Assets/EditorIcons/Selected/Bone_Influence@4x.png using Guid(daf2ab606d4db0d4f9ecf4c02137d2a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99e9740f8707ff23da9c5c58493b2d7') in 0.014962 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
