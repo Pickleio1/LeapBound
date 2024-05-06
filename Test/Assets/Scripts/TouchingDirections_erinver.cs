@@ -74,7 +74,6 @@ public class TouchingDirections : MonoBehaviour
         castFilter.useLayerMask = true;
         Debug.Log("Layer Mask: " + castFilter.layerMask.value);
         Debug.Log("Use Layer Mask: " + castFilter.useLayerMask);
-        Debug.Log("Local Scale: " + gameObject.transform.localScale);
 
     }
 
