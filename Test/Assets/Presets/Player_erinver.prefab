@@ -10,14 +10,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1672659966912376370}
   - component: {fileID: 2921560155450063161}
-  - component: {fileID: 8490249162194471882}
   - component: {fileID: 7036551882788791251}
   - component: {fileID: 2291907737945900160}
   - component: {fileID: 6902159993393326979}
+  - component: {fileID: 1446018073338467588}
+  - component: {fileID: 1954074674478846164}
+  - component: {fileID: 3037450313121389250}
   - component: {fileID: 7167518585781877130}
   m_Layer: 0
-  m_Name: Player_erinver
-  m_TagString: Untagged
+  m_Name: Player_erinver_erinver
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,24 +66,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8490249162194471882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637330436403069549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e089a3a827cedc340a40a6bee1ed5cc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeed: 5
-  runSpeed: 7
-  jumpImpulse: 10
-  airWalkSpeed: 3
-  smallJump: 0.7
-  _isFacingRight: 0
 --- !u!114 &7036551882788791251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 4e621095efe681a4d97bb4c38e04d7cd, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 527f0a1db6ced7f41b04cf5916144fed, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -109,7 +93,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490249162194471882}
+      - m_Target: {fileID: 1954074674478846164}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -129,7 +113,7 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490249162194471882}
+      - m_Target: {fileID: 1954074674478846164}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnAttack
         m_Mode: 0
@@ -145,7 +129,7 @@ MonoBehaviour:
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490249162194471882}
+      - m_Target: {fileID: 1954074674478846164}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -157,11 +141,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 81e14009-e49e-4b74-836f-1e8e7f059de0
+    m_ActionId: 0925ee06-adf2-4dad-82d7-80431780cb2c
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8490249162194471882}
+      - m_Target: {fileID: 1954074674478846164}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnRun
         m_Mode: 0
@@ -173,47 +157,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 9f223560-2763-4f35-96f4-dc0e0f072450
+    m_ActionId: 13a5d8c3-88e3-469b-9c54-6c75df423b99
     m_ActionName: Player/Run[/Keyboard/leftShift]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 4a5893bd-cbfd-44fe-adb1-d43d122b7c3c
+    m_ActionId: bc4ccaac-ed43-4bac-8b8b-be11118b9355
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: b1af76f3-bb06-49cf-8e7f-590401fb4192
+    m_ActionId: fd7fd3eb-3557-4ad7-9251-99bdedcf8c88
     m_ActionName: UI/Submit[/Keyboard/enter]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: dd781498-a404-4534-9129-3167ece3a676
+    m_ActionId: 7fee94a0-d423-4c98-8368-002fab796273
     m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 31c64bb8-ae3b-467d-b612-7a366bf51820
+    m_ActionId: 8f691285-b2af-418f-b583-71c1c7ae6142
     m_ActionName: UI/Point[/Mouse/position,/Pen/position]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: c178c6e8-7678-468e-8692-896979bb0cfc
+    m_ActionId: 6d2317b9-51e3-4e66-8204-2a4f92fdb518
     m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: cf07d7c4-d7c6-431d-a1b0-c6469fbd9292
+    m_ActionId: 9625ac44-e76a-438a-96ec-eaed4ad8afeb
     m_ActionName: UI/ScrollWheel[/Mouse/scroll]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 50aa0e58-b2a1-4080-829c-8eb84958fe50
+    m_ActionId: 50e68c2e-b224-4f75-828a-83bc41556cde
     m_ActionName: UI/MiddleClick[/Mouse/middleButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7f3eeab2-e372-431b-aef5-85bba59feaf9
+    m_ActionId: 9963e742-49b5-4293-8f6a-d6e563a64050
     m_ActionName: UI/RightClick[/Mouse/rightButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 5c9f6ea3-2599-4daf-a5d3-fe8c1f6f4991
+    m_ActionId: 8a22c1a9-57da-463f-bc5b-b062c1d5725c
     m_ActionName: UI/TrackedDevicePosition
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: f9048f2b-6aa8-4622-add1-bdb9a2461953
+    m_ActionId: d97e1bd6-59a3-4daf-a3ae-182626d5584f
     m_ActionName: UI/TrackedDeviceOrientation
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
@@ -260,7 +244,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 867dec154eef1a0429af53131e3a5007, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -304,6 +288,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+  m_Offset: {x: -0.0014795576, y: 0.10358197}
+  m_Size: {x: 1.2648828, y: 2.6480136}
   m_Offset: {x: 0.06403787, y: 0.05583627}
   m_Size: {x: 1.249891, y: 2.5832913}
   m_Direction: 0
@@ -338,3 +324,64 @@ MonoBehaviour:
   ceilingDistance: 0.05
   _isGrounded: 0
   _isOnWall: 0
+--- !u!114 &1446018073338467588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22004f1d26f6d6843b04694c65bda0a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
+    useTriggers: 0
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 0
+--- !u!114 &1954074674478846164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e089a3a827cedc340a40a6bee1ed5cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeed: 5
+  runSpeed: 7
+  jumpImpulse: 10
+  airWalkSpeed: 3
+  smallJump: 0.7
+  _isFacingRight: 0
+--- !u!114 &3037450313121389250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df059f3526ab6f4086ea0b7037d7ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2921560155450063161}

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     private bool grounded;
 
     TouchingDirections touchingDirections;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     Vector2 moveInput;
     
@@ -113,6 +113,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool isOnPlatform;
+    public Rigidbody2D platformRb;
+
 
     private void Awake()
     {
@@ -137,7 +140,17 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+
+        if (isOnPlatform)
+        {
+            rb.velocity = new Vector2((moveInput.x * CurrentMoveSpeed) + platformRb.velocity.x, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
+        }
 
     }
 
