@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public bool _isFacingRight = false;
+    public bool _isFacingRight = true;
     public bool IsFacingRight
     {
         get

@@ -9,7 +9,8 @@ public class TouchingDirections : MonoBehaviour
     CapsuleCollider2D touchingCol;
 
     public ContactFilter2D castFilter;
-    
+
+   
     public float groundDistance = 0.05f;
     public float wallDistance = 0.2f;
     public float ceilingDistance = 0.05f;
@@ -33,6 +34,7 @@ public class TouchingDirections : MonoBehaviour
         }
     }
 
+    [SerializeField]
     private bool _isOnWall;
 
     public bool IsOnWall
@@ -61,11 +63,19 @@ public class TouchingDirections : MonoBehaviour
         }
     }
 
+
     private UnityEngine.Vector2 wallCheckDirection => gameObject.transform.localScale.x > 0 ? UnityEngine.Vector2.right : UnityEngine.Vector2.left;
 
     private void Awake()
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
+        int layerMask = 1 << LayerMask.NameToLayer("Tilemap");
+        castFilter.layerMask = layerMask;
+        castFilter.useLayerMask = true;
+        Debug.Log("Layer Mask: " + castFilter.layerMask.value);
+        Debug.Log("Use Layer Mask: " + castFilter.useLayerMask);
+        Debug.Log("Local Scale: " + gameObject.transform.localScale);
+
     }
 
 
