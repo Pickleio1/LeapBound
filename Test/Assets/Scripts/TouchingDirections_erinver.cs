@@ -69,11 +69,7 @@ public class TouchingDirections : MonoBehaviour
     private void Awake()
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
-        int layerMask = 1 << LayerMask.NameToLayer("Tilemap");
-        castFilter.layerMask = layerMask;
-        castFilter.useLayerMask = true;
-        Debug.Log("Layer Mask: " + castFilter.layerMask.value);
-        Debug.Log("Use Layer Mask: " + castFilter.useLayerMask);
+        
 
     }
 
