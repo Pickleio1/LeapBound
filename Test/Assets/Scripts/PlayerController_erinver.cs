@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                return walkSpeed;
+                return 0;
             }
         }
     }
@@ -95,21 +95,21 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public bool _isFacingRight = false;
-    public bool IsFacingRight
+    public bool _isFacingLeft = false;
+    public bool IsFacingLeft
     {
         get
         { 
-            return _isFacingRight;
+            return _isFacingLeft;
         }
         private set
         {
-            if (_isFacingRight != value) 
+            if (_isFacingLeft != value) 
             {
                 transform.localScale *= new Vector2(-1,1);
             }
 
-            _isFacingRight = value;
+            _isFacingLeft = value;
         }
     }
 
@@ -167,13 +167,13 @@ public class PlayerController : MonoBehaviour
 
     private void SetFacingDirections(Vector2 moveInput)
     {
-        if (moveInput.x > 0 && !IsFacingRight)
+        if (moveInput.x < 0 && !IsFacingLeft)
         {
-            IsFacingRight = true;
+            IsFacingLeft = true;
         }
-        else if (moveInput.x < 0 && IsFacingRight)
+        else if (moveInput.x > 0 && IsFacingLeft)
         {
-            IsFacingRight = false;
+            IsFacingLeft = false;
         }
 
     }
