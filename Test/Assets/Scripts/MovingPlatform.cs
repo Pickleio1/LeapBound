@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public Transform posA, posB;
     public float speed;
     Vector3 targetPos;
 
@@ -12,42 +12,75 @@ public class MovingPlatform : MonoBehaviour
     Rigidbody2D rb;
     Vector3 moveDirection;
 
+    public GameObject ways;
+    public Transform[] wayPoints;
+    int pointIndex;
+    int pointCount;
+    int direction = 1;
+
+    public float waitDuration;
+
     private void Awake()
     {
         movementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+
+        wayPoints = new Transform[ways.transform.childCount];
+        for (int i = 0; i < ways.gameObject.transform.childCount; i++)
+        {
+            wayPoints[i] = ways.transform.GetChild(i).gameObject.transform;
+        }
     } 
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPos = posB.position;
+        pointIndex = 1;
+        pointCount = wayPoints.Length;
+        targetPos = wayPoints[1].transform.position;
         DirectionCalculate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, posA.position) < 0.05f)
+        if(Vector2.Distance(transform.position, targetPos) < 0.05f)
         {
-            targetPos = posB.position;
-            DirectionCalculate();
-        }
-
-        if (Vector2.Distance(transform.position, posB.position) < 0.05f)
-        {
-            targetPos = posA.position;
-            DirectionCalculate();
+            NextPoint();
         }
 
     }
 
     private void FixedUpdate()
     {
-        if (!movementController.IsAttacking &&!Mathf.Approximately(movementController.rb.velocity.y, 0f))
+        rb.velocity = moveDirection * speed;
+    }
+
+    void NextPoint()
+    {
+        transform.position = targetPos;
+        moveDirection = Vector3.zero;
+
+        if (pointIndex == pointCount - 1)
         {
-            rb.velocity = moveDirection * speed;
+            direction = -1;
         }
+
+        if (pointIndex == 0)
+        {
+            direction = 1;
+        }
+
+        pointIndex += direction;
+        targetPos = wayPoints[pointIndex].transform.position;
+
+        StartCoroutine(WaitNextPoint());
+    }
+
+    IEnumerator WaitNextPoint()
+    {
+        yield return new WaitForSeconds(waitDuration);
+        DirectionCalculate(); 
     }
 
     void DirectionCalculate()

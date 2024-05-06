@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1322164468200739969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2444707296867603598}
+  m_Layer: 0
+  m_Name: Point 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2444707296867603598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322164468200739969}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 10.909691, y: 11.769394, z: 0.15686063}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3716182504682330004}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2428790180261808359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3716182504682330004}
+  m_Layer: 0
+  m_Name: Ways
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3716182504682330004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2428790180261808359}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6475069064344760458}
+  - {fileID: 6333018186944818090}
+  - {fileID: 2444707296867603598}
+  m_Father: {fileID: 8347918093550262070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6039168578809006939
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6475069064344760458}
   m_Layer: 0
-  m_Name: PointA
+  m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -25,11 +90,11 @@ Transform:
   m_GameObject: {fileID: 6039168578809006939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0903091, y: 11.769394, z: 0.15686063}
+  m_LocalPosition: {x: -0.09030914, y: 11.769394, z: 0.15686063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8347918093550262070}
+  m_Father: {fileID: 3716182504682330004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6699852261504198325
 GameObject:
@@ -41,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6333018186944818090}
   m_Layer: 0
-  m_Name: PointB
+  m_Name: Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -56,11 +121,11 @@ Transform:
   m_GameObject: {fileID: 6699852261504198325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.909693, y: 11.769389, z: 0.15686063}
+  m_LocalPosition: {x: 4.909693, y: 8.769389, z: 0.15686063}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8347918093550262070}
+  m_Father: {fileID: 3716182504682330004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8852076877604346076
 GameObject:
@@ -218,9 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 713d3338b2e37cf458fa7b5287395ddb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posA: {fileID: 6475069064344760458}
-  posB: {fileID: 6333018186944818090}
   speed: 3
+  ways: {fileID: 2428790180261808359}
+  wayPoints: []
+  waitDuration: 1
 --- !u!61 &6534773669646102601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,7 +389,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3166147808823078855}
-  - {fileID: 6475069064344760458}
-  - {fileID: 6333018186944818090}
+  - {fileID: 3716182504682330004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -10,7 +10,6 @@ public class LadderMovement : MonoBehaviour
     private bool isLadder;
     private bool isClimbing;
 
-    public float nonClimbingGravity = 1f;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -33,7 +32,7 @@ public class LadderMovement : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = nonClimbingGravity ;
+            rb.gravityScale = rb.gravityScale;
         }
     }
 
