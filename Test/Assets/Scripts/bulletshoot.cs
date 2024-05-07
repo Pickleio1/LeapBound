@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class bulletshoot : MonoBehaviour
@@ -7,6 +8,7 @@ public class bulletshoot : MonoBehaviour
     public GameObject bullet;
     public float cooldown = 2f;
     public float force;
+    
 
     [SerializeField] private GameObject player;
     [SerializeField] private bool canattack;
@@ -25,7 +27,6 @@ public class bulletshoot : MonoBehaviour
     void Update()
     {
         AttackPlayer();
-
     }
 
     void AttackPlayer()
@@ -39,7 +40,7 @@ public class bulletshoot : MonoBehaviour
         else
         {
             canattack = true;
-            Vector3 direction = (player.transform.position - transform.position);
+            Vector2 direction = (player.transform.position - transform.position);
 
         }
     }
@@ -49,5 +50,5 @@ public class bulletshoot : MonoBehaviour
         canattack = true;
     }
 
-
+    
 }
