@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class enemymove : MonoBehaviour
@@ -9,31 +10,48 @@ public class enemymove : MonoBehaviour
     public float speed;
     private Rigidbody2D rigidbody2;
     private Transform startingpoint;
-    private Transform startingpoint2;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         startingpoint = PointB.transform;
-        startingpoint2 = PointA.transform;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 point = startingpoint.position - transform.position;
+        //move to a point
+        Vector2 point = startingpoint.transform.position - transform.position;
         if (startingpoint == PointB.transform)
         {
-            transform.position = Vector2.MoveTowards(transform.position, PointA.transform.position, speed * Time.deltaTime);
-
+            rigidbody2.velocity = new Vector2(speed, 0);
         }
-        else
+        if (startingpoint == PointA.transform)
         {
-            startingpoint = startingpoint2;
+            rigidbody2.velocity = new Vector2(-speed, 0);
+        }
+        //making it move between two points
+        if (startingpoint == PointA.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
+        {
+            flip();
+            startingpoint = PointB.transform;
+        }
+        if (startingpoint == PointB.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
+        {
+            flip();
+            startingpoint = PointA.transform;
         }
 
 
-
+    }
+    
+    private void flip()
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
