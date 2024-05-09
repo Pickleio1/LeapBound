@@ -222,13 +222,22 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnAttack (InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.started && Collision.gameObject.tag "Enemy")
+        if (context.started)
         {
             IsAttacking = true;
 
         }
     }
 
+
+    //private void OnCollisionEnter2D (Collision2D enemyCollision)
+    //{
+        //if (enemyCollision.gameObject.tag == "Enemy")
+        //{
+            //enemyhealth.TakeDamage(damage);
+
+       // }
+   // }
 }
