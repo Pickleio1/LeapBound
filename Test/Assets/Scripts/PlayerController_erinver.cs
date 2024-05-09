@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float airWalkSpeed = 3f;
     public float smallJump = 0.7f;
+   
+    
 
     private bool grounded;
 
@@ -222,9 +224,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack (InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && Collision.gameObject.tag "Enemy")
         {
             IsAttacking = true;
+
         }
     }
+
 }

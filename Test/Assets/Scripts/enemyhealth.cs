@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyhealth : MonoBehaviour
 {
-    public int maxhealth;
+    public int maxhealth = 3;
     private int currenthealth;
     public GameObject playerbullet;
 
