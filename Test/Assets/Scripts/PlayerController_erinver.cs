@@ -13,10 +13,10 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float airWalkSpeed = 3f;
     public float smallJump = 0.7f;
-   
+    public int damage = 1;
+    public enemyhealth enemyHealth;
     
 
-    private bool grounded;
 
     TouchingDirections touchingDirections;
     public Rigidbody2D rb;
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
+            animator.SetBool("MoveTrigger" , value);
         }
     }
 
@@ -117,12 +118,13 @@ public class PlayerController : MonoBehaviour
 
     public bool isOnPlatform;
     public Rigidbody2D platformRb;
-
+    public Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -182,7 +184,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && grounded)
+        if (context.started && touchingDirections.IsGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
@@ -202,42 +204,22 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-
-            grounded = true;
-
-        }
-    }
-
-
-    public void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            grounded = false;
-        }
-    }
-
-
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
+            animator.SetTrigger(AnimationStrings.AttackTrigger);
             IsAttacking = true;
 
         }
     }
 
 
-    //private void OnCollisionEnter2D (Collision2D enemyCollision)
-    //{
-        //if (enemyCollision.gameObject.tag == "Enemy")
-        //{
-            //enemyhealth.TakeDamage(damage);
-
-       // }
-   // }
+    private void OnCollisionEnter2D (Collision2D enemyCol)
+    {
+        if (enemyCol.gameObject.tag == "Enemy")
+        {
+           enemyHealth.TakeDamage(damage);
+       }
+   }
 }

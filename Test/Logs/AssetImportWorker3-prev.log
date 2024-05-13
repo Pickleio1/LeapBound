@@ -15,7 +15,7 @@ C:/Users/mirfa/Projects/LeapBound/Test
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-63903
+49785
 Successfully changed project path to: C:/Users/mirfa/Projects/LeapBound/Test
 C:/Users/mirfa/Projects/LeapBound/Test
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/mirfa/Projects/LeapBound/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [29748] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 2884657337 [EditorId] 2884657337 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [22436] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 396370006 [EditorId] 396370006 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [29748] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 2884657337 [EditorId] 2884657337 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22436] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 396370006 [EditorId] 396370006 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 14.40 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 14.53 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.22f1 (887be4894c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Resources/UnitySubsystems
@@ -70,19 +70,19 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56728
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56404
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.008438 seconds.
-- Loaded All Assemblies, in  0.300 seconds
+Registered in 0.008665 seconds.
+- Loaded All Assemblies, in  0.306 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.251 seconds
-Domain Reload Profiling: 549ms
-	BeginReloadAssembly (93ms)
+- Finished resetting the current domain, in  0.236 seconds
+Domain Reload Profiling: 540ms
+	BeginReloadAssembly (95ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
@@ -91,25 +91,25 @@ Domain Reload Profiling: 549ms
 	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (54ms)
-	LoadAllAssembliesAndSetupDomain (115ms)
-		LoadAssemblies (91ms)
+	LoadAllAssembliesAndSetupDomain (118ms)
+		LoadAssemblies (93ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (113ms)
-			TypeCache.Refresh (112ms)
-				TypeCache.ScanAssembly (100ms)
+		AnalyzeDomain (116ms)
+			TypeCache.Refresh (115ms)
+				TypeCache.ScanAssembly (103ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (251ms)
+	FinalizeReload (236ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (200ms)
+		SetupLoadedEditorAssemblies (187ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (10ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (138ms)
-			ProcessInitializeOnLoadMethodAttributes (46ms)
+			ProcessInitializeOnLoadAttributes (131ms)
+			ProcessInitializeOnLoadMethodAttributes (40ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 549ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.644 seconds
-Refreshing native plugins compatible for Editor in 5.51 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.645 seconds
+Refreshing native plugins compatible for Editor in 5.50 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,47 +126,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.868 seconds
-Domain Reload Profiling: 1507ms
-	BeginReloadAssembly (127ms)
+- Finished resetting the current domain, in  0.859 seconds
+Domain Reload Profiling: 1500ms
+	BeginReloadAssembly (128ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (20ms)
-	RebuildCommonClasses (26ms)
+	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (40ms)
-	LoadAllAssembliesAndSetupDomain (435ms)
-		LoadAssemblies (313ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (437ms)
+		LoadAssemblies (311ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (196ms)
-			TypeCache.Refresh (160ms)
+		AnalyzeDomain (199ms)
+			TypeCache.Refresh (162ms)
 				TypeCache.ScanAssembly (147ms)
-			ScanForSourceGeneratedMonoScriptInfo (24ms)
+			ScanForSourceGeneratedMonoScriptInfo (26ms)
 			ResolveRequiredComponents (10ms)
-	FinalizeReload (869ms)
+	FinalizeReload (860ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (718ms)
+		SetupLoadedEditorAssemblies (699ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (7ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (83ms)
-			ProcessInitializeOnLoadAttributes (547ms)
-			ProcessInitializeOnLoadMethodAttributes (70ms)
+			ProcessInitializeOnLoadAttributes (529ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
 			AfterProcessingInitializeOnLoad (8ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 8.45 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 7.99 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6231 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 105 unused Assets / (423.8 KB). Loaded Objects now: 6692.
-Memory consumption went from 236.5 MB to 236.1 MB.
-Total: 8.185500 ms (FindLiveObjects: 0.864600 ms CreateObjectMapping: 0.818000 ms MarkObjects: 6.171600 ms  DeleteObjects: 0.329800 ms)
+Unloading 6278 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (423.7 KB). Loaded Objects now: 6739.
+Memory consumption went from 241.1 MB to 240.7 MB.
+Total: 4.754600 ms (FindLiveObjects: 0.675300 ms CreateObjectMapping: 0.220300 ms MarkObjects: 3.636700 ms  DeleteObjects: 0.220800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -183,330 +183,398 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 416680.830798 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/gift_01b.png
-  artifactKey: Guid(353059d1145e4dc4791f7e895d04d292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/gift_01b.png using Guid(353059d1145e4dc4791f7e895d04d292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8aabbd521229d47ed2767f5c58d43a7c') in 0.097896 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.525 seconds
+Refreshing native plugins compatible for Editor in 5.55 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.619 seconds
+Domain Reload Profiling: 2139ms
+	BeginReloadAssembly (165ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (287ms)
+		LoadAssemblies (311ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (53ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1620ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (740ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (569ms)
+			ProcessInitializeOnLoadMethodAttributes (61ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 10.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (392.5 KB). Loaded Objects now: 6757.
+Memory consumption went from 212.3 MB to 211.9 MB.
+Total: 4.149200 ms (FindLiveObjects: 0.445000 ms CreateObjectMapping: 0.246900 ms MarkObjects: 3.307900 ms  DeleteObjects: 0.148400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.496 seconds
+Refreshing native plugins compatible for Editor in 5.48 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.572 seconds
+Domain Reload Profiling: 2063ms
+	BeginReloadAssembly (158ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (266ms)
+		LoadAssemblies (293ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (47ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1572ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (684ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (509ms)
+			ProcessInitializeOnLoadMethodAttributes (69ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 13.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (392.6 KB). Loaded Objects now: 6774.
+Memory consumption went from 214.2 MB to 213.8 MB.
+Total: 4.449700 ms (FindLiveObjects: 0.478500 ms CreateObjectMapping: 0.225400 ms MarkObjects: 3.605100 ms  DeleteObjects: 0.139900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.543 seconds
+Refreshing native plugins compatible for Editor in 5.15 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.807 seconds
+Domain Reload Profiling: 2346ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (11ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (30ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (31ms)
+	LoadAllAssembliesAndSetupDomain (293ms)
+		LoadAssemblies (323ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (55ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (32ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1808ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (748ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (569ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 12.14 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (392.5 KB). Loaded Objects now: 6791.
+Memory consumption went from 216.2 MB to 215.8 MB.
+Total: 4.660000 ms (FindLiveObjects: 0.463700 ms CreateObjectMapping: 0.236900 ms MarkObjects: 3.813300 ms  DeleteObjects: 0.145000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.518 seconds
+Refreshing native plugins compatible for Editor in 5.31 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.634 seconds
+Domain Reload Profiling: 2148ms
+	BeginReloadAssembly (178ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (265ms)
+		LoadAssemblies (303ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (46ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1635ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (791ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (96ms)
+			ProcessInitializeOnLoadAttributes (602ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+			AfterProcessingInitializeOnLoad (9ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (15ms)
+Refreshing native plugins compatible for Editor in 14.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (393.5 KB). Loaded Objects now: 6808.
+Memory consumption went from 218.1 MB to 217.7 MB.
+Total: 5.671500 ms (FindLiveObjects: 0.612900 ms CreateObjectMapping: 0.464700 ms MarkObjects: 4.434000 ms  DeleteObjects: 0.158600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.399 seconds
+Refreshing native plugins compatible for Editor in 7.11 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in 13.857 seconds
+Domain Reload Profiling: 15251ms
+	BeginReloadAssembly (167ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (35ms)
+	LoadAllAssembliesAndSetupDomain (1143ms)
+		LoadAssemblies (1175ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (48ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (1ms)
+			ScanForSourceGeneratedMonoScriptInfo (25ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (13857ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (670ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (508ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (1ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 8.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 50 unused Assets / (392.5 KB). Loaded Objects now: 6825.
+Memory consumption went from 220.0 MB to 219.7 MB.
+Total: 6.565200 ms (FindLiveObjects: 0.697300 ms CreateObjectMapping: 0.677600 ms MarkObjects: 5.033600 ms  DeleteObjects: 0.155500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01a.png
-  artifactKey: Guid(76bd3a5dcd56159429194a5ed1104155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01a.png using Guid(76bd3a5dcd56159429194a5ed1104155) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66d828398faf08077589613baa77a00b') in 0.013386 seconds
+  Time since last request: 422242.606690 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Textures/Mask Zig-n-Zag.psd
+  artifactKey: Guid(bb8dfcd263ad4eb383a33d74a720be6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Textures/Mask Zig-n-Zag.psd using Guid(bb8dfcd263ad4eb383a33d74a720be6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e61c5a640c30c2a609f06329cedb736') in 0.071050 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01e.png
-  artifactKey: Guid(5b9c8ad354e0d7b42b29558f0da4defd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01e.png using Guid(5b9c8ad354e0d7b42b29558f0da4defd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fdd5c587be1a94ab222982042041cd3') in 0.025703 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a482919586595b11effc12dd846d5eaa') in 0.350373 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 20
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01f.png
-  artifactKey: Guid(e5d3e65fbcd9c1345b817f29c6fb24a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/hat_01f.png using Guid(e5d3e65fbcd9c1345b817f29c6fb24a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c787279ce182ad69f8bbc6f2404280') in 0.014832 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b694ac791892a1058a22b4dde47aaf14') in 0.025279 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/helmet_01e.png
-  artifactKey: Guid(0dc3f2d4b4d0e4e47b8dba9547784b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/helmet_01e.png using Guid(0dc3f2d4b4d0e4e47b8dba9547784b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47dfe6bd6857f258977c7d9bdf19baa8') in 0.015879 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/helmet_02c.png
-  artifactKey: Guid(45558cd55c55f1847b89682e900fd01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/helmet_02c.png using Guid(45558cd55c55f1847b89682e900fd01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f1a16a0d3c6e6c2cfff111d28af441d') in 0.018162 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.299737 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ingot_01e.png
-  artifactKey: Guid(0f74ce815084abb4fab796442ee39f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ingot_01e.png using Guid(0f74ce815084abb4fab796442ee39f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '227237f4ee0812c04795a63dd234c323') in 0.012319 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.004706 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01d.png
-  artifactKey: Guid(95778fb5dee350642b5f7b13fb5b2d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_01d.png using Guid(95778fb5dee350642b5f7b13fb5b2d45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd576362bb85c1a7a94a5c048ee1ade65') in 0.012745 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002841 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_02c.png
-  artifactKey: Guid(03edf3b865eee5344b38f2e2519cb1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/key_02c.png using Guid(03edf3b865eee5344b38f2e2519cb1a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dd49f22040ce2ebff0ca206fd6c9661') in 0.017599 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.007473 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_01a.png
-  artifactKey: Guid(f2ec6ba7cd220ab41891d1a747e80401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_01a.png using Guid(f2ec6ba7cd220ab41891d1a747e80401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb5ccc5498c40dc20d95ceb8ff19f5e2') in 0.014303 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001515 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_01e.png
-  artifactKey: Guid(b367a71d51220ea46b8d4509363e4b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_01e.png using Guid(b367a71d51220ea46b8d4509363e4b97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c98312d559d6fed8334e4fe2b09524cb') in 0.015595 seconds
+  Time since last request: 0.000032 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82b8b2d1348e15f86a74895cee5d333c') in 0.070255 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000018 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_02d.png
-  artifactKey: Guid(2657d2f9e0db5c74ca72c18b16a94a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_02d.png using Guid(2657d2f9e0db5c74ca72c18b16a94a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '637da715222b006fc4558d1318d39e32') in 0.014099 seconds
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/leaf_01a.png
+  artifactKey: Guid(68597c81a23577c4baa4f61f6d72b9ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/leaf_01a.png using Guid(68597c81a23577c4baa4f61f6d72b9ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c5fa548fc68172a58ecc2c83fe2071') in 0.019901 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.290388 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_03c.png
-  artifactKey: Guid(fa75a46261352e3489646e9d6c6c7387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/necklace_03c.png using Guid(fa75a46261352e3489646e9d6c6c7387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1d9a9ee49cd38af8d93ebad175ad056') in 0.012113 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/key_02e.png
+  artifactKey: Guid(d7bbf90e8919d7644b99db62322aa01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/key_02e.png using Guid(d7bbf90e8919d7644b99db62322aa01d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd39d920d63eaaf05da3c4f9621a48eaa') in 0.014027 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.003288 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/pearl_01b.png
-  artifactKey: Guid(5439ec37a1a4e6d47acaabb992c32976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/pearl_01b.png using Guid(5439ec37a1a4e6d47acaabb992c32976) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c700fc5d3f35c17ea91f0288731f31f') in 0.013427 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Soft Mask.mat
+  artifactKey: Guid(42df1c7856584b6b8db9a509b6b10074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/LiberationSans SDF - Soft Mask.mat using Guid(42df1c7856584b6b8db9a509b6b10074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c85266d28f36e9ede5ab81074b796f4') in 0.026204 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002408 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/plank_01a.png
-  artifactKey: Guid(1d2cb98ab96aba2418733bb4c481dba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/plank_01a.png using Guid(1d2cb98ab96aba2418733bb4c481dba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40cf92ac9c2cd91420fbef463dd3fde4') in 0.016734 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.212861 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_03d.png
-  artifactKey: Guid(3209b157bb015d34f9bb481be19a4d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_03d.png using Guid(3209b157bb015d34f9bb481be19a4d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e67e51c54509f8b3f846fa1ae2a3c8a') in 0.013228 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002628 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_03h.png
-  artifactKey: Guid(7ef06f467e022e842af0ee8e972f5e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/potion_03h.png using Guid(7ef06f467e022e842af0ee8e972f5e22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bea4411abae130a71c5522318c33c4d') in 0.015421 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.353884 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_01d.png
-  artifactKey: Guid(a5d6df07f2b78394aa71f8b0115c1f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_01d.png using Guid(a5d6df07f2b78394aa71f8b0115c1f94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4dae2746488ce4d2cd19f5782a946d4') in 0.013182 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002037 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_02c.png
-  artifactKey: Guid(383730899c1f9d946a83ac330aaa9d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_02c.png using Guid(383730899c1f9d946a83ac330aaa9d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9608d08a24442e7e4ed1f15a7f0415f5') in 0.012012 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003563 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_03b.png
-  artifactKey: Guid(c6529c5baa84c1e41880e82a54967001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/ring_03b.png using Guid(c6529c5baa84c1e41880e82a54967001) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca3de5697e0c44d245abca6cf5e0eaaf') in 0.021236 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.075321 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01a.png
-  artifactKey: Guid(75860b30abf66274f8ca7013df38eb5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01a.png using Guid(75860b30abf66274f8ca7013df38eb5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fe862a960d2ac5b1acf5c34e9b446b3') in 0.014027 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001759 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01e.png
-  artifactKey: Guid(e755394f1ec79b4469781f3ae8c43ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/scroll_01e.png using Guid(e755394f1ec79b4469781f3ae8c43ed3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4ee86ef61b0de5a83ac07644073bd00') in 0.013069 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003212 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01a.png
-  artifactKey: Guid(03afd7f2e80e87d42b1a192259b13383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01a.png using Guid(03afd7f2e80e87d42b1a192259b13383) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e702b1e4729c05e62c293bbface58e37') in 0.013571 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.389176 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01e.png
-  artifactKey: Guid(ffaa9bafc95ac10428604431955ceebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01e.png using Guid(ffaa9bafc95ac10428604431955ceebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe3751cce9b7a011702a2bfef794a14d') in 0.012686 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001895 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01i.png
-  artifactKey: Guid(ec7d7a665854fda4c83774fd157a1387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shard_01i.png using Guid(ec7d7a665854fda4c83774fd157a1387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5f83c3217a70cc64ff822c725271504') in 0.012364 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003907 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_01c.png
-  artifactKey: Guid(ad42f34dfa7ecef4796a6514d4848eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_01c.png using Guid(ad42f34dfa7ecef4796a6514d4848eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e770a9e22c5932cf53143a3bd6b90034') in 0.014158 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.131157 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02b.png
-  artifactKey: Guid(7c11814336da47e4aa371d08c435f880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_02b.png using Guid(7c11814336da47e4aa371d08c435f880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1eaf46deceb139cd3d745556656a13b1') in 0.013472 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001954 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03a.png
-  artifactKey: Guid(6d85f03b196428848a49c5c2a3dfc42a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03a.png using Guid(6d85f03b196428848a49c5c2a3dfc42a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '004e524ed2800e2dfe1ce9241f7a7659') in 0.012015 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003699 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03e.png
-  artifactKey: Guid(dd1948e78a12be3409191aeadb1bb862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/shield_03e.png using Guid(dd1948e78a12be3409191aeadb1bb862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88983badd7fda508bdda84cd7014965d') in 0.013723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.225489 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01b.png
-  artifactKey: Guid(c85393ec380e72d4188b6c2abc2afe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_01b.png using Guid(c85393ec380e72d4188b6c2abc2afe89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc417cb06568f222976119dd6424a0fe') in 0.012929 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003314 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02a.png
-  artifactKey: Guid(204056a451bd6c249b233335842c7a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02a.png using Guid(204056a451bd6c249b233335842c7a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e918e2696e7c765dfbd62b6b5153cd3f') in 0.012878 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001326 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02e.png
-  artifactKey: Guid(457279abfaafce24bb09af1b0ad466e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_02e.png using Guid(457279abfaafce24bb09af1b0ad466e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd466852ab19f5fafa2e9397609980b') in 0.014816 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.681653 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_03d.png
-  artifactKey: Guid(bc0314482d525204885aeddd6869f884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/spellbook_03d.png using Guid(bc0314482d525204885aeddd6869f884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '100f57f4b8b1816cc4b2b0ed08d1d85c') in 0.012437 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002211 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_01c.png
-  artifactKey: Guid(91684da9736fbf74e85b37067ded5a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_01c.png using Guid(91684da9736fbf74e85b37067ded5a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10af0ab1e48f2e131d9c13033e49eb16') in 0.011861 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.004185 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_02b.png
-  artifactKey: Guid(d02909f51eb5dce4684e0f99e597cfbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_02b.png using Guid(d02909f51eb5dce4684e0f99e597cfbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3b76c79a054e82298fee7a04150afe') in 0.015799 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.350120 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_03a.png
-  artifactKey: Guid(979416bb841d4ca4aac9ceff22e1f7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_03a.png using Guid(979416bb841d4ca4aac9ceff22e1f7ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7502ce63d010c48ed0a3575595d9f1d') in 0.012896 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002793 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_03e.png
-  artifactKey: Guid(fbe5fd8d353fc2c4d955f7b7a9d30b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/staff_03e.png using Guid(fbe5fd8d353fc2c4d955f7b7a9d30b6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef5d9d0038d363f089684c64b82c989c') in 0.013045 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_01c.png
-  artifactKey: Guid(84d890c09a9106d4f8a402d20fad670c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_01c.png using Guid(84d890c09a9106d4f8a402d20fad670c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9b162859462102a981a4bd23ee3a24f') in 0.017774 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.358370 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_02b.png
-  artifactKey: Guid(d33dd28e1b2d8db4ab11b4920b256067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_02b.png using Guid(d33dd28e1b2d8db4ab11b4920b256067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22475312f17440803230638315e58bc3') in 0.012720 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002726 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_03a.png
-  artifactKey: Guid(3bba40294a111f940962ca722d22f502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_03a.png using Guid(3bba40294a111f940962ca722d22f502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b2e2fe2c8bc76a2271fe49be7162589') in 0.014345 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002204 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_03e.png
-  artifactKey: Guid(1e594cdb80234324c8aaff99cd31f31d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/sword_03e.png using Guid(1e594cdb80234324c8aaff99cd31f31d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e14333f742156e76b4c41ffa44a5645') in 0.018452 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 4
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
