@@ -28,30 +28,36 @@ public class PlayerController : MonoBehaviour
     public float CurrentMoveSpeed
     {
         get
-        {
-            if (IsMoving && !touchingDirections.IsOnWall)
+        {   if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        return airWalkSpeed;
                     }
                 }
                 else
-                {
-                    return airWalkSpeed;
+                {   //Speed into Wall = 0
+                    return 0;
                 }
-            }
-            else
-            {
+            } else
+            {   //Locked Movement, Can Move is False, Animation Bool Behaviour
                 return 0;
             }
         }
+            
     }
 
 
@@ -115,6 +121,11 @@ public class PlayerController : MonoBehaviour
             _isFacingLeft = value;
         }
     }
+
+    public bool CanMove { get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        } }
 
     public bool isOnPlatform;
     public Rigidbody2D platformRb;
@@ -184,7 +195,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && touchingDirections.IsGrounded)
+        if (context.started && touchingDirections.IsGrounded && CanMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
