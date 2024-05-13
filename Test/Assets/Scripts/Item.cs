@@ -11,7 +11,7 @@ public class Item : MonoBehaviour
     [Header("Attributes")]
     public InteractionType interactType;
     public ItemType type;
-    [Header("Exmaine")]
+    [Header("Examine")]
     public string descriptionText;
     [Header("Custom Events")]
     public UnityEvent customEvent;
