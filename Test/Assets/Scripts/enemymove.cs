@@ -10,14 +10,14 @@ public class enemymove : MonoBehaviour
     public float speed;
     private Rigidbody2D rigidbody2;
     private Transform startingpoint;
-    
-    
+
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         startingpoint = PointB.transform;
-       
+
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class enemymove : MonoBehaviour
 
 
     }
-    
+
     private void flip()
     {
         Vector3 localScale = transform.localScale;
