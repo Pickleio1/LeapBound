@@ -402,7 +402,7 @@ Transform:
   m_GameObject: {fileID: 395976910}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.83, y: -1.64, z: 0.013710963}
+  m_LocalPosition: {x: -0.81, y: -1.58, z: 0.013710963}
   m_LocalScale: {x: 1.5497978, y: 1.6204705, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13155,7 +13155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxlives: 3
   bullet: {fileID: 1925964573}
-  heart: []
+  heart:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &1889648230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13176,6 +13179,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 1554690994147781587, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: m_Size.x
+      value: 0.48501205
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554690994147781587, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4371338
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554690994147781587, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0021076202
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554690994147781587, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06492615
+      objectReference: {fileID: 0}
     - target: {fileID: 2038172761996774830, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
       propertyPath: m_Mass
       value: 0.6785074
@@ -13190,11 +13209,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4911122887094713357, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.74
+      value: -47.79
       objectReference: {fileID: 0}
     - target: {fileID: 4911122887094713357, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -175.02
+      value: -178.76
       objectReference: {fileID: 0}
     - target: {fileID: 4911122887094713357, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13229,9 +13248,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5868923039899436239, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868923039899436239, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7229006553814006449, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
+      propertyPath: playerhealth
+      value: 
+      objectReference: {fileID: 1872483408}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13428,7 +13455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3335938573525025301, guid: 9308dc1fccc248f4b9701a623b7e5fc1, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: timer system
       objectReference: {fileID: 0}
     - target: {fileID: 7077965074639225512, guid: 9308dc1fccc248f4b9701a623b7e5fc1, type: 3}
       propertyPath: m_Pivot.x
