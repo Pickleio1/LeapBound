@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public float jumpImpulse = 10f;
     public float airWalkSpeed = 3f;
     public float smallJump = 0.7f;
+    public int damage = 1;
+    public enemyhealth enemyHealth;
+    
 
-    private bool grounded;
 
     TouchingDirections touchingDirections;
     public Rigidbody2D rb;
@@ -26,30 +28,36 @@ public class PlayerController : MonoBehaviour
     public float CurrentMoveSpeed
     {
         get
-        {
-            if (IsMoving && !touchingDirections.IsOnWall)
+        {   if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        return airWalkSpeed;
                     }
                 }
                 else
-                {
-                    return airWalkSpeed;
+                {   //Speed into Wall = 0
+                    return 0;
                 }
-            }
-            else
-            {
+            } else
+            {   //Locked Movement, Can Move is False, Animation Bool Behaviour
                 return 0;
             }
         }
+            
     }
 
 
@@ -63,6 +71,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
+            animator.SetBool("MoveTrigger" , value);
         }
     }
 
@@ -113,14 +122,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public bool CanMove { get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        } }
+
     public bool isOnPlatform;
     public Rigidbody2D platformRb;
-
+    public Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -180,7 +195,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && grounded)
+        if (context.started && touchingDirections.IsGrounded && CanMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
@@ -200,31 +215,22 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-
-            grounded = true;
-
-        }
-    }
-
-
-    public void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            grounded = false;
-        }
-    }
-
-
-    public void OnAttack (InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
+            animator.SetTrigger(AnimationStrings.AttackTrigger);
             IsAttacking = true;
+
         }
     }
+
+
+    private void OnCollisionEnter2D (Collision2D enemyCol)
+    {
+        if (enemyCol.gameObject.tag == "Enemy")
+        {
+           enemyHealth.TakeDamage(damage);
+       }
+   }
 }
