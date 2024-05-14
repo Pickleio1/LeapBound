@@ -18,6 +18,8 @@ public class timerscript : MonoBehaviour
     void Update()
     {
         elapsedtime += Time.deltaTime;
-        timertext.text = elapsedtime.ToString();
+        float minutes = elapsedtime / 60;
+        float seconds = elapsedtime % 60;
+        timertext.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
