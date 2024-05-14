@@ -140,6 +140,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (FindObjectOfType<InteractionSystem>()!= null && FindObjectOfType<InteractionSystem>().isExamining)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
 
         rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
 
@@ -147,11 +152,6 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2((moveInput.x * CurrentMoveSpeed) + platformRb.velocity.x, rb.velocity.y);
         }
-        else
-        {
-            rb.velocity = new Vector2(moveInput.x * CurrentMoveSpeed, rb.velocity.y);
-        }
-
     }
 
 
