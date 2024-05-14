@@ -15,7 +15,7 @@ C:/Users/mirfa/Projects/LeapBound/Test
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-49255
+59145
 Successfully changed project path to: C:/Users/mirfa/Projects/LeapBound/Test
 C:/Users/mirfa/Projects/LeapBound/Test
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/mirfa/Projects/LeapBound/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [4888] Host "[IP] 192.168.182.250 [Port] 0 [Flags] 2 [Guid] 2151485996 [EditorId] 2151485996 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [41116] Host "[IP] 192.168.182.250 [Port] 0 [Flags] 2 [Guid] 3174054892 [EditorId] 3174054892 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [4888] Host "[IP] 192.168.182.250 [Port] 0 [Flags] 2 [Guid] 2151485996 [EditorId] 2151485996 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [41116] Host "[IP] 192.168.182.250 [Port] 0 [Flags] 2 [Guid] 3174054892 [EditorId] 3174054892 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
-Refreshing native plugins compatible for Editor in 13.44 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 16.84 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.22f1 (887be4894c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Resources/UnitySubsystems
@@ -70,46 +70,46 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56808
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007736 seconds.
-- Loaded All Assemblies, in  0.386 seconds
+Registered in 0.009743 seconds.
+- Loaded All Assemblies, in  0.475 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.274 seconds
-Domain Reload Profiling: 658ms
-	BeginReloadAssembly (109ms)
+- Finished resetting the current domain, in  0.281 seconds
+Domain Reload Profiling: 755ms
+	BeginReloadAssembly (207ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (61ms)
-	LoadAllAssembliesAndSetupDomain (167ms)
-		LoadAssemblies (106ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (152ms)
+		LoadAssemblies (203ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (165ms)
-			TypeCache.Refresh (164ms)
-				TypeCache.ScanAssembly (150ms)
+		AnalyzeDomain (150ms)
+			TypeCache.Refresh (148ms)
+				TypeCache.ScanAssembly (133ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (275ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (281ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (217ms)
+		SetupLoadedEditorAssemblies (223ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
+			InitializePlatformSupportModulesInManaged (11ms)
 			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (152ms)
-			ProcessInitializeOnLoadMethodAttributes (46ms)
+			ProcessInitializeOnLoadAttributes (156ms)
+			ProcessInitializeOnLoadMethodAttributes (48ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,8 +117,8 @@ Domain Reload Profiling: 658ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.718 seconds
-Refreshing native plugins compatible for Editor in 5.64 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.831 seconds
+Refreshing native plugins compatible for Editor in 6.29 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -126,47 +126,47 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.942 seconds
-Domain Reload Profiling: 1656ms
-	BeginReloadAssembly (152ms)
+- Finished resetting the current domain, in  1.014 seconds
+Domain Reload Profiling: 1841ms
+	BeginReloadAssembly (167ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (39ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (469ms)
-		LoadAssemblies (362ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (564ms)
+		LoadAssemblies (428ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (193ms)
-			TypeCache.Refresh (157ms)
-				TypeCache.ScanAssembly (142ms)
-			ScanForSourceGeneratedMonoScriptInfo (25ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (943ms)
+		AnalyzeDomain (234ms)
+			TypeCache.Refresh (191ms)
+				TypeCache.ScanAssembly (173ms)
+			ScanForSourceGeneratedMonoScriptInfo (32ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1015ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (783ms)
+		SetupLoadedEditorAssemblies (824ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (92ms)
-			ProcessInitializeOnLoadAttributes (593ms)
-			ProcessInitializeOnLoadMethodAttributes (81ms)
+			BeforeProcessingInitializeOnLoad (98ms)
+			ProcessInitializeOnLoadAttributes (631ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
 			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 5.99 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
+Refreshing native plugins compatible for Editor in 7.03 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6278 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 105 unused Assets / (423.3 KB). Loaded Objects now: 6739.
+Unloading 105 unused Assets / (423.2 KB). Loaded Objects now: 6739.
 Memory consumption went from 241.2 MB to 240.8 MB.
-Total: 4.231600 ms (FindLiveObjects: 0.454400 ms CreateObjectMapping: 0.204900 ms MarkObjects: 3.325600 ms  DeleteObjects: 0.245800 ms)
+Total: 5.486600 ms (FindLiveObjects: 0.456800 ms CreateObjectMapping: 0.249700 ms MarkObjects: 4.358800 ms  DeleteObjects: 0.420100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -184,596 +184,30 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 524334.031494 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-air-attack-3-end-02.png
-  artifactKey: Guid(0c447075b88e4d243b4e05a5d501f679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-air-attack-3-end-02.png using Guid(0c447075b88e4d243b4e05a5d501f679) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0ed785f815b8424e9aab28b41164b24') in 0.098800 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.056574 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-cast-02.png
-  artifactKey: Guid(f312a0294dbdffd4cb13560395976e18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-cast-02.png using Guid(f312a0294dbdffd4cb13560395976e18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4baddb1494608b317ef101d6e68f6bf') in 0.015513 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.025620 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crnr-clmb-03.png
-  artifactKey: Guid(038a95c9b6eb72045bb854272ad4c6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crnr-clmb-03.png using Guid(038a95c9b6eb72045bb854272ad4c6ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4216852609947320647331dce05dc24') in 0.013818 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.001851 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crnr-grb-02.png
-  artifactKey: Guid(9a6059176884a7a4693b9f97a096fa51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crnr-grb-02.png using Guid(9a6059176884a7a4693b9f97a096fa51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99b74acd3fdc94997431e6c17fc09a2c') in 0.013148 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.016808 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crouch-03.png
-  artifactKey: Guid(2d284d49c610f0f408b955984ec32c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crouch-03.png using Guid(2d284d49c610f0f408b955984ec32c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68157650921548b7de61b41a4fabd231') in 0.012220 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.003976 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crouch-walk-03.png
-  artifactKey: Guid(83aef6ac60109154586cbddd730411e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-crouch-walk-03.png using Guid(83aef6ac60109154586cbddd730411e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a099b7c78c0ddb1d8ba3f389fc768a00') in 0.013615 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.002479 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-die-01.png
-  artifactKey: Guid(b39bfcd6fe262984083c977da9e5bb37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-die-01.png using Guid(b39bfcd6fe262984083c977da9e5bb37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0334d941aafdcf08a0118935e941e7c') in 0.017524 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-die-05.png
-  artifactKey: Guid(c747ee9e681406f49aaeba0055de844e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-die-05.png using Guid(c747ee9e681406f49aaeba0055de844e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ead590f74096ee270b785ddfa00597') in 0.013741 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.085696 seconds.
-  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Flying eye/Attack3.png
-  artifactKey: Guid(82d83ccf080cdff438c22040eeb9bd07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Flying eye/Attack3.png using Guid(82d83ccf080cdff438c22040eeb9bd07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bff6d9ce5d8e92dc66f4f60acedf3220') in 0.017337 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000675 seconds.
-  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Avocado.png
-  artifactKey: Guid(2d996a9f7524c354585e081fdf1c9ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Avocado.png using Guid(2d996a9f7524c354585e081fdf1c9ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a442f0bedb4b64fe62b8837a55129841') in 0.015491 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Art/freecutetileset/BG2.png
-  artifactKey: Guid(96765dee1e4a98541a860f4c3793df47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freecutetileset/BG2.png using Guid(96765dee1e4a98541a860f4c3793df47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81da20e3fa10e3f9a93de1e233ea68b') in 0.016498 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.169889 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/book_02c.png
-  artifactKey: Guid(39046e578c164364fa76d4e6ad95e842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/book_02c.png using Guid(39046e578c164364fa76d4e6ad95e842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c0257e1e165ad0f6fe0085bf116dd32') in 0.014740 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.846700 seconds.
-  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack.png
-  artifactKey: Guid(b1559fcb5326c70429af3ce22413273e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Skeleton/Attack.png using Guid(b1559fcb5326c70429af3ce22413273e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3ca15273c4663b05c36b97ef1cc2163') in 0.016842 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.365264 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_02g.png
-  artifactKey: Guid(23017d1b421b4ed48846285253c56aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_02g.png using Guid(23017d1b421b4ed48846285253c56aa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3255fca207e6d461cb571e14b4fa7292') in 0.015540 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.178480 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_04a.png
-  artifactKey: Guid(7029625d8b81799429549d31879544c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_04a.png using Guid(7029625d8b81799429549d31879544c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17cdec0c1180972f660081916f3fe00d') in 0.012696 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.533467 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_04g.png
-  artifactKey: Guid(e9d3d088715ffe44c9d70f470017baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_04g.png using Guid(e9d3d088715ffe44c9d70f470017baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a72cad34163175ffdc3065ea342c6612') in 0.016445 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.063681 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/book_05d.png
-  artifactKey: Guid(92cf960c7ce28a04e9074714ddedb5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/book_05d.png using Guid(92cf960c7ce28a04e9074714ddedb5cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '273bfa4a4f285be6bc870b28700515d5') in 0.013025 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.101934 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_06b.png
-  artifactKey: Guid(268782bf45ad47044b216d1f3ab0d925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/book_06b.png using Guid(268782bf45ad47044b216d1f3ab0d925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe2ad7d090ec56c6ede2a608ddcf406b') in 0.012070 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.384345 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/bow_02e.png
-  artifactKey: Guid(2211679620d6992429ccae04c6fe5768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/bow_02e.png using Guid(2211679620d6992429ccae04c6fe5768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '884634b6920d856a0953a0601224149b') in 0.022667 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.784317 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_01e.png
-  artifactKey: Guid(84e649c8e05009b4a9327cf735edd351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/candy_01e.png using Guid(84e649c8e05009b4a9327cf735edd351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c7e1e01ab1d68c4f4c55ce7f4ce89aa') in 0.013434 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 7.180897 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_01a.png
-  artifactKey: Guid(c688378413da3874e832d566cae8633d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_01a.png using Guid(c688378413da3874e832d566cae8633d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fb1a244d6022a94528095688377d5cd') in 0.014956 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 4.344438 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_01e.png
-  artifactKey: Guid(0e1c25a6ad7243c4ab498f05377d1993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_01e.png using Guid(0e1c25a6ad7243c4ab498f05377d1993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afe57f40b1525af5abe103094a42af1b') in 0.018524 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.200523 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_03e.png
-  artifactKey: Guid(9a3a70ffe1b63644fb06a02457d9f4fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_03e.png using Guid(9a3a70ffe1b63644fb06a02457d9f4fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf134f1a3564beb153a1387e3ecba7a') in 0.017284 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 76.805956 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_04a.png
-  artifactKey: Guid(0b0bd95545c482847954dab0e98068a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_04a.png using Guid(0b0bd95545c482847954dab0e98068a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5474600ab2d47c75f6e4d299733a6507') in 0.015068 seconds
+  Time since last request: 525149.111878 seconds.
+  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-attack1-04.png
+  artifactKey: Guid(4ac342de8c3afd345999efb47896f651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-attack1-04.png using Guid(4ac342de8c3afd345999efb47896f651) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '474dbb0f741c8642f7cd68e41510931e') in 0.108556 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04b.png
-  artifactKey: Guid(3ed9d11cd0b46b24aac0f206e36671d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04b.png using Guid(3ed9d11cd0b46b24aac0f206e36671d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e490b8e2af5eb39cbe9f45bb68386837') in 0.013067 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.352232 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_04c.png
-  artifactKey: Guid(0bea26a6e6d492448955e6f5eae8ddc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_04c.png using Guid(0bea26a6e6d492448955e6f5eae8ddc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02b33f2206e103201c4ad1ba57773320') in 0.013708 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04d.png
-  artifactKey: Guid(d77f3925497089c4e98c49e354e4f4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04d.png using Guid(d77f3925497089c4e98c49e354e4f4e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '437480af6dbb0420f0ee83f27c2b5641') in 0.017995 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.017392 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04e.png
-  artifactKey: Guid(fa9d9cb7fc4896a44bae8ef16d51f555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_04e.png using Guid(fa9d9cb7fc4896a44bae8ef16d51f555) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e1b50917ba31e3f0ecad4791f3655f4') in 0.013813 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_05a.png
-  artifactKey: Guid(8bfeb1c4da4f09e42b6f4d644e977c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_05a.png using Guid(8bfeb1c4da4f09e42b6f4d644e977c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b85e37237acdde7a83522ce2c35a4594') in 0.020286 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.016406 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05b.png
-  artifactKey: Guid(937da167156c4944cbe6f729f447cd9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05b.png using Guid(937da167156c4944cbe6f729f447cd9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9ecdbbbe6cdf1793164c51c6b2f463d') in 0.014426 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_05c.png
-  artifactKey: Guid(3b2ee353c8cd8824eb948e655c7f0793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/coin_05c.png using Guid(3b2ee353c8cd8824eb948e655c7f0793) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4c33fbb393e89301089dcf5a34e0608') in 0.013607 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000090 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05d.png
-  artifactKey: Guid(910448c3c3193a345ad97ba7d0ab538a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05d.png using Guid(910448c3c3193a345ad97ba7d0ab538a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '100a86bd318dc9002e0dcf2dc7219060') in 0.014784 seconds
+  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-attack2-00.png
+  artifactKey: Guid(0ad5499c37ca0aa40b2a57dda7aa5759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-attack2-00.png using Guid(0ad5499c37ca0aa40b2a57dda7aa5759) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2824c765cd37c76f2e90cc30b7379399') in 0.024409 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05e.png
-  artifactKey: Guid(c169a45760fad5f499a0d28057421340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/coin_05e.png using Guid(c169a45760fad5f499a0d28057421340) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9d4ab9413b5ec6d88eb9f065cb70c26') in 0.018995 seconds
+  path: Assets/Art/rvros-adventurer/Individual Sprites/adventurer-bow-04.png
+  artifactKey: Guid(f0b274b24f751af469ebcd35abb6a39d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/rvros-adventurer/Individual Sprites/adventurer-bow-04.png using Guid(f0b274b24f751af469ebcd35abb6a39d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ebf7c5e5e75fcc0f469e2cf4ad40905') in 0.014835 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.372614 seconds.
-  path: Assets/Art/1-Bit-Sci-Fi(Omniclause)/Conveyer-Belt/Conveyer-Belt.gif
-  artifactKey: Guid(2adb191ffeb96524f832e0f69b930826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/1-Bit-Sci-Fi(Omniclause)/Conveyer-Belt/Conveyer-Belt.gif using Guid(2adb191ffeb96524f832e0f69b930826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50ceea5b23c04eff810df52ae9b850cb') in 0.012263 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.012568 seconds.
-  path: Assets/Art/1-Bit-Sci-Fi(Omniclause)/Conveyer-Belt/Conveyer-Belt-Sheet-Right.png
-  artifactKey: Guid(40ed8e0bc319fc64bb3eb891c09c3049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/1-Bit-Sci-Fi(Omniclause)/Conveyer-Belt/Conveyer-Belt-Sheet-Right.png using Guid(40ed8e0bc319fc64bb3eb891c09c3049) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd77d558060ffa8cee9dedf89f8b6bdb1') in 0.018729 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Cookie.png
-  artifactKey: Guid(ecfc905a2597f014695bcc25207a2010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Cookie.png using Guid(ecfc905a2597f014695bcc25207a2010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '616d770203edd1dc148f1ef38959be09') in 0.019366 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.011407 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cookie_01a.png
-  artifactKey: Guid(a436f2fc74f572442b1a13a902f18e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cookie_01a.png using Guid(a436f2fc74f572442b1a13a902f18e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5309ab0dd8ac8d1a11bebbeb99228b92') in 0.021644 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cotton_01a.png
-  artifactKey: Guid(299b326e17bbeb445a0d9afec1fa2410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cotton_01a.png using Guid(299b326e17bbeb445a0d9afec1fa2410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '286806c93f53e01dca1e814a827b1938') in 0.018186 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Audio/SFX/Cover.png
-  artifactKey: Guid(6bb9f0a6b9e68fa40b7adb3dc23cf887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Audio/SFX/Cover.png using Guid(6bb9f0a6b9e68fa40b7adb3dc23cf887) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f697f0a20b610d1a88864ae78d986840') in 0.023066 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01b.png
-  artifactKey: Guid(81f831b616e61154cacfb7ad764e8023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01b.png using Guid(81f831b616e61154cacfb7ad764e8023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f127293bc16e52b8186f2cdb876c40f') in 0.020763 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.009056 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01c.png
-  artifactKey: Guid(20f3ab6c2c8d2784fb74c9720fc577a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01c.png using Guid(20f3ab6c2c8d2784fb74c9720fc577a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a27c8146d90dcded405abbad4e40e0f') in 0.013167 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01d.png
-  artifactKey: Guid(23f93009dd11e394e96b6d0ad2a7c5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01d.png using Guid(23f93009dd11e394e96b6d0ad2a7c5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52139b87895f2f04b5b2af6c5b738b40') in 0.016619 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.209080 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01e.png
-  artifactKey: Guid(2075422c09bef7e40bf0b7ba324e4257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01e.png using Guid(2075422c09bef7e40bf0b7ba324e4257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '773b570f9b8ede513278934f2d8d9897') in 0.015648 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01f.png
-  artifactKey: Guid(57293993820f26e478c7065431951972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01f.png using Guid(57293993820f26e478c7065431951972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2b7454bba4fa7bfc347a804a543718b') in 0.019898 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.031716 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01g.png
-  artifactKey: Guid(78548b55e766a7c4792ce200c6e650d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01g.png using Guid(78548b55e766a7c4792ce200c6e650d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a7a33ade96335600c9d1cf599a97d95') in 0.016715 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01h.png
-  artifactKey: Guid(466a3864f16964747b363a0fb3f6e9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/crystal_01h.png using Guid(466a3864f16964747b363a0fb3f6e9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a655d0eff79966f3aeefff49a76b5383') in 0.014097 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01h.png
-  artifactKey: Guid(2ed77130d0568b34fab6de7765bf4814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01h.png using Guid(2ed77130d0568b34fab6de7765bf4814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '437d942d6d361ab5e6eec20db45906ec') in 0.019730 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01j.png
-  artifactKey: Guid(1782820b86569304896ab5736d95cfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/crystal_01j.png using Guid(1782820b86569304896ab5736d95cfff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd07c85bc4b5742f544675d1225f60976') in 0.017191 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.238240 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_01a.png
-  artifactKey: Guid(c7919ee5cddc4ad4e9b9b5c7422f5d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_01a.png using Guid(c7919ee5cddc4ad4e9b9b5c7422f5d09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45ba6299c14126096b4cbadcf29e7e58') in 0.011668 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_01b.png
-  artifactKey: Guid(2aa8eba0790cd244ab94bf4eab76f33b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_01b.png using Guid(2aa8eba0790cd244ab94bf4eab76f33b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58cd0f4f1b23bbbee1e2280bc346ac53') in 0.012249 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.232010 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_02a.png
-  artifactKey: Guid(5cfa32cd739a6434ab6e88e7ade7f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_02a.png using Guid(5cfa32cd739a6434ab6e88e7ade7f89e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e20db75a19023fa13debec84d9cf1f4b') in 0.016006 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_02b.png
-  artifactKey: Guid(a6de59150cd75ea49b061606a6e6c783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/cup_02b.png using Guid(a6de59150cd75ea49b061606a6e6c783) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2414a361e732354c6c1c2b35361f574b') in 0.013545 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.021090 seconds.
-  path: Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Goblin/Death.png
-  artifactKey: Guid(8fdf066083f4d9043a6b5285dddb0ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/luizmelo_Monsters_Creatures_Fantasy/Goblin/Death.png using Guid(8fdf066083f4d9043a6b5285dddb0ac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4803b179392e716a185119bc279cb324') in 0.018213 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/freecutetileset/Decors.png
-  artifactKey: Guid(d48669d0256b188419a9eafcf99a6493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freecutetileset/Decors.png using Guid(d48669d0256b188419a9eafcf99a6493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1071f99d36252921e216b6cc4cdb1981') in 0.015939 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.716330 seconds.
-  path: Assets/Art/1-Bit-Sci-Fi(Omniclause)/Door/Door-Sheet.png
-  artifactKey: Guid(344fc038005540244bba76fd988efeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/1-Bit-Sci-Fi(Omniclause)/Door/Door-Sheet.png using Guid(344fc038005540244bba76fd988efeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b843dbf220295455bd4af81059b7220') in 0.016374 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.258754 seconds.
-  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Eggplant.png
-  artifactKey: Guid(b4c9f99162deca84ebc6c689c9df3de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/Eggplant.png using Guid(b4c9f99162deca84ebc6c689c9df3de9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa43d8558dd5e548c09b632809e5977') in 0.015902 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.358329 seconds.
-  path: Assets/Art/freecutetileset/ExampleTiles.png
-  artifactKey: Guid(32452d43e9056254db7f25c575f88816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freecutetileset/ExampleTiles.png using Guid(32452d43e9056254db7f25c575f88816) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9ac30f857b99af4f54c68434a2f49fa') in 0.020872 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01a.png
-  artifactKey: Guid(6364579aab1cae94b9a9207a4f30e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01a.png using Guid(6364579aab1cae94b9a9207a4f30e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99731725fa5a7fd92a4efb84c3f3a243') in 0.018427 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.029250 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fish_01b.png
-  artifactKey: Guid(6ee70dde5276e1041b5dafbca88f076f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fish_01b.png using Guid(6ee70dde5276e1041b5dafbca88f076f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64ea820dd464a62b71e0b52a68672e0c') in 0.012460 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01c.png
-  artifactKey: Guid(f25e910e52741be49a3dd8d1ff31a1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01c.png using Guid(f25e910e52741be49a3dd8d1ff31a1b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c032cb0d3e195f2c4585dd33e61765f6') in 0.012450 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01d.png
-  artifactKey: Guid(a3c9a239f3bfdda46b11b4c3f1fa4e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fish_01d.png using Guid(a3c9a239f3bfdda46b11b4c3f1fa4e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2f6e61b7f76c947ab2ff036e44ffd66') in 0.012637 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/henrysoftware-freepixelfood/Sprite/Food/FishFillet.png
-  artifactKey: Guid(a592e52011d988e46b3a2c82e1ac05ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/henrysoftware-freepixelfood/Sprite/Food/FishFillet.png using Guid(a592e52011d988e46b3a2c82e1ac05ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553255a9ebd77e118d807731979bdf64') in 0.014027 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fish_01e.png
-  artifactKey: Guid(e7540e0f07de17b488410b6bd21bd9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fish_01e.png using Guid(e7540e0f07de17b488410b6bd21bd9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3206ee04f08154cf674dc22c66c045c5') in 0.014727 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.494240 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fruit_01a.png
-  artifactKey: Guid(4eafa5f1bb55414429bece507a906ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/fruit_01a.png using Guid(4eafa5f1bb55414429bece507a906ee0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01aebf5cd6753a656b5b7b92aed204a7') in 0.016934 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.006591 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fruit_01b.png
-  artifactKey: Guid(b77b3afb98b4096419c1a683b06342ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/32x32/fruit_01b.png using Guid(b77b3afb98b4096419c1a683b06342ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50b274c22b7d6924d68f505d8ef8ad92') in 0.011511 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/kyrises-rpg-icon-pack/icons/48x48/gem_01a.png
-  artifactKey: Guid(e6f0ebcae0afc224fb5972acc52e4ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/kyrises-rpg-icon-pack/icons/48x48/gem_01a.png using Guid(e6f0ebcae0afc224fb5972acc52e4ada) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a99187022213f9a8d34e23f04c772b2') in 0.015488 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.512 seconds
-Refreshing native plugins compatible for Editor in 4.80 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.791 seconds
-Domain Reload Profiling: 2300ms
-	BeginReloadAssembly (158ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (9ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (42ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (28ms)
-	LoadAllAssembliesAndSetupDomain (278ms)
-		LoadAssemblies (302ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (51ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (26ms)
-			ResolveRequiredComponents (14ms)
-	FinalizeReload (1792ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (702ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (91ms)
-			ProcessInitializeOnLoadAttributes (538ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
-			AfterProcessingInitializeOnLoad (7ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
-Refreshing native plugins compatible for Editor in 6.26 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6111 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 50 unused Assets / (392.4 KB). Loaded Objects now: 6788.
-Memory consumption went from 216.5 MB to 216.2 MB.
-Total: 4.768500 ms (FindLiveObjects: 0.549500 ms CreateObjectMapping: 0.286500 ms MarkObjects: 3.787700 ms  DeleteObjects: 0.143700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
