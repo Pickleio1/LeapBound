@@ -23,28 +23,10 @@ public class heartsgopoof : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-    }
-
-    public void TakeDamage(int damage) //dmg and destroy player
-    {
-        currentlife -= damage;
-        if (currentlife < 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision) //decrease life
-    {
-        if (bullet.gameObject.CompareTag("Player"))
-        {
-            currentlife -= 1;
-        }
-
         if (currentlife == 0)   //destroy hearts, not working tho
         {
             Destroy(heart[0].gameObject);
+            Destroy(gameObject);
         }
         else if (currentlife == 1)
         {
@@ -54,6 +36,22 @@ public class heartsgopoof : MonoBehaviour
         {
             Destroy(heart[2].gameObject);
         }
+    }
+
+    public void TakeDamage(int damage) //dmg and destroy player
+    {
+        currentlife -= damage;
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) //decrease life
+    {
+        if (bullet.gameObject.CompareTag("Player"))
+        {
+            currentlife -= 1;
+        }
+
+       
     }
 
 

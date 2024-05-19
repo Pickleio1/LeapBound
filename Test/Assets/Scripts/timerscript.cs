@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class timerscript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timertext;
     public float elapsedtime;
     public bool counting;
+    private GameObject player;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,17 @@ public class timerscript : MonoBehaviour
 
     public void StopTimer()
     {
+        
         counting = false;
+    }
+
+    public void NextScene()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void PreviousScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
