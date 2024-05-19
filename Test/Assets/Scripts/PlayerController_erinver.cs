@@ -15,7 +15,16 @@ public class PlayerController : MonoBehaviour
     public float smallJump = 0.7f;
     public int damage = 1;
     public enemyhealth enemyHealth;
-    
+    public float fastDropSpeed = 20f;
+    public float stunDuration = 2f;
+    bool applyFastDrop = false;
+    bool isStunned = false;
+    float stunTimer = 0;
+    public float landingStunDuration = 1f;
+    bool wasInAir = false;
+    bool quickDropInitiated = false;
+
+
 
 
     TouchingDirections touchingDirections;
@@ -71,6 +80,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
+            animator.SetBool("MoveTrigger", value);
         }
     }
 
@@ -148,11 +158,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Quick drop and associated stun can only be initiated if not grounded
+        if (Keyboard.current.qKey.wasPressedThisFrame && !isStunned && !touchingDirections.IsGrounded)
+        {
+            StartAirStun(stunDuration);
+        }
 
+        if (isStunned)
+        {
+            UpdateStun();
+        }
+
+        // Check for landing only if quickDropInitiated is true
+        if (touchingDirections.IsGrounded && wasInAir && quickDropInitiated)
+        {
+            StartStun(landingStunDuration); // Apply stun when landing
+            quickDropInitiated = false; // Reset the flag after applying stun
+        }
+
+        wasInAir = !touchingDirections.IsGrounded; // Update to track if player was in the air last frame
     }
 
-
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (FindObjectOfType<InteractionSystem>()!= null && FindObjectOfType<InteractionSystem>().isExamining)
         {
@@ -166,7 +193,17 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2((moveInput.x * CurrentMoveSpeed) + platformRb.velocity.x, rb.velocity.y);
         }
+
+        if (!isStunned)
+        {
+            UpdateStun();
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y); // Zero out horizontal movement but allow for gravity impact
+        }
     }
+
 
 
     public void OnMove(InputAction.CallbackContext context)
@@ -194,7 +231,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && touchingDirections.IsGrounded && CanMove)
+        if (context.started && touchingDirections.IsGrounded && CanMove && !isStunned)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
@@ -232,4 +269,38 @@ public class PlayerController : MonoBehaviour
            enemyHealth.TakeDamage(damage);
        }
    }
+
+
+   void StartStun(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+        rb.velocity = new Vector2(0, rb.velocity.y); // Stop horizontal movement
+    }
+
+    void StartAirStun(float duration)
+    {
+        isStunned = true;
+        stunTimer = duration;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY; // Freeze position completely in air
+        applyFastDrop = true; // Flag for fast drop after stun
+        quickDropInitiated = true; // Indicate that quick drop has been initiated
+    }
+
+    void UpdateStun()
+    {
+        stunTimer -= Time.deltaTime;
+        if (stunTimer <= 0)
+        {
+            isStunned = false;
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.freezeRotation = true;
+
+            if (applyFastDrop)
+            {
+                rb.velocity = new Vector2(0, -fastDropSpeed); // Apply fast drop
+                applyFastDrop = false;
+            }
+        }
+    }
 }
