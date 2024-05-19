@@ -23,10 +23,10 @@ public class heartsgopoof : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentlife == 0)   //destroy hearts, not working tho
+        if (currentlife == 0)   //destroy hearts 
         {
             Destroy(heart[0].gameObject);
-            Destroy(gameObject);
+            Destroy(gameObject);   //destroy player
         }
         else if (currentlife == 1)
         {
@@ -38,7 +38,7 @@ public class heartsgopoof : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int damage) //dmg and destroy player
+    public void TakeDamage(int damage) //take dmg
     {
         currentlife -= damage;
         
