@@ -35,26 +35,30 @@ public class heartsgopoof : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) //decrease life
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (bullet.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            currentlife -= 1;
+            currentlife -= 1;  // Existing bullet damage logic
         }
 
-        if (currentlife == 0)   //destroy hearts, not working tho
+        if (collision.gameObject.CompareTag("Spike"))  // Assuming spikes are tagged as "Spike"
         {
-            Destroy(heart[0].gameObject);
+            TakeDamage(1);  // Call TakeDamage with the damage value that spikes should inflict
         }
-        else if (currentlife == 1)
-        {
-            Destroy(heart[1].gameObject);
-        }
-        else if (currentlife == 2)
-        {
-            Destroy(heart[2].gameObject);
-        }
+
+        UpdateHealthUI();  // Call this method to update health display if you have one
     }
 
-
+    // Assumes you have a method to update the health UI
+    private void UpdateHealthUI()
+    {
+        for (int i = 0; i < heart.Length; i++)
+        {
+            if (i < currentlife)
+                heart[i].SetActive(true);  // Show heart if health is above index
+            else
+                heart[i].SetActive(false);  // Hide heart if health is below or equal to index
+        }
+    }
 }

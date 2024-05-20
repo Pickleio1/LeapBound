@@ -47,10 +47,9 @@ GameObject:
   - component: {fileID: 1446018073338467588}
   - component: {fileID: 1954074674478846164}
   - component: {fileID: 3037450313121389250}
-  - component: {fileID: 7167518585781877130}
   - component: {fileID: 6060732342106851920}
-  - component: {fileID: 7129111089412828944}
   - component: {fileID: 284920256186698082}
+  - component: {fileID: 1252241977025709562}
   m_Layer: 0
   m_Name: Player_erinver
   m_TagString: Player
@@ -100,7 +99,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &4771766940458701646
 CapsuleCollider2D:
@@ -425,10 +424,14 @@ MonoBehaviour:
   smallJump: 0.7
   damage: 1
   enemyHealth: {fileID: 0}
-  rb: {fileID: 0}
+  fastDropSpeed: 100
+  stunDuration: 0.3
+  landingStunDuration: 0.1
+  rb: {fileID: 2921560155450063161}
   _isFacingLeft: 0
   isOnPlatform: 0
   platformRb: {fileID: 0}
+  animator: {fileID: 284920256186698082}
 --- !u!114 &3037450313121389250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,37 +446,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ClimbingSpeed: 8
   rb: {fileID: 2921560155450063161}
---- !u!114 &7167518585781877130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637330436403069549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22004f1d26f6d6843b04694c65bda0a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
-  groundDistance: 0.05
-  wallDistance: 0.05
-  ceilingDistance: 0.05
-  _isGrounded: 0
-  _isOnWall: 0
 --- !u!114 &6060732342106851920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,41 +471,6 @@ MonoBehaviour:
   examineText: {fileID: 0}
   isExamining: 0
   isGrabbing: 0
---- !u!70 &7129111089412828944
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7637330436403069549}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.216696, y: 0.73675734}
-  m_Size: {x: 1.0240645, y: 1.3129824}
-  m_Direction: 0
 --- !u!95 &284920256186698082
 Animator:
   serializedVersion: 5
@@ -555,6 +492,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1252241977025709562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e709701d64f3449271a195760bad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxlives: 3
+  bullet: {fileID: 0}
+  heart:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &8479247028519345894
 GameObject:
   m_ObjectHideFlags: 0
