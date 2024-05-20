@@ -9,7 +9,7 @@ public class Spike : MonoBehaviour
     public enum Direction { Up, Down, Left, Right }
     public Direction extendDirection;
     private Vector3 originalPosition;
-    private bool isOperating = false; // To handle only one operation at a time
+    private bool isOperating = false;
 
     private void Start()
     {
@@ -21,17 +21,17 @@ public class Spike : MonoBehaviour
         if (collision.CompareTag("Player") && !isOperating)
         {
             StartCoroutine(HandleSpikeExtension());
-            collision.gameObject.GetComponent<heartsgopoof>()?.TakeDamage(1);  // Assuming player has a health script attached
+            collision.gameObject.GetComponent<heartsgopoof>()?.TakeDamage(1); 
         }
     }
 
     private IEnumerator HandleSpikeExtension()
     {
-        isOperating = true;   // To prevent retriggering while operating
-        yield return MoveSpike(originalPosition + GetExtensionVector(extendDirection));  // Extend Spike
-        yield return new WaitForSeconds(2);  // Wait for 2 seconds
-        yield return MoveSpike(originalPosition);  // Retract Spike
-        isOperating = false;  // Operation complete, ready for another trigger
+        isOperating = true;   
+        yield return MoveSpike(originalPosition + GetExtensionVector(extendDirection));  
+        yield return new WaitForSeconds(2);  
+        yield return MoveSpike(originalPosition); 
+        isOperating = false; 
     }
 
     private IEnumerator MoveSpike(Vector3 target)
