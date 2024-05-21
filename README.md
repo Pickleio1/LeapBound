@@ -1,1 +1,1 @@
-LeapBound is a 2D platformer 'souls-like' game made in Unity!
+LeapBound is a 2D platformer 'rogue-like' game made in Unity!
