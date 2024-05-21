@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SpeedBoostArea : MonoBehaviour
 {
-    public float speedMultiplier = 2.0f; // Factor to multiply the speed
-    public float durationAfterExit = 2.0f; // Duration to keep the speed after exiting the area
+    public float speedMultiplier = 2.0f; 
+    public float durationAfterExit = 2.0f; 
 
-    private bool isPlayerInside = false; // Flag to check if the player is inside the area
-    private bool boostApplied = false; // Flag to prevent reapplication of the boost
+    private bool isPlayerInside = false; 
+    private bool boostApplied = false; 
     private Coroutine resetSpeedCoroutine;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,10 +45,10 @@ public class SpeedBoostArea : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        if (!isPlayerInside) // Check if the player is no longer inside the area when delay ends
+        if (!isPlayerInside) 
         {
-            boostApplied = false; // Allow speed boost to be applied again upon re-entry
-            // Reset player's speeds
+            boostApplied = false; 
+            
             player.walkSpeed /= speedMultiplier;
             player.runSpeed /= speedMultiplier;
             player.airWalkSpeed /= speedMultiplier;
