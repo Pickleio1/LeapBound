@@ -55,8 +55,7 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
-  m_StateMachineBehaviours:
-  - {fileID: 4079871015451062126}
+  m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
@@ -145,12 +144,12 @@ AnimatorStateMachine:
   m_EntryTransitions:
   - {fileID: -3064720520224841020}
   m_StateMachineTransitions:
-  - first: {fileID: -3188475584134696263}
-    second:
-    - {fileID: 549892439905915506}
   - first: {fileID: -3636628901458093983}
     second:
     - {fileID: -7596360559229596850}
+  - first: {fileID: -3188475584134696263}
+    second:
+    - {fileID: 549892439905915506}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -60, y: -50, z: 0}
   m_EntryPosition: {x: -50, y: 30, z: 0}
@@ -171,13 +170,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: canMove
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -220,23 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4296686eda7f9254a94c9e8f5a77e6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4079871015451062126
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7adc7b791ca8b843b38175bcfe8fcf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boolName: canMove
-  updateOnState: 0
-  updateOnStateMachine: 1
-  valueOnEnter: 0
-  valueOnExit: 1
 --- !u!1102 &4260086220057756912
 AnimatorState:
   serializedVersion: 6
