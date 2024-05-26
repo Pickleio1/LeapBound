@@ -9,6 +9,7 @@ public class enemymove : MonoBehaviour
     public GameObject PointB;
     public float speed;
     private Rigidbody2D rigidbody2;
+    Collider2D collider2;
     private Transform startingpoint;
 
 
@@ -17,7 +18,7 @@ public class enemymove : MonoBehaviour
     {
         rigidbody2 = GetComponent<Rigidbody2D>();
         startingpoint = PointB.transform;
-
+        collider2 = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame

@@ -73,9 +73,9 @@ GameObject:
   - component: {fileID: 1571021734685477744}
   - component: {fileID: 8672211236404537463}
   - component: {fileID: 6432597143131825788}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: SwordAttack
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  enemyhp: {fileID: 469064957334833727, guid: 1da9d7a02ab6e144082b860e1f76cac3, type: 3}
 --- !u!1 &7637330436403069549
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -521,6 +522,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22004f1d26f6d6843b04694c65bda0a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
   castFilter:
     useTriggers: 0
     useLayerMask: 0
