@@ -23,7 +23,9 @@ public class PlayerController : MonoBehaviour
     public float landingStunDuration = 1f;
     bool wasInAir = false;
     bool quickDropInitiated = false;
-
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayer;
 
 
     TouchingDirections touchingDirections;
@@ -196,11 +198,14 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y); // Zero out horizontal movement but allow for gravity impact
         }
+
+
+   
     }
 
 
 
-    public void OnMove(InputAction.CallbackContext context)
+public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
@@ -250,23 +255,40 @@ public class PlayerController : MonoBehaviour
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.AttackTrigger);
-            IsAttacking = true;
+
             Debug.Log("attackstarted");
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
             
+            foreach(Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                Debug.Log("We hit " + enemy.name);
+            }
         }
-
-        IsAttacking = false;
-
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    private void OnDrawGizmos()
     {
-        if (collision !=null)
-        {
-            if  collision.gameObject.tag == "Enemy")
+        if (attackPoint == null)
+            return; 
 
-        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+      //  if (_isAttacking == true)
+     //   {
+    //        Debug.Log("IsAttack = true");
+
+    //        if (collision.gameObject.CompareTag("Enemy"))
+      //      {
+       //         Debug.Log("collision occured");
+               // enemyhp.TakeDamage(damage);
+    //        }
+   //     }
+       
+    //}
 
 
 
