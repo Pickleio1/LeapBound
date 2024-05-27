@@ -10,8 +10,13 @@ public class LadderMovement : MonoBehaviour
     private bool isLadder;
     private bool isClimbing;
 
-
     [SerializeField] private Rigidbody2D rb;
+    private float originalGravityScale;  // Store the original gravity
+
+    void Start() 
+    {
+        originalGravityScale = rb.gravityScale;
+    }
 
     void Update()
     {
@@ -21,18 +26,22 @@ public class LadderMovement : MonoBehaviour
         {
             isClimbing = true;
         }
+        else if (!isLadder) // Ensure to stop climbing when not on the ladder
+        {
+            isClimbing = false;
+        }
     }
 
     private void FixedUpdate()
     {
         if (isClimbing)
         {
-            rb.gravityScale = 0f;
+            rb.gravityScale = 0;
             rb.velocity = new Vector2(rb.velocity.x, vertical * ClimbingSpeed);
         }
         else
         {
-            rb.gravityScale = rb.gravityScale;
+            rb.gravityScale = originalGravityScale; // Reset the gravity scale
         }
     }
 
@@ -49,7 +58,7 @@ public class LadderMovement : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isLadder = false;
-            isClimbing = false;
+            isClimbing = false; // Stop climbing when exiting the ladder
         }
     }
 }
