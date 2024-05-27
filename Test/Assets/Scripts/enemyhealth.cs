@@ -8,25 +8,19 @@ public class enemyhealth : MonoBehaviour
     private int currenthealth;
     public int damage = 1;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         currenthealth = maxhealth;
     }
 
-    // Update is called once per frame
-    
-
-    public void TakeDamage(int damage) //dmg and destroy enemy
+    public void TakeDamage(int damage)
     {
         currenthealth -= damage;
         if (currenthealth <= 0)
         {
             Destroy(gameObject);
             Debug.Log("Enemy died.");
-
+            FindObjectOfType<PointsController>().EnemyKilled(); // Call the EnemyKilled() function in the PointsController script
         }
-
     }
-
 }

@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 6060732342106851920}
   - component: {fileID: 284920256186698082}
   - component: {fileID: 1252241977025709562}
+  - component: {fileID: 2288625018190122115}
   m_Layer: 0
   m_Name: Player_erinver
   m_TagString: Player
@@ -136,6 +137,7 @@ Transform:
   - {fileID: 5430298801001784379}
   - {fileID: 1863531097400522368}
   - {fileID: 2324533049691368935}
+  - {fileID: 6114153527146030961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2921560155450063161
@@ -488,15 +490,16 @@ MonoBehaviour:
   smallJump: 0.7
   damage: 1
   enemyHealth: {fileID: 0}
-  fastDropSpeed: 100
+  fastDropSpeed: 20
   stunDuration: 0.3
-  landingStunDuration: 0.1
+  landingStunDuration: 0.2
   attackPoint: {fileID: 2324533049691368935}
   attackRange: 1.03
   enemyLayer:
     serializedVersion: 2
     m_Bits: 2560
   rb: {fileID: 2921560155450063161}
+  powerUpController: {fileID: 0}
   _isFacingLeft: 0
   isOnPlatform: 0
   platformRb: {fileID: 0}
@@ -579,6 +582,54 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &2288625018190122115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7676a467f869b54da625a249108f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 2935597724026805304, guid: 6cf9a5e12526ca4499d3679310867b90, type: 3}
+  shootingPoint: {fileID: 6114153527146030961}
+  isProjectilePowerActive: 0
+  isProjectilePowerUpgraded: 0
+  projectileCooldown: 5
+--- !u!1 &8028739072005560763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6114153527146030961}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6114153527146030961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028739072005560763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.02, y: -0.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672659966912376370}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8479247028519345894
 GameObject:
   m_ObjectHideFlags: 0
