@@ -7,7 +7,7 @@ public class TouchingDirections : MonoBehaviour
 {
 
     CapsuleCollider2D touchingCol;
-
+    Animator animator;
 
     public ContactFilter2D castFilter;
 
@@ -32,6 +32,7 @@ public class TouchingDirections : MonoBehaviour
         private set
         {
             _isGrounded = value;
+            animator.SetBool(AnimationStrings.IsGrounded, value);
         }
     }
 
@@ -70,7 +71,7 @@ public class TouchingDirections : MonoBehaviour
     private void Awake()
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
-
+        animator = GetComponent<Animator>();    
     }
 
 

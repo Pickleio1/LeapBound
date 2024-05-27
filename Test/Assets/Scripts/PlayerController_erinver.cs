@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
+     
 
+    public Rigidbody2D platformRb;
+    public Animator animator;
 
     TouchingDirections touchingDirections;
 
@@ -38,29 +41,29 @@ public class PlayerController : MonoBehaviour
     public float CurrentMoveSpeed
     {
         get
-        {
-            if (IsMoving && !touchingDirections.IsOnWall)
-            {
-                if (touchingDirections.IsGrounded)
+        {   if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        return airWalkSpeed;
                     }
                 }
                 else
-                {
-                    return airWalkSpeed;
+                {   //Speed into Wall = 0
+                    return 0;
                 }
-            }
-            else
-            {   //Speed into Wall = 0
-                return 0;
-            }
+            
         }
     }
 
@@ -75,7 +78,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
-            //animator.SetBool("MoveTrigger", value);
+            animator.SetBool(AnimationStrings.MoveTrigger, value);
         }
     }
 
@@ -126,15 +129,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //public bool CanMove { get
-        //{
-            //return animator.GetBool(AnimationStrings.canMove);
-        //} }
+    public bool canMove = true;
+    public bool CanMove
+    {
+        get
+        {
+            return canMove;
+        }
+        private set
+        {
+            canMove = value;
+        }
+
+    }
 
     public bool isOnPlatform;
-    public Rigidbody2D platformRb;
-    public Animator animator;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -204,7 +213,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y); 
         }
 
-
+        animator.SetFloat(AnimationStrings.yvelocity, rb.velocity.y);
    
     }
 

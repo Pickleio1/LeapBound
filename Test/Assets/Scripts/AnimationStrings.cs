@@ -4,5 +4,8 @@ using UnityEngine;
 internal class AnimationStrings
   {
     internal static string AttackTrigger = "attack";
-    internal static string canMove = "canMove";
+    internal static string MoveTrigger = "isMoving";
+    internal static string IsGrounded = "isGrounded";
+    internal static string yvelocity = "yvelocity";
+
 }
