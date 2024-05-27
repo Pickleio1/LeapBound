@@ -25,45 +25,43 @@ public class PlayerController : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
-     
 
-    public Rigidbody2D platformRb;
-    public Animator animator;
 
     TouchingDirections touchingDirections;
 
     public Rigidbody2D rb;
 
     Vector2 moveInput;
-    
+
+    public PowerUpController powerUpController;
 
 
     public float CurrentMoveSpeed
     {
         get
-        {   if (IsMoving && !touchingDirections.IsOnWall)
+        {
+            if (IsMoving && !touchingDirections.IsOnWall)
+            {
+                if (touchingDirections.IsGrounded)
                 {
-                    if (touchingDirections.IsGrounded)
+                    if (IsRunning)
                     {
-                        if (IsRunning)
-                        {
-                            return runSpeed;
-                        }
-                        else
-                        {
-                            return walkSpeed;
-                        }
+                        return runSpeed;
                     }
                     else
                     {
-                        return airWalkSpeed;
+                        return walkSpeed;
                     }
                 }
                 else
-                {   //Speed into Wall = 0
-                    return 0;
+                {
+                    return airWalkSpeed;
                 }
-            
+            }
+            else
+            {   //Speed into Wall = 0
+                return 0;
+            }
         }
     }
 
@@ -78,7 +76,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
-            animator.SetBool(AnimationStrings.MoveTrigger, value);
+            //animator.SetBool("MoveTrigger", value);
         }
     }
 
@@ -129,21 +127,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool canMove = true;
-    public bool CanMove
-    {
-        get
-        {
-            return canMove;
-        }
-        private set
-        {
-            canMove = value;
-        }
-
-    }
+    //public bool CanMove { get
+        //{
+            //return animator.GetBool(AnimationStrings.canMove);
+        //} }
 
     public bool isOnPlatform;
+    public Rigidbody2D platformRb;
+    public Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -213,7 +205,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y); 
         }
 
-        animator.SetFloat(AnimationStrings.yvelocity, rb.velocity.y);
+
    
     }
 
@@ -272,6 +264,14 @@ public void OnMove(InputAction.CallbackContext context)
 
             Debug.Log("attackstarted");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+            if (powerUpController == null)
+            {
+                Debug.LogError("PowerUpController reference not set on PlayerController.");
+            }
+            else
+            {
+                powerUpController.AttemptToShootProjectile();
+            }
             
             foreach(Collider2D enemy in hitEnemies)
             {
@@ -288,21 +288,6 @@ public void OnMove(InputAction.CallbackContext context)
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
-    //public void OnCollisionEnter2D(Collision2D collision)
-    //{
-      //  if (_isAttacking == true)
-     //   {
-    //        Debug.Log("IsAttack = true");
-
-    //        if (collision.gameObject.CompareTag("Enemy"))
-      //      {
-       //         Debug.Log("collision occured");
-               // enemyhp.TakeDamage(damage);
-    //        }
-   //     }
-       
-    //}
 
 
 
