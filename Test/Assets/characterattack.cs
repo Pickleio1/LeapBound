@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class characterattack : MonoBehaviour
 {
-    public int damage = 1;
-    public enemyhealth enemyhp;
+    //blic int damage = 1;
+    //blic enemyhealth enemyhp;
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        enemyhp.TakeDamage(damage); 
-        //enemyhealth enemyhealth = collision.GetComponent<enemyhealth>();
+   //rivate void//nTriggerEnter2D(Collider2D collision)
+    //
+       //nemyhealth enemyhitbox = collision.GetComponent<enemyhealth>();
 
-        //if (enemyhp != null)
+    
+
+        // (enemyhitbox != null)
+       //
+         // enemyhp.TakeDamage(damage);
+           //ebug.Log("character attack started");
+       //
+
+
+
+        //if (enemyhitbox.gameObject.CompareTag("Enemy"))
         //{
-           // Debug.Log("Enemy health component found, applying damage");
-           // enemyhealth.TakeDamage(damage);
-       // }
-       // else
-       // {
-           // Debug.Log("Enemy health component not found");
-       // }
+        //   Debug.Log("Enemy health component found, applying damage");
+        //    enemyhp.TakeDamage(damage);
+        //}
 
 
 
+        //{ Debug.Log("ATTACK STARTED");if (enemyhitbox != null)
+        //{
+
+        // }
+        //  }
     }
 }

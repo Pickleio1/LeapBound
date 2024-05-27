@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-
     TouchingDirections touchingDirections;
+
     public Rigidbody2D rb;
 
     Vector2 moveInput;
@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private bool _isAttacking;
+    private bool _isAttacking = false;
     public bool IsAttacking
     {
         get
@@ -251,13 +251,26 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(AnimationStrings.AttackTrigger);
             IsAttacking = true;
+            Debug.Log("attackstarted");
+            
+        }
+
+        IsAttacking = false;
+
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision !=null)
+        {
+            if  collision.gameObject.tag == "Enemy")
 
         }
     }
 
 
 
-   void StartStun(float duration)
+    void StartStun(float duration)
     {
         isStunned = true;
         stunTimer = duration;

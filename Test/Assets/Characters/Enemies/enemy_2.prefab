@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 2102055648791144401}
   - component: {fileID: 469064957334833727}
   - component: {fileID: 1428820163183476698}
-  - component: {fileID: 342037395229956089}
+  - component: {fileID: 3699153039724381797}
   m_Layer: 11
   m_Name: enemy_2
   m_TagString: Enemy
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21c84ec29340ab4ea541bf7c01e941a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 2
+  maxhealth: 1
   damage: 1
 --- !u!50 &1428820163183476698
 Rigidbody2D:
@@ -192,8 +192,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
---- !u!70 &342037395229956089
-CapsuleCollider2D:
+--- !u!61 &3699153039724381797
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -224,6 +224,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07541359, y: -0.37362862}
-  m_Size: {x: 2.7099586, y: 3.2080796}
-  m_Direction: 0
+  m_Offset: {x: -0.1717763, y: 0.31395864}
+  m_SpriteTilingProperty:
+    border: {x: 2.375, y: 0.75, z: 0.75, w: 2.375}
+    pivot: {x: 0.621447, y: 0.3630492}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.2295856, y: 5.2411594}
+  m_EdgeRadius: 0
