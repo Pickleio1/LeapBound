@@ -8,6 +8,7 @@ public class TouchingDirections : MonoBehaviour
 
     CapsuleCollider2D touchingCol;
 
+
     public ContactFilter2D castFilter;
 
    
@@ -69,7 +70,6 @@ public class TouchingDirections : MonoBehaviour
     private void Awake()
     {
         touchingCol = GetComponent<CapsuleCollider2D>();
-        
 
     }
 
