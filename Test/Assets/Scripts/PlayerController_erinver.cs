@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
-
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
@@ -154,7 +153,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Quick drop and associated stun can only be initiated if not grounded
+        if (isOnPlatform)
+        {
+        
+        rb.freezeRotation = true;
+        }
+
+        
         if (Keyboard.current.qKey.wasPressedThisFrame && !isStunned && !touchingDirections.IsGrounded)
         {
             StartAirStun(stunDuration);
@@ -165,14 +170,14 @@ public class PlayerController : MonoBehaviour
             UpdateStun();
         }
 
-        // Check for landing only if quickDropInitiated is true
+        
         if (touchingDirections.IsGrounded && wasInAir && quickDropInitiated)
         {
-            StartStun(landingStunDuration); // Apply stun when landing
-            quickDropInitiated = false; // Reset the flag after applying stun
+            StartStun(landingStunDuration); 
+            quickDropInitiated = false; 
         }
 
-        wasInAir = !touchingDirections.IsGrounded; // Update to track if player was in the air last frame
+        wasInAir = !touchingDirections.IsGrounded; 
     }
 
     void FixedUpdate()
@@ -196,7 +201,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(0, rb.velocity.y); // Zero out horizontal movement but allow for gravity impact
+            rb.velocity = new Vector2(0, rb.velocity.y); 
         }
 
 
@@ -296,16 +301,16 @@ public void OnMove(InputAction.CallbackContext context)
     {
         isStunned = true;
         stunTimer = duration;
-        rb.velocity = new Vector2(0, rb.velocity.y); // Stop horizontal movement
+        rb.velocity = new Vector2(0, rb.velocity.y); 
     }
 
     void StartAirStun(float duration)
     {
         isStunned = true;
         stunTimer = duration;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY; // Freeze position completely in air
-        applyFastDrop = true; // Flag for fast drop after stun
-        quickDropInitiated = true; // Indicate that quick drop has been initiated
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        applyFastDrop = true; 
+        quickDropInitiated = true; 
     }
 
     void UpdateStun()
@@ -314,14 +319,23 @@ public void OnMove(InputAction.CallbackContext context)
         if (stunTimer <= 0)
         {
             isStunned = false;
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.freezeRotation = true;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             if (applyFastDrop)
             {
-                rb.velocity = new Vector2(0, -fastDropSpeed); // Apply fast drop
+                rb.velocity = new Vector2(0, -fastDropSpeed); 
                 applyFastDrop = false;
             }
+        }
+    }
+
+    void ApplyQuickDrop()
+    {
+        if (quickDropInitiated)
+        {
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Re-confirm rotation lock
+        rb.velocity = new Vector2(0, -fastDropSpeed); // Quick drop only affects vertical speed
+        quickDropInitiated = false;  // Reset quick drop state
         }
     }
 }

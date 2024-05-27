@@ -24,14 +24,14 @@ public class MovingPlatform : MonoBehaviour
     {
         movementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true; 
 
         wayPoints = new Transform[ways.transform.childCount];
         for (int i = 0; i < ways.gameObject.transform.childCount; i++)
         {
             wayPoints[i] = ways.transform.GetChild(i).gameObject.transform;
         }
-    } 
-
+    }
     // Start is called before the first frame update
     void Start()
     {
