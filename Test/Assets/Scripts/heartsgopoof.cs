@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class heartsgopoof : MonoBehaviour
@@ -10,32 +11,39 @@ public class heartsgopoof : MonoBehaviour
     private int currentlife;
     public GameObject bullet;
     public GameObject[] heart;
+    public timerscript timer;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        currentlife = maxlives;
+        currentlife = PlayerPrefs.GetInt("life");
+
+        currentlife = 3;
         
+       
     }
 
     
     // Update is called once per frame
     void Update()
     {
-        if (currentlife == 0)   //destroy hearts 
+        PlayerPrefs.SetInt("life", currentlife);
+        
+        if (currentlife < 1)   //destroy hearts 
         {
-            Destroy(heart[0].gameObject);
-            Destroy(gameObject);   //destroy player
+            isDead();     //stop timer when dead
         }
-        else if (currentlife == 1)
+        else if (currentlife <2)
         {
             Destroy(heart[1].gameObject);
         }
-        else if (currentlife == 2)
+        else if (currentlife < 3)
         {
             Destroy(heart[2].gameObject);
         }
+
+        
     }
 
     public void TakeDamage(int damage) //take dmg
@@ -54,5 +62,24 @@ public class heartsgopoof : MonoBehaviour
        
     }
 
+    public void isDead()
+    {
+        Destroy(heart[0].gameObject) ;  
+        Destroy(gameObject);
+        timerscript.Destroy(timer);
 
+
+    }
+
+    public void NextScene()   //to change between scenes
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void PreviousScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    
 }

@@ -24,9 +24,9 @@ public class attack : MonoBehaviour
         spawntime += Time.deltaTime;
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance < range)
+        if (distance < range)   // r a n g e
         {
-            if (spawntime > 2)
+            if (spawntime > 2)   //spawns bullet
             {
                 spawntime = 0;
                 copyshoot();
@@ -34,7 +34,7 @@ public class attack : MonoBehaviour
         }
     }
 
-    void copyshoot()
+    void copyshoot()   //copy the bullet to shoot more bullets
     {
         Instantiate(bullettt, bulletposition.position, Quaternion.identity);
     }

@@ -48,7 +48,7 @@ public class enemymove : MonoBehaviour
 
     }
 
-    private void flip()
+    private void flip()  //flip the enemy
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1;

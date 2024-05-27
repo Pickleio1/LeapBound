@@ -18,9 +18,9 @@ public class bulletshoot : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
-        player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 direction = player.transform.position - transform.position;
-        rb.velocity = new Vector2 (direction.x, direction.y).normalized * force;
+        player = GameObject.FindGameObjectWithTag("Player");                          //direct the
+        Vector3 direction = player.transform.position - transform.position;           //bullet towards
+        rb.velocity = new Vector2 (direction.x, direction.y).normalized * force;      //the player
     }
 
     // Update is called once per frame
@@ -29,10 +29,10 @@ public class bulletshoot : MonoBehaviour
         AttackPlayer();
     }
 
-    void AttackPlayer()
+    void AttackPlayer()  //attacks and cooldown between attacks
     {
         
-        if (cooldown > 2)
+        if (cooldown > 2)   
         {
             canattack = false;
             cooldown = 0;
