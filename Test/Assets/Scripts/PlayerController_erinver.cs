@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
+        powerUpController = GetComponent<PowerUpController>();
     }
 
 
@@ -264,13 +265,14 @@ public void OnMove(InputAction.CallbackContext context)
 
             Debug.Log("attackstarted");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-            if (powerUpController == null)
+            if (powerUpController != null && powerUpController.isProjectilePowerActive)
             {
-                Debug.LogError("PowerUpController reference not set on PlayerController.");
+                powerUpController.AttemptToShootProjectile();
+                Debug.Log("PowerUpController reference set on PlayerController.");
             }
             else
             {
-                powerUpController.AttemptToShootProjectile();
+                Debug.LogError("PowerUpController reference not set on PlayerController.");   
             }
             
             foreach(Collider2D enemy in hitEnemies)

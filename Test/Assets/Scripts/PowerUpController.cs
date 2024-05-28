@@ -7,9 +7,9 @@ public class PowerUpController : MonoBehaviour
     public Transform shootingPoint; 
 
     [SerializeField]
-    private bool isProjectilePowerActive = false; 
+    public bool isProjectilePowerActive = false; 
     [SerializeField]
-    private bool isProjectilePowerUpgraded = false; 
+    public bool isProjectilePowerUpgraded = false; 
     [SerializeField]
     private float projectileCooldown = 5f; 
     private float lastProjectileTime = -5f; 
@@ -51,7 +51,7 @@ public class PowerUpController : MonoBehaviour
             return;
         }
 
-        if (Time.time - lastProjectileTime >= projectileCooldown)
+        if (Time.time - lastProjectileTime >= projectileCooldown )
         {
             Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
             lastProjectileTime = Time.time;
