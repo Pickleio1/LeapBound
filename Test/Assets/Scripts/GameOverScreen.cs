@@ -12,6 +12,7 @@ public class GameOverScreen : MonoBehaviour
     
     public void Setup()
     {
+        Debug.Log("Setup called");
         gameOverScreen.SetActive(true);
     }
 

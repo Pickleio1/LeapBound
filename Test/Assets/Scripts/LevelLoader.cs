@@ -17,8 +17,13 @@ public class LevelLoader : MonoBehaviour
         // Check if the collider is tagged as "Player"
         if (other.CompareTag("Player"))
         {
-            LoadLevel(loadLevelIndex + 1); // Load the level specified in the public variable
+            if (loadLevelIndex < 4)
+            {
+                LoadLevel(loadLevelIndex + 1); // Load the level specified in the public variable
+            }
+
         }
+
     }
 
     public void LoadLevel(int levelIndex)

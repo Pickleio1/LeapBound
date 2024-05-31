@@ -12,7 +12,7 @@ public class heartsgopoof : MonoBehaviour
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
-    public GameOverScreen gameOverScreen;
+    public GameOverScreen gameManager;
 
 
 
@@ -25,7 +25,7 @@ public class heartsgopoof : MonoBehaviour
     {
         currentlife = maxlives;
         animator = GetComponent<Animator>();
-        gameOverScreen = GetComponent<GameOverScreen>();
+        gameManager = GetComponent<GameOverScreen>();
     }
 
 
@@ -38,33 +38,23 @@ public class heartsgopoof : MonoBehaviour
             Debug.Log("isDead");
 
         }
-        else
+        else if (!isDead)
         {
             Debug.Log("NOT isDead");
 
         }
 
-        if (isDead)
-        {
-            Debug.Log("Player is dead. Triggering GameOverScreen.");
-            Destroy(gameObject);
-            SceneManager.LoadScene(3);
-.
-        }
 
     }
 
-    private void Update()
+    void Update()
     {
         if (currentlife <= 0 && !isDead)
         {
             isDead = true;
+            SceneManager.LoadScene(3);
+            Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
-
-        
-            
-
-        
 
 
     }
@@ -98,9 +88,15 @@ public class heartsgopoof : MonoBehaviour
         for (int i = 0; i < heart.Length; i++)
         {
             if (i < currentlife)
+            {
                 heart[i].SetActive(true);  // Show heart if health is above index
+
+            }
             else
+            {
                 heart[i].SetActive(false);  // Hide heart if health is below or equal to index
+
+            }
         }
     }
 }
