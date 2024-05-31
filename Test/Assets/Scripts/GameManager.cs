@@ -63,11 +63,14 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        Debug.Log("restarting");
         // Reset any necessary game state
         CurrentPoints = 0;
         SavePoints();
 
         // Load the first scene
-        SceneController.instance.LoadScene(0);
+
+        //SceneController.instance.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

@@ -112,8 +112,7 @@ GameObject:
   - component: {fileID: 6060732342106851920}
   - component: {fileID: 284920256186698082}
   - component: {fileID: 1252241977025709562}
-  - component: {fileID: 129066493656527689}
-  - component: {fileID: 7671397197897140946}
+  - component: {fileID: 2288625018190122115}
   m_Layer: 0
   m_Name: Player_erinver
   m_TagString: Player
@@ -502,7 +501,7 @@ MonoBehaviour:
   airWalkSpeed: 3
   smallJump: 0.7
   damage: 1
-  enemyHealth: {fileID: 0}
+  enemyHealth: {fileID: 469064957334833727, guid: 1da9d7a02ab6e144082b860e1f76cac3, type: 3}
   fastDropSpeed: 20
   stunDuration: 0.3
   landingStunDuration: 0.2
@@ -590,12 +589,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxlives: 3
-  bullet: {fileID: 0}
+  bullet: {fileID: 1144021537125119950, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
   heart:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  gameManager: {fileID: 2413458414367704419, guid: 67fb463214fbdaa438853cd1390cac45, type: 3}
 --- !u!114 &2288625018190122115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2935597724026805304, guid: 6cf9a5e12526ca4499d3679310867b90, type: 3}
   shootingPoint: {fileID: 6114153527146030961}
-  isProjectilePowerActive: 1
+  isProjectilePowerActive: 0
   isProjectilePowerUpgraded: 0
   projectileCooldown: 5
 --- !u!1 &8028739072005560763

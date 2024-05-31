@@ -12,7 +12,6 @@ public class heartsgopoof : MonoBehaviour
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
-    public GameOverScreen gameManager;
 
 
 
@@ -25,7 +24,6 @@ public class heartsgopoof : MonoBehaviour
     {
         currentlife = maxlives;
         animator = GetComponent<Animator>();
-        gameManager = GetComponent<GameOverScreen>();
     }
 
 
@@ -33,17 +31,7 @@ public class heartsgopoof : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (isDead)
-        {
-            Debug.Log("isDead");
-
-        }
-        else if (!isDead)
-        {
-            Debug.Log("NOT isDead");
-
-        }
-
+      
 
     }
 

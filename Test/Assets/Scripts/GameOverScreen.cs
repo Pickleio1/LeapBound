@@ -8,8 +8,14 @@ using UnityEngine.SceneManagement;
 public class GameOverScreen : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public GameManager gameManager;
 
-    
+    public void Awake()
+    {
+
+    }
+
+
     public void Setup()
     {
         Debug.Log("Setup called");
@@ -18,7 +24,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void TryAgain()
     {
-        SceneManager.LoadScene(1);
+        gameManager.ResetPoints();
+        gameManager.RestartGame();
     }
 
     public void Exit()
