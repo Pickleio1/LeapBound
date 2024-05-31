@@ -7,15 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public void Start()
-    {
-        gameObject.SetActive(false);
+    public GameObject gameOverScreen;
 
-    }
-
+    
     public void Setup()
     {
-        gameObject.SetActive(true);
+        gameOverScreen.SetActive(true);
     }
 
     public void TryAgain()

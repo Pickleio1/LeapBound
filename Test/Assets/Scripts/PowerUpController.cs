@@ -15,7 +15,7 @@ public class PowerUpController : MonoBehaviour
     private float lastProjectileTime = -5f; 
 
     void Update() {
-        Debug.Log("Power-Up Active: " + isProjectilePowerActive);
+        //Debug.Log("Power-Up Active: " + isProjectilePowerActive);
     }
 
 
