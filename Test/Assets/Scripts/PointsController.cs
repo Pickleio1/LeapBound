@@ -1,23 +1,55 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class PointsController : MonoBehaviour
 {
-    public int currentPoints = 0;
-    public Text pointsText;
+    private Text pointsText;
 
     private void Start()
     {
-        UpdatePointsText();
+        FindAndUpdatePointsText();
+        GameManager.Instance.AddPoints(0); // Ensure the GameManager is initialized
     }
 
-    public void EnemyKilled()
+    public void EnemyKilled(int points)
     {
-        currentPoints += 10;
+        GameManager.Instance.AddPoints(points);
         UpdatePointsText();
+        Debug.Log($"Enemy killed, current points: {GameManager.Instance.CurrentPoints}");
+    }
+
+        private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindAndUpdatePointsText();
+    }
+
+    private void FindAndUpdatePointsText()
+    {
+        GameObject pointsDisplayGO = GameObject.FindWithTag("PointsDisplay");
+        if (pointsDisplayGO != null)
+        {
+            pointsText = pointsDisplayGO.GetComponent<Text>();
+            UpdatePointsText();
+        }
     }
 
     private void UpdatePointsText()
     {
-        pointsText.text = "Points: " + currentPoints;
+        if (pointsText != null)
+        {
+            pointsText.text = "Points: " + GameManager.Instance.CurrentPoints;
+        }
     }
+    
 }

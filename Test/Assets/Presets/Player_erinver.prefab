@@ -112,7 +112,8 @@ GameObject:
   - component: {fileID: 6060732342106851920}
   - component: {fileID: 284920256186698082}
   - component: {fileID: 1252241977025709562}
-  - component: {fileID: 2288625018190122115}
+  - component: {fileID: 129066493656527689}
+  - component: {fileID: 7671397197897140946}
   m_Layer: 0
   m_Name: Player_erinver
   m_TagString: Player
@@ -163,7 +164,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -199,8 +200,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22147588, y: -0.37085822}
-  m_Size: {x: 1.1053467, y: 3.2582831}
+  m_Offset: {x: 0.27927673, y: -0.31786665}
+  m_Size: {x: 1.2209483, y: 3.3642664}
   m_Direction: 0
 --- !u!114 &7036551882788791251
 MonoBehaviour:
@@ -231,7 +232,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1954074674478846164}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -241,7 +242,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0925ee06-adf2-4dad-82d7-80431780cb2c
+    m_ActionId: 09cd5e13-72ec-43c1-859a-9813ec8d9d16
     m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
@@ -257,11 +258,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 13a5d8c3-88e3-469b-9c54-6c75df423b99
+    m_ActionId: 4c749cfa-9b94-409f-b636-441a1ec96bbc
     m_ActionName: Player/Run[/Keyboard/leftShift]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bc4ccaac-ed43-4bac-8b8b-be11118b9355
+      m_Calls:
+      - m_Target: {fileID: 1954074674478846164}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+    m_ActionId: 1f1fa9f4-9d14-438c-8074-8064cfc23905
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
@@ -582,7 +595,25 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
---- !u!114 &2288625018190122115
+--- !u!114 &129066493656527689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7637330436403069549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e709701d64f3449271a195760bad4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxlives: 3
+  bullet: {fileID: 0}
+  heart:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &7671397197897140946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -596,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2935597724026805304, guid: 6cf9a5e12526ca4499d3679310867b90, type: 3}
   shootingPoint: {fileID: 6114153527146030961}
-  isProjectilePowerActive: 0
+  isProjectilePowerActive: 1
   isProjectilePowerUpgraded: 0
   projectileCooldown: 5
 --- !u!1 &8028739072005560763
