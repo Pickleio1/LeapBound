@@ -11,6 +11,7 @@ public class heartsgopoof : MonoBehaviour
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
+    public GameOverScreen gameOverScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -35,10 +36,13 @@ public class heartsgopoof : MonoBehaviour
         
         if (currentlife < 0)
         {
+            gameManager.gameOver
             Destroy(gameObject);
         }
             
     }
+
+ 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
