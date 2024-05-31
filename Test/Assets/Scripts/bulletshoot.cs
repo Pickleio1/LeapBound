@@ -27,6 +27,7 @@ public class bulletshoot : MonoBehaviour
     void Update()
     {
         AttackPlayer();
+       
     }
 
     void AttackPlayer()
@@ -43,6 +44,8 @@ public class bulletshoot : MonoBehaviour
             Vector2 direction = (player.transform.position - transform.position);
 
         }
+
+    
     }
 
     void ResetCooldown()

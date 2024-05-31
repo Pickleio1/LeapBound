@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         private set
         {
             _isMoving = value;
-            //animator.SetBool("MoveTrigger", value);
+            animator.SetBool(AnimationStrings.MoveTrigger, value);
         }
     }
 
@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-public void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
 
@@ -285,8 +285,7 @@ public void OnMove(InputAction.CallbackContext context)
 
     private void OnDrawGizmos()
     {
-        if (attackPoint == null)
-            return; 
+        
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }

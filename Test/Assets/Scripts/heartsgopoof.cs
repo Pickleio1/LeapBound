@@ -10,43 +10,47 @@ public class heartsgopoof : MonoBehaviour
     private int currentlife;
     public GameObject bullet;
     public GameObject[] heart;
-    
-    
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         currentlife = maxlives;
-        
+        animator = GetComponent<Animator>();    
     }
 
-    
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-      
+
+
+
     }
 
     public void TakeDamage(int damage) //dmg and destroy player
     {
         currentlife -= damage;
+        animator.SetTrigger(AnimationStrings.HitTrigger);
+        
         if (currentlife < 0)
         {
             Destroy(gameObject);
         }
+            
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            currentlife -= 1;  // Existing bullet damage logic
+            TakeDamage(1);  // Existing bullet damage logic
         }
 
         if (collision.gameObject.CompareTag("Spike"))  // Assuming spikes are tagged as "Spike"
         {
             TakeDamage(1);  // Call TakeDamage with the damage value that spikes should inflict
         }
-
         UpdateHealthUI();  // Call this method to update health display if you have one
     }
 
