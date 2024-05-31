@@ -7,6 +7,7 @@ public class enemyhealth : MonoBehaviour
     public int maxhealth = 3;
     private int currenthealth;
     public int damage = 1;
+    public int pointsForKill = 10;
 
     private void Start()
     {
@@ -20,7 +21,8 @@ public class enemyhealth : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Enemy died.");
-            FindObjectOfType<PointsController>().EnemyKilled(); // Call the EnemyKilled() function in the PointsController script
+            FindObjectOfType<PointsController>().EnemyKilled(pointsForKill); // Call the EnemyKilled() function in the PointsController script
+            Debug.Log($"Calling EnemyKilled() with {pointsForKill} points");
         }
     }
 }
