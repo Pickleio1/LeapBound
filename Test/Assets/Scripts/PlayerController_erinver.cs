@@ -135,13 +135,15 @@ public class PlayerController : MonoBehaviour
     public bool isOnPlatform;
     public Rigidbody2D platformRb;
     public Animator animator;
+    public enemyhealth enemyHealthScript;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
-        powerUpController = GetComponent<PowerUpController>();
+        powerUpController = FindObjectOfType<PowerUpController>();
+        enemyHealthScript = FindObjectOfType<enemyhealth>();
     }
 
 
@@ -257,29 +259,56 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    private GameObject projectileGameObject; // Add this line to declare the projectile game object variable
+
+    public bool allowMeleeAttack = true; // Boolean to control melee attack functionality
+
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             animator.SetTrigger(AnimationStrings.AttackTrigger);
 
-            Debug.Log("attackstarted");
+            Debug.Log("Attack started");
+
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
             if (powerUpController != null && powerUpController.isProjectilePowerActive)
             {
                 powerUpController.AttemptToShootProjectile();
-                Debug.Log("PowerUpController reference set on PlayerController.");
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    if (enemy.CompareTag("Enemy"))
+                    {
+                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                        Debug.Log("Projectile hit " + enemy.name);
+                    }
+                }
             }
             else
             {
-                Debug.LogError("PowerUpController reference not set on PlayerController.");   
+                // Only perform melee attack if no projectile power-up is active
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    if (enemy.CompareTag("Enemy"))
+                    {
+                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                        Debug.Log("Melee hit " + enemy.name);
+                    }
+                }
             }
-            
-            foreach(Collider2D enemy in hitEnemies)
-            {
-                enemy.GetComponent<enemyhealth>().TakeDamage(damage);
-                Debug.Log("We hit " + enemy.name);
-            }
+        }
+    }
+
+
+
+    private void DestroyProjectile()
+    {
+        // Add logic to destroy the projectileGameObject
+        if (projectileGameObject != null)
+        {
+            Destroy(projectileGameObject); // Destroy the projectile game object
         }
     }
 
@@ -331,6 +360,18 @@ public class PlayerController : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Re-confirm rotation lock
         rb.velocity = new Vector2(0, -fastDropSpeed); // Quick drop only affects vertical speed
         quickDropInitiated = false;  // Reset quick drop state
+        }
+    }
+
+    public Vector2 GetFacingDirection()
+    {
+        if (IsFacingLeft)
+        {
+            return Vector2.left;
+        }
+        else
+        {
+            return Vector2.right;
         }
     }
 }
