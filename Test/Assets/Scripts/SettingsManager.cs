@@ -8,8 +8,11 @@ public class SettingsManager : MonoBehaviour
 {
     public static bool GamePaused = false;
     public GameObject SettingsMenuUI;
+
+
     private void Awake()
     {
+        GamePaused = false;
         SettingsMenuUI.SetActive(false);
     }
 
@@ -34,7 +37,7 @@ public class SettingsManager : MonoBehaviour
     {
 
         SettingsMenuUI.SetActive(false);
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         GamePaused = false;
     }
 
@@ -43,6 +46,12 @@ public class SettingsManager : MonoBehaviour
         SettingsMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;
+    }
+
+
+    public void SaveChanges()
+    {
+
     }
 }
 

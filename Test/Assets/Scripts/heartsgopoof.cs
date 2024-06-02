@@ -40,7 +40,7 @@ public class heartsgopoof : MonoBehaviour
         if (currentlife <= 0 && !isDead)
         {
             isDead = true;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
             Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
 
