@@ -6,51 +6,43 @@ using UnityEngine.UI;
 
 public class SettingsManager : MonoBehaviour
 {
-    public GameObject SettingsUI;
-
-    private bool _SettingsInput = false;
-    public bool SettingsInput
+    public static bool GamePaused = false;
+    public GameObject SettingsMenuUI;
+    private void Awake()
     {
-        get
-        {
-            return _SettingsInput;
-        }
-        private set
-        {
-            _SettingsInput = value;
-        }
+        SettingsMenuUI.SetActive(false);
     }
 
-    public void Update()
+    private void Update()
     {
-        S_Input();
-        if (SettingsInput)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OnPress();
+            if (GamePaused) 
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
-        else
-        {
-            SettingsUI.SetActive(false);
 
-        }
-
-    }
-
-    public void OnPress()
-    {
-        SettingsUI.SetActive(true);
-        if (SettingsInput)
-        {
-           SettingsInput = false;
-        }
-        
         
     }
 
-    private void S_Input()
+    public void Resume()
     {
-        SettingsInput = Input.GetKeyDown(KeyCode.Escape);
-        Debug.Log("Pressed");
-        return;
+
+        SettingsMenuUI.SetActive(false);
+        Time.timeScale = 0f;
+        GamePaused = false;
+    }
+
+    public void Pause()
+    {
+        SettingsMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GamePaused = true;
     }
 }
+
