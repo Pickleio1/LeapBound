@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class PowerUpController : MonoBehaviour
@@ -22,61 +23,43 @@ public class PowerUpController : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            transform.SetParent(null); // Detach from parent to become root-level
-            DontDestroyOnLoad(gameObject); // Apply DontDestroyOnLoad to the root-level object
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject); // Destroy duplicate instances
-        }
-
-        // Find Player and ShootingPoint by tag
-        if (playerController == null)
-        {
-            GameObject[] playerObjects = GameObject.FindGameObjectsWithTag("Player");
-            if (playerObjects.Length > 0)
-            {
-                playerController = playerObjects[0].GetComponent<PlayerController>();
-            }
-
-            if (playerController == null)
-            {
-                Debug.LogError("PlayerController not found. Ensure it is present in the scene with the 'Player' tag.");
-            }
-        }
-
-        if (shootingPoint == null && playerController != null)
-        {
-            shootingPoint = playerController.transform.Find("ShootingPoint");
-            if (shootingPoint == null)
-            {
-                Debug.LogError("ShootingPoint not found under Player. Check the hierarchy.");
-            }
+            Destroy(gameObject);
         }
     }
 
-    private IEnumerator FindPlayerAndShootingPointWithDelay()
+        private void OnEnable()
     {
-        yield return new WaitForSeconds(1f); // Wait for a short delay, adjust as needed
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
-        // Assign the playerController reference dynamically
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        FindPlayerAndShootingPoint();
+    }
+
+    private void FindPlayerAndShootingPoint()
+    {
         playerController = FindObjectOfType<PlayerController>();
         if (playerController == null)
         {
             Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
         }
         
-        // Find the shooting point recursively in the player hierarchy
         if (playerController != null)
         {
-            Transform shootingPointTransform = SearchForShootingPoint(playerController.transform);
-            if (shootingPointTransform != null)
+            shootingPoint = playerController.transform.Find("ShootingPoint");
+            if (shootingPoint == null)
             {
-                shootingPoint = shootingPointTransform;
-            }
-            else
-            {
-                Debug.LogError("ShootingPoint not found in the player hierarchy.");
+                Debug.LogError("ShootingPoint not found under Player. Check the hierarchy.");
             }
         }
     }
