@@ -24,6 +24,7 @@ public class InteractionSystem : MonoBehaviour
     public Text examineText;
     public bool isExamining;
     public bool isGrabbing;
+    public heartsgopoof healthScript;
 
     void Update()
     {
@@ -123,6 +124,13 @@ public class InteractionSystem : MonoBehaviour
             grabbedObjectYValue=grabbedObject.transform.position.y;
             //Adjust the position of the grabbed object to be closer to hands                        
             grabbedObject.transform.localPosition=grabPoint.localPosition;
+        }
+    }
+    public void AddLives(int livesToAdd)
+    {
+        if (healthScript != null)
+        {
+            healthScript.AddLives(livesToAdd); // Call the AddLives function from the heartsgopoof script
         }
     }
 }

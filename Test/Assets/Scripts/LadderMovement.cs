@@ -7,6 +7,7 @@ public class LadderMovement : MonoBehaviour
 {
     private float vertical;
     public float ClimbingSpeed = 8f;
+    public float JumpForce = 10f; // Jump force value
     private bool isLadder;
     private bool isClimbing;
 
@@ -30,6 +31,11 @@ public class LadderMovement : MonoBehaviour
         {
             isClimbing = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space) && isClimbing)
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
@@ -43,6 +49,12 @@ public class LadderMovement : MonoBehaviour
         {
             rb.gravityScale = originalGravityScale; // Reset the gravity scale
         }
+    }
+
+    private void Jump()
+    {
+        isClimbing = false; // Disable climbing when jumping
+        rb.velocity = new Vector2(rb.velocity.x, JumpForce); // Apply jump force
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

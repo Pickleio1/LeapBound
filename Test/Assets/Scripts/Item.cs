@@ -6,8 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {    
-    public enum InteractionType { NONE, PickUp, Examine,GrabDrop }
-    public enum ItemType { Static, Consumables}
+    public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume }
+    public enum ItemType { Static, Consumables }
     [Header("Attributes")]
     public InteractionType interactType;
     public ItemType type;
@@ -25,27 +25,32 @@ public class Item : MonoBehaviour
 
     public void Interact()
     {
-        switch(interactType)
+        switch (interactType)
         {
             case InteractionType.PickUp:
-                //Add the object to the PickedUpItems list
-                //Disable
+                // Add the object to the PickedUpItems list
+                // Disable
                 gameObject.SetActive(false);
                 break;
             case InteractionType.Examine:
-                //Call the Examine item in the interaction system
-                FindObjectOfType<InteractionSystem>().ExamineItem(this);                
+                FindObjectOfType<InteractionSystem>().ExamineItem(this);
                 break;
             case InteractionType.GrabDrop:
-                //Grab interaction
                 FindObjectOfType<InteractionSystem>().GrabDrop();
+                break;
+            case InteractionType.Consume:
+                consumeEvent.Invoke(); // Trigger the consume event
+                if (type == ItemType.Consumables)
+                {
+                    FindObjectOfType<InteractionSystem>().AddLives(1); // Example: Add 1 life when the consumable is consumed
+                }
+                gameObject.SetActive(false); // Disable the item after consumption
                 break;
             default:
                 Debug.Log("NULL ITEM");
                 break;
         }
 
-        //Invoke (call) the custom event(s)
-        customEvent.Invoke();
+        customEvent.Invoke(); // Invoke the custom event(s)
     }
 }
