@@ -42,17 +42,6 @@ public class timerscript : MonoBehaviour
         counting = false;
     }
 
-    public void NextScene()   //to change between scenes
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void PreviousScene()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-   
     private void OnApplicationQuit()  //reset timer
     {
         PlayerPrefs.DeleteKey("time");

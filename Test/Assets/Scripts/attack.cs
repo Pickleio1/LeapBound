@@ -11,6 +11,7 @@ public class attack : MonoBehaviour
 
     private float spawntime;
     private GameObject player;
+    private float btimer;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,8 @@ public class attack : MonoBehaviour
     void copyshoot()   //copy the bullet to shoot more bullets
     {
         Instantiate(bullettt, bulletposition.position, Quaternion.identity);
+
+        
     }
 
 }

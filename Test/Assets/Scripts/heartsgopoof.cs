@@ -8,47 +8,52 @@ public class heartsgopoof : MonoBehaviour
 {
     
     public int maxlives;
-    private int currentlife;
+    private int currentlife = 3;
     public GameObject bullet;
     public GameObject[] heart;
     public timerscript timer;
+    public GameObject add;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        currentlife = PlayerPrefs.GetInt("life");
-
-        currentlife = 3;
         
-       
+        DecreaseLife();
     }
 
     
     // Update is called once per frame
     void Update()
     {
-        PlayerPrefs.SetInt("life", currentlife);
         
+        DecreaseLife();
+    }
+
+    public void DecreaseLife()
+    {
         if (currentlife < 1)   //destroy hearts 
         {
             isDead();     //stop timer when dead
         }
-        else if (currentlife <2)
+        else if (currentlife < 2)
         {
-            Destroy(heart[1].gameObject);
+            heart[1].gameObject.SetActive(false);
+
         }
         else if (currentlife < 3)
         {
-            Destroy(heart[2].gameObject);
-        }
+            heart[2].gameObject.SetActive(false);
 
+        }
         
     }
-
+    
+    
     public void TakeDamage(int damage) //take dmg
     {
         currentlife -= damage;
+        
         
     }
 
@@ -57,28 +62,37 @@ public class heartsgopoof : MonoBehaviour
         if (bullet.gameObject.CompareTag("Player"))
         {
             currentlife -= 1;
-        }
-
-       
+        }   
     }
 
-    public void isDead()
+    public void isDead() //die
     {
-        Destroy(heart[0].gameObject) ;  
+        heart[0].gameObject.SetActive(false) ;  
         Destroy(gameObject);
         timerscript.Destroy(timer);
-
-
     }
 
-    public void NextScene()   //to change between scenes
+    void OnApplicationQuit()  //reset life
     {
-        SceneManager.LoadScene(1);
+        PlayerPrefs.DeleteKey("lifeu");
     }
 
-    public void PreviousScene()
+    public void AddLife() //heal
     {
-        SceneManager.LoadScene(0);
+        if (currentlife < maxlives)
+        {
+            currentlife += 1;
+            
+            if (currentlife == 2)
+            {
+                heart[1].gameObject.SetActive(true);
+            }
+            else if (currentlife == 3)
+            {
+                heart[2].gameObject.SetActive(true) ;
+            }
+        }
+        
     }
 
     
