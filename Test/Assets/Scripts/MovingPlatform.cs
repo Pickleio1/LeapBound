@@ -19,12 +19,13 @@ public class MovingPlatform : MonoBehaviour
     int direction = 1;
 
     public float waitDuration;
+    public bool loopMode = false;
 
     private void Awake()
     {
         movementController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody2D>();
-        rb.freezeRotation = true; 
+        rb.freezeRotation = true;
 
         wayPoints = new Transform[ways.transform.childCount];
         for (int i = 0; i < ways.gameObject.transform.childCount; i++)
@@ -32,23 +33,23 @@ public class MovingPlatform : MonoBehaviour
             wayPoints[i] = ways.transform.GetChild(i).gameObject.transform;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        pointIndex = 1;
+        pointIndex = 0;
         pointCount = wayPoints.Length;
-        targetPos = wayPoints[1].transform.position;
+        targetPos = wayPoints[pointIndex].transform.position;
         DirectionCalculate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, targetPos) < 0.05f)
+        if (Vector2.Distance(transform.position, targetPos) < 0.05f)
         {
             NextPoint();
         }
-
     }
 
     private void FixedUpdate()
@@ -61,17 +62,17 @@ public class MovingPlatform : MonoBehaviour
         transform.position = targetPos;
         moveDirection = Vector3.zero;
 
-        if (pointIndex == pointCount - 1)
-        {
-            direction = -1;
-        }
-
-        if (pointIndex == 0)
-        {
-            direction = 1;
-        }
-
         pointIndex += direction;
+
+        if (pointIndex >= pointCount)
+        {
+            pointIndex = 0;
+        }
+        else if (pointIndex < 0)
+        {
+            pointIndex = pointCount - 1;
+        }
+
         targetPos = wayPoints[pointIndex].transform.position;
 
         StartCoroutine(WaitNextPoint());
@@ -80,7 +81,7 @@ public class MovingPlatform : MonoBehaviour
     IEnumerator WaitNextPoint()
     {
         yield return new WaitForSeconds(waitDuration);
-        DirectionCalculate(); 
+        DirectionCalculate();
     }
 
     void DirectionCalculate()
@@ -88,7 +89,7 @@ public class MovingPlatform : MonoBehaviour
         moveDirection = (targetPos - transform.position).normalized;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -97,7 +98,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-        private void OnTriggerExit2D(Collider2D collision) 
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {

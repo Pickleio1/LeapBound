@@ -6,84 +6,72 @@ using UnityEngine.UI;
 
 public class heartsgopoof : MonoBehaviour
 {
-    
-    public int maxlives;
-    private int currentlife;
+    public int maxLives;
+    private int currentLife;
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
-
-
-
-
     private bool isDead = false;
-    
 
-    // Start is called before the first frame update
     void Start()
     {
-        currentlife = maxlives;
+        currentLife = maxLives;
         animator = GetComponent<Animator>();
-    }
-
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-      
-
     }
 
     void Update()
     {
-        if (currentlife <= 0 && !isDead)
+        if (currentLife <= 0 && !isDead)
         {
             isDead = true;
             SceneManager.LoadScene("Game Over");
             Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
-
-
+        
+        Debug.Log("Current Lives: " + currentLife);
     }
 
-    public void TakeDamage(int damage) //dmg and destroy player
+    public void TakeDamage(int damage)
     {
-        currentlife -= damage;
+        currentLife -= damage;
         animator.SetTrigger(AnimationStrings.HitTrigger);
-        UpdateHealthUI();         // Call this method to update health display if you have one
-
+        UpdateHealthUI();
     }
 
-
+    public void AddLives(int livesToAdd)
+    {
+        currentLife += livesToAdd;
+        if (currentLife > maxLives)
+        {
+            currentLife = maxLives;
+        }
+        UpdateHealthUI();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            TakeDamage(1);  // Existing bullet damage logic
+            TakeDamage(1);
         }
 
-        if (collision.gameObject.CompareTag("Spike"))  // Assuming spikes are tagged as "Spike"
+        if (collision.gameObject.CompareTag("Spike"))
         {
-            TakeDamage(1);  // Call TakeDamage with the damage value that spikes should inflict
+            TakeDamage(1);
         }
     }
 
-    // Assumes you have a method to update the health UI
     private void UpdateHealthUI()
     {
         for (int i = 0; i < heart.Length; i++)
         {
-            if (i < currentlife)
+            if (i < currentLife)
             {
-                heart[i].SetActive(true);  // Show heart if health is above index
-
+                heart[i].SetActive(true);
             }
             else
             {
-                heart[i].SetActive(false);  // Hide heart if health is below or equal to index
-
+                heart[i].SetActive(false);
             }
         }
     }
