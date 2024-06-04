@@ -1186,7 +1186,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b3ea60886a429f4784778c059a28af7, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1194,7 +1194,7 @@ SpriteRenderer:
   m_Size: {x: 8, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &806735623
@@ -14028,6 +14028,7 @@ GameObject:
   - component: {fileID: 2077146906}
   - component: {fileID: 2077146904}
   - component: {fileID: 2077146903}
+  - component: {fileID: 2077146909}
   m_Layer: 0
   m_Name: enemy_mantis
   m_TagString: Untagged
@@ -14050,7 +14051,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.5
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -14090,7 +14091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullettt: {fileID: 806735616}
   bulletposition: {fileID: 927925193}
-  range: 2
+  range: 5
 --- !u!212 &2077146907
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14159,6 +14160,51 @@ Transform:
   - {fileID: 927925193}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2077146909
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077146902}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.9614502, y: -1.7654735}
+  m_SpriteTilingProperty:
+    border: {x: 2, y: 0, z: 0.125, w: 2.9375}
+    pivot: {x: 0.51550376, y: 0.27002588}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.185808, y: 0.7894666}
+  m_EdgeRadius: 0
 --- !u!1 &2127100819
 GameObject:
   m_ObjectHideFlags: 0
@@ -14574,11 +14620,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1548901056299120722, guid: 4597810c13572c84484408eea5e0769c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -58.12
+      value: -60.37
       objectReference: {fileID: 0}
     - target: {fileID: 1548901056299120722, guid: 4597810c13572c84484408eea5e0769c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -192.46
+      value: -201.14
       objectReference: {fileID: 0}
     - target: {fileID: 1548901056299120722, guid: 4597810c13572c84484408eea5e0769c, type: 3}
       propertyPath: m_LocalPosition.z

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemymelee : MonoBehaviour
 {
-   
+
     public float range;
     public float cooldown;
     public float speed;
@@ -13,13 +13,13 @@ public class enemymelee : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D rb2d;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");                          //direct the
-        Vector3 direction = player.transform.position - transform.position;           //bullet towards
+        Vector3 direction = player.transform.position - transform.position;           //attack towards
         rb2d.velocity = new Vector2(direction.x, direction.y).normalized * force;      //the player
     }
 
@@ -32,7 +32,15 @@ public class enemymelee : MonoBehaviour
         {
             AttackPlayer();
         }
-        
+        else if (distance < chase)
+        {
+            ChasePlayer();
+        }
+    }
+
+    void ChasePlayer() //mantis will move towards the player if player enters a specific range
+    {
+
     }
 
     void AttackPlayer()  //attacks and cooldown between attacks
@@ -40,14 +48,22 @@ public class enemymelee : MonoBehaviour
 
         if (cooldown > 2)
         {
-            
+
             cooldown = 0;
         }
         else
         {
-           
+
             Vector2 direction = (player.transform.position - transform.position);
 
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
         }
     }
 }

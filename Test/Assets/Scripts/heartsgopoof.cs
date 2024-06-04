@@ -8,17 +8,32 @@ public class heartsgopoof : MonoBehaviour
 {
     
     public int maxlives;
+
     private int currentlife = 3;
+    
     public GameObject bullet;
     public GameObject[] heart;
     public timerscript timer;
     public GameObject add;
+
+    private static bool IsSet;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        if (IsSet = false)
+        {
+            currentlife = PlayerPrefs.GetInt("lifeu", maxlives);
+            IsSet = true;
+            DontDestroyOnLoad(gameObject);  // Prevent this object from being destroyed when loading a new scene
+        }
+        else
+        {
+            currentlife = PlayerPrefs.GetInt("lifeu", currentlife);
+        }
+
         DecreaseLife();
     }
 
@@ -34,7 +49,9 @@ public class heartsgopoof : MonoBehaviour
     {
         if (currentlife < 1)   //destroy hearts 
         {
-            isDead();     //stop timer when dead
+            isDead();     
+
+
         }
         else if (currentlife < 2)
         {
@@ -53,8 +70,9 @@ public class heartsgopoof : MonoBehaviour
     public void TakeDamage(int damage) //take dmg
     {
         currentlife -= damage;
-        
-        
+
+
+        PlayerPrefs.SetInt("lifeu", currentlife);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) //decrease life
@@ -67,33 +85,20 @@ public class heartsgopoof : MonoBehaviour
 
     public void isDead() //die
     {
-        heart[0].gameObject.SetActive(false) ;  
-        Destroy(gameObject);
-        timerscript.Destroy(timer);
+        heart[0].gameObject.SetActive(false) ;  //destroy last heart
+
+        Destroy(gameObject);    //destroy player
+
+        timerscript.Destroy(timer);    //stops timer when dead
     }
 
     void OnApplicationQuit()  //reset life
     {
         PlayerPrefs.DeleteKey("lifeu");
+
     }
 
-    public void AddLife() //heal
-    {
-        if (currentlife < maxlives)
-        {
-            currentlife += 1;
-            
-            if (currentlife == 2)
-            {
-                heart[1].gameObject.SetActive(true);
-            }
-            else if (currentlife == 3)
-            {
-                heart[2].gameObject.SetActive(true) ;
-            }
-        }
-        
-    }
+    
 
     
 }
