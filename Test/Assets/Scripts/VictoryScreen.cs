@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class VictoryScreen : MonoBehaviour
 {
+    GameManager gameManager;
     public GameObject VictoryScreenUI;
 
     public void Awake()
@@ -19,7 +20,7 @@ public class VictoryScreen : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(1);
+            GameManager.Instance.RestartGame();
         }
     }
 }
