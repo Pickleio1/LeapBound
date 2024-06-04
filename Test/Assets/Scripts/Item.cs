@@ -8,14 +8,24 @@ public class Item : MonoBehaviour
 {    
     public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume }
     public enum ItemType { Static, Consumables }
+    
     [Header("Attributes")]
     public InteractionType interactType;
     public ItemType type;
+    
     [Header("Examine")]
     public string descriptionText;
+    
     [Header("Custom Events")]
     public UnityEvent customEvent;
     public UnityEvent consumeEvent;
+
+    private InteractionSystem interactionSystem; // Reference to InteractionSystem script
+
+    private void Start()
+    {
+        interactionSystem = FindObjectOfType<InteractionSystem>(); // Find and store the InteractionSystem script reference
+    }
 
     private void Reset()
     {
@@ -33,16 +43,19 @@ public class Item : MonoBehaviour
                 gameObject.SetActive(false);
                 break;
             case InteractionType.Examine:
-                FindObjectOfType<InteractionSystem>().ExamineItem(this);
+                interactionSystem.ExamineItem(this);
                 break;
             case InteractionType.GrabDrop:
-                FindObjectOfType<InteractionSystem>().GrabDrop();
+                interactionSystem.GrabDrop();
                 break;
             case InteractionType.Consume:
                 consumeEvent.Invoke(); // Trigger the consume event
                 if (type == ItemType.Consumables)
                 {
-                    FindObjectOfType<InteractionSystem>().AddLives(1); // Example: Add 1 life when the consumable is consumed
+                    if (interactionSystem != null)
+                    {
+                        interactionSystem.AddLives(1); // Add 1 life when the consumable is consumed
+                    }
                 }
                 gameObject.SetActive(false); // Disable the item after consumption
                 break;

@@ -1,6 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class PowerUpController : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PowerUpController : MonoBehaviour
     private static PowerUpController instance;
     public static PowerUpController Instance { get { return instance; } }
 
+    public float projectileAngle = 45f; // Angle of the additional projectiles
+
     private void Awake()
     {
         if (instance == null)
@@ -31,7 +34,7 @@ public class PowerUpController : MonoBehaviour
         }
     }
 
-        private void OnEnable()
+    private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -53,7 +56,7 @@ public class PowerUpController : MonoBehaviour
         {
             Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
         }
-        
+
         if (playerController != null)
         {
             shootingPoint = playerController.transform.Find("ShootingPoint");
@@ -82,9 +85,11 @@ public class PowerUpController : MonoBehaviour
 
         return null;
     }
+
     void Update()
     {
         Debug.Log("Power-Up Active: " + isProjectilePowerActive);
+        Debug.Log("Power-Up Upgrade Active: " + isProjectilePowerUpgraded);
     }
 
     public void ToggleProjectilePower()
@@ -94,13 +99,47 @@ public class PowerUpController : MonoBehaviour
 
     public void UpgradeProjectilePower()
     {
-        if (isProjectilePowerActive)
+        if (isProjectilePowerActive == true)
         {
-            isProjectilePowerUpgraded = true;
+            isProjectilePowerUpgraded = !isProjectilePowerUpgraded;
+            Debug.Log("Power-Upgrade successfully upgraded");
+        }
+        else
+        {
+            Debug.Log("Power-Upgrade failed. Base power must be active to upgrade.");
         }
     }
 
-    public void AttemptToShootProjectile()
+    private void ShootProjectileBase()
+    {
+        if (projectilePrefab == null || shootingPoint == null)
+        {
+            return;
+        }
+
+        if (isProjectilePowerActive == true)
+        {
+            // Original single projectile firing behavior
+            FireProjectile(0f);
+        }
+    }
+
+    private void ShootProjectileUpgraded()
+    {
+            if (isProjectilePowerUpgraded == true && isProjectilePowerActive == true)
+        {
+            // Fire three projectiles (0 degrees, -45 degrees, 45 degrees)
+            FireProjectile(0f);
+            FireProjectile(-projectileAngle);
+            FireProjectile(projectileAngle);
+        } 
+        else if (isProjectilePowerUpgraded == true && isProjectilePowerActive == false)
+        {
+            Debug.Log("Cannot use upgraded power without activating base power.");
+        }
+    }
+
+    public void AttemptToShootProjectileBase()
     {
         if (projectilePrefab == null || shootingPoint == null)
         {
@@ -109,29 +148,39 @@ public class PowerUpController : MonoBehaviour
 
         if (Time.time - lastProjectileTime >= projectileCooldown)
         {
-            ShootProjectile();
+            ShootProjectileBase();
             lastProjectileTime = Time.time;
         }
     }
-
-    private void ShootProjectile()
+    public void AttemptToShootProjectileUpgraded()
     {
-        Debug.Log("Shooting Projectile");
-
         if (projectilePrefab == null || shootingPoint == null)
         {
             return;
         }
 
+        if (Time.time - lastProjectileTime >= projectileCooldown)
+        {
+            ShootProjectileUpgraded();
+            lastProjectileTime = Time.time;
+        }
+    }
+
+    private void FireProjectile(float angleOffset)
+    {
         GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
+        
+        // Rotate the projectile based on the angle offset
+        projectile.transform.Rotate(0f, 0f, angleOffset);
 
         // Set the projectile's movement
         Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
         if (projectileRigidbody != null)
         {
             Vector2 projectileDirection = playerController.GetFacingDirection();
-            projectileRigidbody.velocity = projectileDirection * 10f;
-            Debug.Log("Projectile direction: " + projectileDirection);
+            Vector2 direction = Quaternion.Euler(0, 0, angleOffset) * projectileDirection;
+            projectileRigidbody.velocity = direction * 10f;
+            Debug.Log("Projectile direction: " + direction);
         }
 
         // Check for collision with any objects
@@ -165,9 +214,11 @@ public class PowerUpController : MonoBehaviour
                             enemy.TakeDamage(projectileDamage);
                         }
                     }
-
-                    // Destroy the projectile on collision
-                    Destroy(projectile);
+                    else if (hitCollider.CompareTag("Ground"))
+                    {
+                        // Destroy the projectile only if it hits Ground or Enemy
+                        Destroy(projectile);
+                    }
 
                     yield break; // Exit the coroutine after handling the collision
                 }

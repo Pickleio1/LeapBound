@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class heartsgopoof : MonoBehaviour
 {
     public int maxLives;
-    private int currentLife;
+    public int currentLife;
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
@@ -15,8 +15,10 @@ public class heartsgopoof : MonoBehaviour
 
     void Start()
     {
-        currentLife = maxLives;
+        currentLife = 3; // Set the starting current life
+        maxLives = 5; // Set the maximum lives threshold
         animator = GetComponent<Animator>();
+        UpdateHealthUI();
     }
 
     void Update()
@@ -40,11 +42,15 @@ public class heartsgopoof : MonoBehaviour
 
     public void AddLives(int livesToAdd)
     {
-        currentLife += livesToAdd;
-        if (currentLife > maxLives)
+        if (currentLife + livesToAdd > maxLives)
         {
             currentLife = maxLives;
         }
+        else
+        {
+            currentLife += livesToAdd;
+        }
+        
         UpdateHealthUI();
     }
 

@@ -263,19 +263,35 @@ public class PlayerController : MonoBehaviour
 
     public bool allowMeleeAttack = true; // Boolean to control melee attack functionality
 
-    public void OnAttack(InputAction.CallbackContext context)
+ public void OnAttack(InputAction.CallbackContext context)
+{
+    if (context.started)
     {
-        if (context.started)
+        animator.SetTrigger(AnimationStrings.AttackTrigger);
+
+        Debug.Log("Attack started");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        if (powerUpController != null)
         {
-            animator.SetTrigger(AnimationStrings.AttackTrigger);
-
-            Debug.Log("Attack started");
-
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-            if (powerUpController != null && powerUpController.isProjectilePowerActive)
+            if (powerUpController.isProjectilePowerActive && !powerUpController.isProjectilePowerUpgraded)
             {
-                powerUpController.AttemptToShootProjectile();
+                powerUpController.AttemptToShootProjectileBase();
+                // Single projectile shooting when power is active but not upgraded
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    if (enemy.CompareTag("Enemy"))
+                    {
+                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                        Debug.Log("Projectile hit " + enemy.name);
+                    }
+                }
+            }
+            else if (powerUpController.isProjectilePowerActive && powerUpController.isProjectilePowerUpgraded)
+            {
+                // Upgraded projectile shooting when power is both active and upgraded
+                powerUpController.AttemptToShootProjectileUpgraded();
 
                 foreach (Collider2D enemy in hitEnemies)
                 {
@@ -288,7 +304,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                // Only perform melee attack if no projectile power-up is active
+                // Default melee attack when power is not active
                 foreach (Collider2D enemy in hitEnemies)
                 {
                     if (enemy.CompareTag("Enemy"))
@@ -300,9 +316,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
-
+}
     private void DestroyProjectile()
     {
         // Add logic to destroy the projectileGameObject
