@@ -24,8 +24,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void TryAgain()
     {
-        gameManager.ResetPoints();
-        gameManager.RestartGame();
+        GameManager.Instance.RestartGame();
     }
 
     public void Exit()
