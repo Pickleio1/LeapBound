@@ -126,14 +126,14 @@ public class PowerUpController : MonoBehaviour
 
     private void ShootProjectileUpgraded()
     {
-            if (isProjectilePowerUpgraded == true && isProjectilePowerActive == true)
+        if (isProjectilePowerUpgraded && isProjectilePowerActive)
         {
-            // Fire three projectiles (0 degrees, -45 degrees, 45 degrees)
+            // Fire the upgraded projectiles
             FireProjectile(0f);
             FireProjectile(-projectileAngle);
             FireProjectile(projectileAngle);
         } 
-        else if (isProjectilePowerUpgraded == true && isProjectilePowerActive == false)
+        else if (isProjectilePowerUpgraded && !isProjectilePowerActive)
         {
             Debug.Log("Cannot use upgraded power without activating base power.");
         }
@@ -166,32 +166,14 @@ public class PowerUpController : MonoBehaviour
         }
     }
 
-    private void FireProjectile(float angleOffset)
-    {
-        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
-        
-        // Rotate the projectile based on the angle offset
-        projectile.transform.Rotate(0f, 0f, angleOffset);
-
-        // Set the projectile's movement
-        Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
-        if (projectileRigidbody != null)
-        {
-            Vector2 projectileDirection = playerController.GetFacingDirection();
-            Vector2 direction = Quaternion.Euler(0, 0, angleOffset) * projectileDirection;
-            projectileRigidbody.velocity = direction * 10f;
-            Debug.Log("Projectile direction: " + direction);
-        }
-
-        // Check for collision with any objects
-        StartCoroutine(ProjectileCollisionDetection(projectile));
-    }
-
     private IEnumerator ProjectileCollisionDetection(GameObject projectile)
     {
-        // Get the projectile's collider to exclude it from collision checks
+        Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
         Collider2D projectileCollider = projectile.GetComponent<Collider2D>();
-        Collider2D playerCollider = playerController.GetComponent<Collider2D>(); // Get player's collider
+        Collider2D playerCollider = playerController.GetComponent<Collider2D>();
+
+        // Ignore collisions between the projectile's collider and the player's collider
+        Physics2D.IgnoreCollision(projectileCollider, playerCollider, true);
 
         while (projectile != null)
         {
@@ -199,35 +181,50 @@ public class PowerUpController : MonoBehaviour
 
             foreach (Collider2D hitCollider in hitColliders)
             {
-                // Check if the hit collider is not the projectile or player collider
                 if (hitCollider != projectileCollider && hitCollider != playerCollider)
                 {
-                    // Handle collision with any object other than the projectile and player
                     Debug.Log("Projectile collided with: " + hitCollider.name);
 
                     if (hitCollider.CompareTag("Enemy"))
                     {
-                        // Deal damage to the enemy
                         enemyhealth enemy = hitCollider.GetComponent<enemyhealth>();
                         if (enemy != null)
                         {
                             enemy.TakeDamage(projectileDamage);
                         }
                     }
-                    else if (hitCollider.CompareTag("Ground"))
-                    {
-                        // Destroy the projectile only if it hits Ground or Enemy
-                        Destroy(projectile);
-                    }
 
-                    yield break; // Exit the coroutine after handling the collision
+                    if (hitCollider.CompareTag("Ground") || hitCollider.CompareTag("Enemy"))
+                    {
+                        Destroy(projectile);
+                        break;
+                    }
                 }
             }
 
-            yield return null; // Wait for the next frame to check for collisions
+            yield return null;
         }
 
-        // Add a return statement here to handle the case where the while loop ends
-        yield return null;
+        // Re-enable collisions between the projectile's collider and the player's collider
+        Physics2D.IgnoreCollision(projectileCollider, playerCollider, false);
+    }
+    private void FireProjectile(float angleOffset)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, shootingPoint.position, Quaternion.identity);
+
+        // Rotate the projectile sprite based on the player's facing direction with horizontal inversion
+        Vector2 playerDirection = playerController.GetFacingDirection();
+        float angle = Mathf.Atan2(-playerDirection.y, playerDirection.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
+        if (projectileRigidbody != null)
+        {
+            Vector2 direction = Quaternion.Euler(0, 0, angleOffset) * playerDirection;
+            projectileRigidbody.velocity = direction * 10f;
+            Debug.Log("Projectile direction: " + direction);
+        }
+
+        StartCoroutine(ProjectileCollisionDetection(projectile));
     }
 }
