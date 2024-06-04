@@ -16,17 +16,17 @@ public class heartsgopoof : MonoBehaviour
     public timerscript timer;
     public GameObject add;
 
-    private static bool IsSet;
+    private static bool Initialized;
     
     
     // Start is called before the first frame update
     void Start()
     {
 
-        if (IsSet = false)
+        if (Initialized == false)
         {
             currentlife = PlayerPrefs.GetInt("lifeu", maxlives);
-            IsSet = true;
+            Initialized = true;
             DontDestroyOnLoad(gameObject);  // Prevent this object from being destroyed when loading a new scene
         }
         else
@@ -86,6 +86,9 @@ public class heartsgopoof : MonoBehaviour
     public void isDead() //die
     {
         heart[0].gameObject.SetActive(false) ;  //destroy last heart
+
+        PlayerPrefs.DeleteKey("lifeu");
+        Initialized = false;
 
         Destroy(gameObject);    //destroy player
 
