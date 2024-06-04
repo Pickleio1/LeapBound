@@ -17,6 +17,7 @@ public class InteractionSystem : MonoBehaviour
     [Header("Examine Fields")]
     //Examine window object
     public GameObject examineWindow;
+    public GameObject ShopWindow;
     public GameObject grabbedObject;
     public float grabbedObjectYValue;
     public Transform grabPoint;
@@ -94,6 +95,24 @@ public class InteractionSystem : MonoBehaviour
             //enable the boolean
             isExamining = true;
         }        
+    }
+
+    public void ShopItem(Item item)
+    {
+        if (isExamining)
+        {
+            //Hide the Examine Window
+            examineWindow.SetActive(false);
+            //disable the boolean
+            isExamining = false;
+        }
+        else
+        {
+            //Display an Examine Window
+            ShopWindow.SetActive(true);
+            //enable the boolean
+            isExamining = true;
+        }
     }
 
     public void GrabDrop()
