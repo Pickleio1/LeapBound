@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {    
-    public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume }
+    public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume, Shop }
     public enum ItemType { Static, Consumables }
     
     [Header("Attributes")]
@@ -58,6 +58,9 @@ public class Item : MonoBehaviour
                     }
                 }
                 gameObject.SetActive(false); // Disable the item after consumption
+                break;
+            case InteractionType.Shop:
+                interactionSystem.ShopItem(this);
                 break;
             default:
                 Debug.Log("NULL ITEM");

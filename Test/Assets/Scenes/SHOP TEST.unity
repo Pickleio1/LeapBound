@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 124392329}
   - component: {fileID: 124392328}
   m_Layer: 5
-  m_Name: 2
+  m_Name: Slow Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -882,7 +882,7 @@ GameObject:
   - component: {fileID: 351925926}
   - component: {fileID: 351925925}
   m_Layer: 5
-  m_Name: 4
+  m_Name: Sword Shooter Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,7 +1016,7 @@ GameObject:
   - component: {fileID: 355223062}
   - component: {fileID: 355223061}
   m_Layer: 5
-  m_Name: 5
+  m_Name: Slow Down Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1591,7 +1591,7 @@ GameObject:
   - component: {fileID: 551916188}
   - component: {fileID: 551916187}
   m_Layer: 5
-  m_Name: 3
+  m_Name: Portals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4311,10 +4311,6 @@ PrefabInstance:
       propertyPath: examineImage
       value: 
       objectReference: {fileID: 559516816}
-    - target: {fileID: 6060732342106851920, guid: d58540781f00d464c838867696e1ae5d, type: 3}
-      propertyPath: examineWindow
-      value: 
-      objectReference: {fileID: 1868716731}
     - target: {fileID: 7637330436403069549, guid: d58540781f00d464c838867696e1ae5d, type: 3}
       propertyPath: m_Name
       value: Player_erinver
@@ -5462,7 +5458,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44e7daaad70bbf24e82be9505652fc57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95981c833593e9846b31b24210babbb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5485,9 +5481,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a0f654672caf6479d41191e237188e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactType: 2
+  interactType: 5
   type: 0
-  descriptionText: Sword Shooter
+  descriptionText: 
   customEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -5530,7 +5526,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.875, y: 1.75}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6160,7 +6156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -161.05362}
+  m_AnchoredPosition: {x: 0, y: -161.01929}
   m_SizeDelta: {x: 0, y: -1322.1896}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1841812481
@@ -6294,7 +6290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1868716732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6328,7 +6324,7 @@ GameObject:
   - component: {fileID: 1918218392}
   - component: {fileID: 1918218391}
   m_Layer: 5
-  m_Name: 1
+  m_Name: Sword Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6782,7 +6778,7 @@ GameObject:
   - component: {fileID: 2045894618}
   - component: {fileID: 2045894617}
   m_Layer: 5
-  m_Name: 6
+  m_Name: Portals Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

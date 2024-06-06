@@ -101,16 +101,16 @@ public class InteractionSystem : MonoBehaviour
     {
         if (isExamining)
         {
-            //Hide the Examine Window
+            // Hide the Examine Window
             examineWindow.SetActive(false);
-            //disable the boolean
+            // Disable the boolean
             isExamining = false;
         }
         else
         {
-            //Display an Examine Window
+            // Display a Shop Window
             ShopWindow.SetActive(true);
-            //enable the boolean
+            // Enable the boolean
             isExamining = true;
         }
     }
