@@ -12,6 +12,8 @@ public class heartsgopoof : MonoBehaviour
     public GameObject[] heart;
     Animator animator;
     private bool isDead = false;
+    public float invincibilityDuration = 2f;
+    private bool isInvincible = false;
 
     void Start()
     {
@@ -35,9 +37,13 @@ public class heartsgopoof : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentLife -= damage;
-        animator.SetTrigger(AnimationStrings.HitTrigger);
-        UpdateHealthUI();
+        if (!isInvincible)
+        {
+            currentLife -= damage;
+            animator.SetTrigger(AnimationStrings.HitTrigger);
+            UpdateHealthUI();
+            StartCoroutine(InvincibilityCooldown());
+        }
     }
 
     public void AddLives(int livesToAdd)
@@ -56,12 +62,12 @@ public class heartsgopoof : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !isInvincible)
         {
             TakeDamage(1);
         }
 
-        if (collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Spike") && !isInvincible)
         {
             TakeDamage(1);
         }
@@ -80,5 +86,12 @@ public class heartsgopoof : MonoBehaviour
                 heart[i].SetActive(false);
             }
         }
+    }
+
+    private IEnumerator InvincibilityCooldown()
+    {
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityDuration);
+        isInvincible = false;
     }
 }

@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.9185901
+  m_Mass: 1.8080058
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -198,8 +198,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.17252423, y: -0.2124968}
-  m_Size: {x: 1.4581771, y: 3.627983}
+  m_Offset: {x: 0.17252423, y: -0.25850326}
+  m_Size: {x: 1.4581771, y: 3.436909}
   m_Direction: 0
 --- !u!114 &7036551882788791251
 MonoBehaviour:
@@ -550,6 +550,7 @@ MonoBehaviour:
     m_Bits: 64
   detectedObject: {fileID: 0}
   examineWindow: {fileID: 0}
+  ShopWindow: {fileID: 0}
   grabbedObject: {fileID: 0}
   grabbedObjectYValue: 0
   grabPoint: {fileID: 5430298801001784379}
@@ -557,6 +558,7 @@ MonoBehaviour:
   examineText: {fileID: 0}
   isExamining: 0
   isGrabbing: 0
+  healthScript: {fileID: 0}
 --- !u!95 &284920256186698082
 Animator:
   serializedVersion: 5
@@ -590,12 +592,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6e709701d64f3449271a195760bad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
+  maxLives: 5
+  currentLife: 3
   bullet: {fileID: 1144021537125119950, guid: 7f3bd2578e9192a4e9a9ad7b95c39784, type: 3}
   heart:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  invincibilityDuration: 1.5
 --- !u!1 &8028739072005560763
 GameObject:
   m_ObjectHideFlags: 0
