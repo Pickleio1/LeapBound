@@ -266,59 +266,81 @@ public class PlayerController : MonoBehaviour
     public bool allowMeleeAttack = true; // Boolean to control melee attack functionality
 
  public void OnAttack(InputAction.CallbackContext context)
-{
-    if (context.started)
     {
-        animator.SetTrigger(AnimationStrings.AttackTrigger);
-
-        Debug.Log("Attack started");
-
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
-
-        if (powerUpController != null)
+        if (context.started)
         {
-            if (powerUpController.isProjectilePowerActive && !powerUpController.isProjectilePowerUpgraded)
-            {
-                powerUpController.AttemptToShootProjectileBase();
-                // Single projectile shooting when power is active but not upgraded
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    if (enemy.CompareTag("Enemy"))
-                    {
-                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
-                        Debug.Log("Projectile hit " + enemy.name);
-                    }
-                }
-            }
-            else if (powerUpController.isProjectilePowerActive && powerUpController.isProjectilePowerUpgraded)
-            {
-                // Upgraded projectile shooting when power is both active and upgraded
-                powerUpController.AttemptToShootProjectileUpgraded();
+            animator.SetTrigger(AnimationStrings.AttackTrigger);
 
-                foreach (Collider2D enemy in hitEnemies)
+            Debug.Log("Attack started");
+
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+            if (powerUpController != null)
+            {
+                if (powerUpController.isProjectilePowerActive && !powerUpController.isProjectilePowerUpgraded)
                 {
-                    if (enemy.CompareTag("Enemy"))
+                    powerUpController.AttemptToShootProjectileBase();
+                    // Single projectile shooting when power is active but not upgraded
+                    foreach (Collider2D enemy in hitEnemies)
                     {
-                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
-                        Debug.Log("Projectile hit " + enemy.name);
+                        if (enemy.CompareTag("Enemy"))
+                        {
+                            enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                            Debug.Log("Projectile hit " + enemy.name);
+                        }
                     }
                 }
-            }
-            else
-            {
-                // Default melee attack when power is not active
-                foreach (Collider2D enemy in hitEnemies)
+                else if (powerUpController.isProjectilePowerActive && powerUpController.isProjectilePowerUpgraded)
                 {
-                    if (enemy.CompareTag("Enemy"))
+                    // Upgraded projectile shooting when power is both active and upgraded
+                    powerUpController.AttemptToShootProjectileUpgraded();
+
+                    foreach (Collider2D enemy in hitEnemies)
                     {
-                        enemy.GetComponent<enemyhealth>().TakeDamage(damage);
-                        Debug.Log("Melee hit " + enemy.name);
+                        if (enemy.CompareTag("Enemy"))
+                        {
+                            enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                            Debug.Log("Projectile hit " + enemy.name);
+                        }
+                    }
+                }
+                else
+                {
+                    // Default melee attack when power is not active
+                    foreach (Collider2D enemy in hitEnemies)
+                    {
+                        if (enemy.CompareTag("Enemy"))
+                        {
+                            enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                            Debug.Log("Melee hit " + enemy.name);
+                        }
                     }
                 }
             }
         }
     }
-}
+
+    public void OnTeleport(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            TeleportPlayer();
+        }
+    }
+
+    private void TeleportPlayer()
+    {
+        if (powerUpController != null && powerUpController.isTeleportActive)
+        {
+            powerUpController.AttemptToTeleport();
+            Debug.Log("Player teleported.");
+        }
+        else
+        {
+            Debug.Log("Teleport power not active.");
+        }
+    }
+
     private void DestroyProjectile()
     {
         // Add logic to destroy the projectileGameObject
@@ -351,6 +373,11 @@ public class PlayerController : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         applyFastDrop = true; 
         quickDropInitiated = true; 
+    }
+
+    public float GetVerticalInput()
+    {
+        return moveInput.y;
     }
 
     void UpdateStun()

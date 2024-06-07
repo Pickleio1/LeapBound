@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Tilemaps;
 
 public class PowerUpController : MonoBehaviour
 {
@@ -11,6 +12,16 @@ public class PowerUpController : MonoBehaviour
 
     [SerializeField] public bool isProjectilePowerActive = false;
     [SerializeField] public bool isProjectilePowerUpgraded = false;
+
+    public bool isTeleportActive = false;
+    public bool isTeleportUpgraded = false;
+    public float teleportCooldownBase = 5f;
+    public float teleportCooldownUpgraded = 4f;
+    public float teleportDistanceBase = 4f;
+    public float teleportDistanceUpgraded = 5f;
+
+
+
     public float projectileCooldown = 5f;
     public float lastProjectileTime = -5f;
     public PlayerController playerController;
@@ -20,6 +31,15 @@ public class PowerUpController : MonoBehaviour
     public static PowerUpController Instance { get { return instance; } }
 
     public float projectileAngle = 45f; // Angle of the additional projectiles
+
+    // Teleport cooldown tracking
+    private float lastTeleportTime = -5f;
+
+    // Teleport direction options
+    private Vector3 teleportDirectionBase = new Vector3(4f, 4f, 4f);
+    private Vector3 teleportDirectionUpgraded = new Vector3(5f, 5f, 5f);
+
+    private Tilemap tilemap;
 
     private void Awake()
     {
@@ -47,6 +67,7 @@ public class PowerUpController : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         FindPlayerAndShootingPoint();
+        FindTilemap();
     }
 
     private void FindPlayerAndShootingPoint()
@@ -90,6 +111,8 @@ public class PowerUpController : MonoBehaviour
     {
         Debug.Log("Power-Up Active: " + isProjectilePowerActive);
         Debug.Log("Power-Up Upgrade Active: " + isProjectilePowerUpgraded);
+        Debug.Log("Teleport Power Active: " + isTeleportActive );
+        Debug.Log("Teleport Power Upgrade Active: " + isTeleportUpgraded);
     }
 
     public void ToggleProjectilePower()
@@ -108,6 +131,25 @@ public class PowerUpController : MonoBehaviour
         {
             Debug.Log("Power-Upgrade failed. Base power must be active to upgrade.");
         }
+    }
+
+    public void UpgradeTeleport()
+    {
+        if (isTeleportActive)
+        {
+            isTeleportUpgraded = true;
+            Debug.Log("Teleport power successfully upgraded");
+        }
+        else
+        {
+            Debug.Log("Activate base teleport power before upgrading.");
+        }
+    }
+
+    // Toggle Teleport power
+    public void ToggleTeleportPower()
+    {
+        isTeleportActive = !isTeleportActive;
     }
 
     private void ShootProjectileBase()
@@ -226,5 +268,206 @@ public class PowerUpController : MonoBehaviour
         }
 
         StartCoroutine(ProjectileCollisionDetection(projectile));
+    }
+
+    private void FindTilemap()
+    {
+        // Find the Tilemap GameObject in the scene
+        GameObject tilemapObject = GameObject.FindWithTag("Ground");
+        if (tilemapObject != null)
+        {
+            // Get the Tilemap component from the GameObject
+            tilemap = tilemapObject.GetComponent<Tilemap>();
+        }
+        else
+        {
+            Debug.LogError("Tilemap GameObject not found in the scene. Make sure there is a GameObject with the 'Tilemap' tag.");
+        }
+    }
+
+    // Teleport the player with the specified distance and direction
+private void PerformTeleport(Transform playerTransform, Vector2 facingDirection, float verticalInput)
+{
+    float teleportDistance = isTeleportUpgraded ? teleportDistanceUpgraded : teleportDistanceBase;
+    Vector3 teleportVector = GetTeleportDirectionVector(facingDirection, verticalInput, teleportDistance);
+
+    // Check if the target position is inside the Tilemap
+    Vector3 targetPosition = playerTransform.position + teleportVector;
+    if (IsPositionInTilemap(targetPosition))
+    {
+        // Adjust the teleport distance to be just before the Tilemap
+        float distanceToTilemap = GetDistanceToTilemap(playerTransform.position, teleportVector.normalized);
+        if (distanceToTilemap < teleportDistance)
+        {
+            teleportDistance = distanceToTilemap - 0.1f; // Add a small offset to ensure the player doesn't get stuck in the Tilemap
+            targetPosition = playerTransform.position + (teleportVector.normalized * teleportDistance);
+
+            // Check if the adjusted target position is still inside the Tilemap
+            if (IsPositionInTilemap(targetPosition))
+            {
+                // The teleport is still blocked by the Tilemap, so teleport the player to the closest position in front of the Tilemap
+                targetPosition = playerTransform.position + (teleportVector.normalized * (distanceToTilemap - 0.1f));
+            }
+        }
+        else
+        {
+            // The Tilemap is too far away, so don't perform the teleport
+            return;
+        }
+    }
+
+    // Check if there are any obstacles between the player's current position and the target position
+    RaycastHit2D[] hits = Physics2D.LinecastAll(playerTransform.position, targetPosition);
+    bool obstacleFound = false;
+    float closestObstacleDistance = float.MaxValue;
+    Vector3 closestObstaclePosition = Vector3.zero;
+
+    foreach (RaycastHit2D hit in hits)
+    {
+        if (hit.collider != null && hit.collider.gameObject != playerTransform.gameObject)
+        {
+            obstacleFound = true;
+            float distanceToObstacle = Vector3.Distance(playerTransform.position, hit.point);
+            if (distanceToObstacle < closestObstacleDistance)
+            {
+                closestObstacleDistance = distanceToObstacle;
+                closestObstaclePosition = Vector3.Lerp(hit.point, targetPosition, 0.1f);
+            }
+        }
+    }
+
+    if (obstacleFound)
+    {
+        // Teleport the player to the closest position in front of the obstacle
+        playerTransform.position = closestObstaclePosition;
+        Debug.Log("Player teleported in front of obstacle.");
+    }
+    else
+    {
+        // Teleport the player to the target position
+        playerTransform.position = targetPosition;
+        Debug.Log("Player teleported.");
+    }
+}
+    private float GetDistanceToTilemap(Vector3 origin, Vector3 direction)
+    {
+        // Raycast from the player's position in the direction of the teleport
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction, Mathf.Infinity, ~0);
+
+        // If the ray hits something, return the distance to the hit point
+        if (hit.collider != null)
+        {
+            return hit.distance;
+        }
+        else
+        {
+            // If the ray doesn't hit anything, return a large distance (e.g., 100 units)
+            return 100f;
+        }
+    }
+
+    private bool IsPositionInTilemap(Vector3 position)
+    {
+        // Check if the Tilemap has been found
+        if (tilemap != null)
+        {
+            // Get the tile at the target position
+            Vector3Int tilePosition = tilemap.WorldToCell(position);
+            TileBase tile = tilemap.GetTile(tilePosition);
+
+            // Check if the tile is not null (i.e., there is a tile at the target position)
+            return tile != null;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private Vector3 GetTeleportDirectionVector(Vector2 facingDirection, float verticalInput, float teleportDistance)
+    {
+        Vector3 teleportVector = Vector3.zero;
+
+        if (isTeleportUpgraded)
+        {
+            // 8-directional teleportation
+            if (facingDirection.x < 0 && verticalInput > 0)
+            {
+                teleportVector = new Vector3(-1, 1, 0) * teleportDistance; // North-West
+            }
+            else if (facingDirection.x < 0 && verticalInput < 0)
+            {
+                teleportVector = new Vector3(-1, -1, 0) * teleportDistance; // South-West
+            }
+            else if (facingDirection.x > 0 && verticalInput > 0)
+            {
+                teleportVector = new Vector3(1, 1, 0) * teleportDistance; // North-East
+            }
+            else if (facingDirection.x > 0 && verticalInput < 0)
+            {
+                teleportVector = new Vector3(1, -1, 0) * teleportDistance; // South-East
+            }
+            else if (facingDirection.x < 0)
+            {
+                teleportVector = Vector3.left * teleportDistance; // West
+            }
+            else if (facingDirection.x > 0)
+            {
+                teleportVector = Vector3.right * teleportDistance; // East
+            }
+            else if (verticalInput > 0)
+            {
+                teleportVector = Vector3.up * teleportDistance; // North
+            }
+            else if (verticalInput < 0)
+            {
+                teleportVector = Vector3.down * teleportDistance; // South
+            }
+        }
+        else
+        {
+            // 4-directional teleportation
+            if (Mathf.Abs(facingDirection.x) > Mathf.Abs(verticalInput))
+            {
+                // Prioritize horizontal input
+                if (facingDirection.x < 0)
+                {
+                    teleportVector = Vector3.left * teleportDistance;
+                }
+                else
+                {
+                    teleportVector = Vector3.right * teleportDistance;
+                }
+            }
+            else
+            {
+                // Prioritize vertical input
+                if (verticalInput > 0)
+                {
+                    teleportVector = Vector3.up * teleportDistance;
+                }
+                else if (verticalInput < 0)
+                {
+                    teleportVector = Vector3.down * teleportDistance;
+                }
+            }
+        }
+
+        return teleportVector;
+    }
+
+    public void AttemptToTeleport()
+    {
+        if (Time.time - lastTeleportTime >= (isTeleportUpgraded ? teleportCooldownUpgraded : teleportCooldownBase))
+        {
+            Vector2 facingDirection = playerController.GetFacingDirection();
+            float verticalInput = playerController.GetVerticalInput();
+            PerformTeleport(playerController.transform, facingDirection, verticalInput);
+            lastTeleportTime = Time.time;
+        }
+        else
+        {
+            Debug.Log("Teleport cooldown not ready.");
+        }
     }
 }

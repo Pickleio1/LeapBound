@@ -7769,7 +7769,7 @@ CompositeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -8940,7 +8940,7 @@ CompositeCollider2D:
       - {x: 166.06252, y: -181}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
-  m_UseDelaunayMesh: 0
+  m_UseDelaunayMesh: 1
   m_CompositeGameObject: {fileID: 947486600}
 --- !u!50 &947486603
 Rigidbody2D:
@@ -55665,7 +55665,7 @@ Tilemap:
   - m_RefCount: 4638
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
+  m_AnimationFrameRate: 60
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -69, y: -242, z: 0}
   m_Size: {x: 345, y: 242, z: 1}
@@ -139115,7 +139115,7 @@ Tilemap:
   - m_RefCount: 7681
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
+  m_AnimationFrameRate: 60
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -67, y: -187, z: 0}
   m_Size: {x: 364, y: 208, z: 1}
@@ -141769,22 +141769,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 589129408677859044, guid: 6e75adba453992940a7339f189a72783, type: 3}
-      propertyPath: projectileAngle
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 589129408677859044, guid: 6e75adba453992940a7339f189a72783, type: 3}
-      propertyPath: projectileCooldown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 589129408677859044, guid: 6e75adba453992940a7339f189a72783, type: 3}
-      propertyPath: isProjectilePowerActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 589129408677859044, guid: 6e75adba453992940a7339f189a72783, type: 3}
-      propertyPath: isProjectilePowerUpgraded
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6503761628854908737, guid: 6e75adba453992940a7339f189a72783, type: 3}
       propertyPath: m_LocalPosition.x
       value: -76.61665
