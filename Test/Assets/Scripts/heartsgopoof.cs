@@ -94,4 +94,9 @@ public class heartsgopoof : MonoBehaviour
         yield return new WaitForSeconds(invincibilityDuration);
         isInvincible = false;
     }
+
+    public void Invincibility()
+    {
+        StartCoroutine(InvincibilityCooldown());
+    }
 }
