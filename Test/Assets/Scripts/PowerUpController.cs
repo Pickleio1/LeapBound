@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
@@ -7,6 +8,8 @@ using UnityEngine.Tilemaps;
 public class PowerUpController : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject forceFieldPrefab;
+    private GameObject forcefieldGameObject;
     public Transform shootingPoint;
     public int projectileDamage = 1; // Damage value of the projectile
 
@@ -15,12 +18,18 @@ public class PowerUpController : MonoBehaviour
 
     public bool isTeleportActive = false;
     public bool isTeleportUpgraded = false;
+    public bool isForcefieldPowerActive = false;
+    public bool isForcefieldPowerUpgraded = false;
+    public float forcefieldCooldownBase = 5f;
+    public float forcefieldCooldownUpgraded = 3f;
+    private float lastForcefieldActivationTime = -5f;
+    public float forcefieldDuration = 3f;
     public float teleportCooldownBase = 5f;
     public float teleportCooldownUpgraded = 4f;
     public float teleportDistanceBase = 4f;
     public float teleportDistanceUpgraded = 5f;
 
-
+    public bool isInvulnerable = false;
 
     public float projectileCooldown = 5f;
     public float lastProjectileTime = -5f;
@@ -40,6 +49,11 @@ public class PowerUpController : MonoBehaviour
     private Vector3 teleportDirectionUpgraded = new Vector3(5f, 5f, 5f);
 
     private Tilemap tilemap;
+    public heartsgopoof Heartsgopoof;
+    public TouchingDirections touchingDirections;
+    private Transform playerTransform;
+    public Rigidbody2D rb;
+
 
     private void Awake()
     {
@@ -52,6 +66,10 @@ public class PowerUpController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Heartsgopoof = FindObjectOfType<heartsgopoof>();
+        touchingDirections = FindObjectOfType<TouchingDirections>();
+        rb = FindObjectOfType<Rigidbody2D>();
     }
 
     private void OnEnable()
@@ -80,7 +98,8 @@ public class PowerUpController : MonoBehaviour
 
         if (playerController != null)
         {
-            shootingPoint = playerController.transform.Find("ShootingPoint");
+            playerTransform = playerController.transform;
+            shootingPoint = playerTransform.Find("ShootingPoint");
             if (shootingPoint == null)
             {
                 Debug.LogError("ShootingPoint not found under Player. Check the hierarchy.");
@@ -150,6 +169,24 @@ public class PowerUpController : MonoBehaviour
     public void ToggleTeleportPower()
     {
         isTeleportActive = !isTeleportActive;
+    }
+
+    public void ToggleForceFieldPower()
+    {
+        isForcefieldPowerActive = !isForcefieldPowerActive;
+    }
+
+    public void UpgradeForceFieldPower()
+    {
+        if (isForcefieldPowerActive == true)
+        {
+            isForcefieldPowerUpgraded =!isForcefieldPowerUpgraded;
+            Debug.Log("Power-Upgrade successfully upgraded");
+        }
+        else
+        {
+            Debug.Log("Power-Upgrade failed. Base power must be active to upgrade.");
+        }
     }
 
     private void ShootProjectileBase()
@@ -469,5 +506,80 @@ private void PerformTeleport(Transform playerTransform, Vector2 facingDirection,
         {
             Debug.Log("Teleport cooldown not ready.");
         }
+    }
+    public void ActivateForcefield()
+    {
+        if (isForcefieldPowerActive && Time.time - lastForcefieldActivationTime >= (isForcefieldPowerUpgraded ? forcefieldCooldownUpgraded : forcefieldCooldownBase))
+        {
+            if (isPlayerGrounded() || isForcefieldPowerUpgraded)
+            {
+
+
+                StartCoroutine(TriggerForcefield());
+                lastForcefieldActivationTime = Time.time;
+            }
+            else
+            {
+                Debug.Log("Player must be grounded to activate the upgraded forcefield mid-air.");
+            }
+        }
+        else
+        {
+            Debug.Log("Forcefield cooldown not ready.");
+        }
+    }
+    private IEnumerator TriggerForcefield()
+    {
+        // Display circle forcefield around the player
+        ShowForcefield();
+
+        // Store the player's current velocity to restore later
+        Vector2 originalVelocity = playerController.rb.velocity;
+
+        // Set the player's velocity to a reduced speed
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+
+        // Make player invincible
+        SetInvulnerable(true);
+
+        yield return new WaitForSeconds(forcefieldDuration);
+
+        // Reset invincibility status after forcefield ends
+        SetInvulnerable(false);
+
+        // Restore the player's original velocity
+        playerController.rb.velocity = originalVelocity;
+
+        // Hide the forcefield
+        HideForcefield();
+    }
+    private bool isPlayerGrounded()
+    {
+        if (touchingDirections.IsGrounded)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void ShowForcefield()
+    {
+        // Instantiate the forcefield prefab and attach it to the player
+        forcefieldGameObject = Instantiate(forceFieldPrefab, playerTransform.position, Quaternion.identity);
+        forcefieldGameObject.transform.SetParent(playerTransform);
+    }
+    private void HideForcefield()
+    {
+        // Destroy the forcefield GameObject
+        Destroy(forcefieldGameObject);
+    }
+
+    private void SetInvulnerable(bool invulnerable)
+    {
+        Heartsgopoof.Invincibility();
+        isInvulnerable = invulnerable;
     }
 }

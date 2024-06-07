@@ -341,6 +341,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ActivateForcefield()
+    {
+        if (powerUpController != null && powerUpController.isForcefieldPowerActive)
+        {
+            powerUpController.ActivateForcefield();
+        }
+        else
+        {
+            Debug.Log("Forcefield power is not active.");
+        }
+    }
+
+    public void OnActivateForcefield(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            ActivateForcefield();
+        }
+    }
+
     private void DestroyProjectile()
     {
         // Add logic to destroy the projectileGameObject

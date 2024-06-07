@@ -45,17 +45,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2935597724026805304, guid: 6cf9a5e12526ca4499d3679310867b90, type: 3}
+  forceFieldPrefab: {fileID: 170711585450550924, guid: 5471006286380d54685b51b4750b5b92, type: 3}
   shootingPoint: {fileID: 0}
   projectileDamage: 1
   isProjectilePowerActive: 0
   isProjectilePowerUpgraded: 0
   isTeleportActive: 0
   isTeleportUpgraded: 0
+  isForcefieldPowerActive: 0
+  isForcefieldPowerUpgraded: 0
+  forcefieldCooldownBase: 10
+  forcefieldCooldownUpgraded: 8
+  forcefieldDuration: 3
   teleportCooldownBase: 5
   teleportCooldownUpgraded: 4
   teleportDistanceBase: 4
   teleportDistanceUpgraded: 6
+  isInvulnerable: 0
   projectileCooldown: 1
   lastProjectileTime: -5
   playerController: {fileID: 0}
   projectileAngle: 15
+  Heartsgopoof: {fileID: 0}
+  touchingDirections: {fileID: 0}
+  rb: {fileID: 0}
