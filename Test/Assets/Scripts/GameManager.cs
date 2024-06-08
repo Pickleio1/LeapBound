@@ -4,10 +4,12 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-    public int CurrentPoints { get; private set; }
+    public static GameManager Instance { get; set; }
+    public int CurrentPoints { get; set; }
 
-    private void Awake()
+    public PowerUpController powerUpController;
+
+    public void Awake()
     {
         if (Instance == null)
         {
@@ -21,6 +23,7 @@ public class GameManager : MonoBehaviour
 
         // Load the points from PlayerPrefs or a persistent data storage system
         LoadPoints();
+        powerUpController = FindObjectOfType<PowerUpController>();
     }
 
     public void AddPoints(int points)
@@ -29,13 +32,13 @@ public class GameManager : MonoBehaviour
         SavePoints();
     }
 
-    private void SavePoints()
+    public void SavePoints()
     {
         // Save the points to PlayerPrefs or a persistent data storage system
         PlayerPrefs.SetInt("PointsKey", CurrentPoints);
     }
 
-    private void LoadPoints()
+    public void LoadPoints()
     {
         // Load the points from PlayerPrefs or a persistent data storage system
         CurrentPoints = PlayerPrefs.GetInt("PointsKey", 0);

@@ -53,6 +53,7 @@ public class PowerUpController : MonoBehaviour
     public TouchingDirections touchingDirections;
     private Transform playerTransform;
     public Rigidbody2D rb;
+    public GameManager gameManager;
 
 
     private void Awake()
@@ -70,6 +71,98 @@ public class PowerUpController : MonoBehaviour
         Heartsgopoof = FindObjectOfType<heartsgopoof>();
         touchingDirections = FindObjectOfType<TouchingDirections>();
         rb = FindObjectOfType<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    public void buyProjectilepowerBase()
+    {
+        if (gameManager.CurrentPoints >= 50)
+        {
+            isProjectilePowerActive = true;
+            gameManager.CurrentPoints -= 50;
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
+
+    }
+
+    public void buyProjectilePowerUpgraded()
+    {
+        if ((gameManager.CurrentPoints >= 100) && isProjectilePowerActive == true)
+        {
+            isProjectilePowerUpgraded = true;
+            gameManager.CurrentPoints -= 100;
+        }
+        if ((gameManager.CurrentPoints >=100) && isProjectilePowerActive == false)
+        {
+            Debug.Log("You don't have the base power");
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
+    }
+
+    public void buyForcefieldPowerBase()
+    {
+        if (gameManager.CurrentPoints >= 50)
+        {
+            isForcefieldPowerActive = true;
+            gameManager.CurrentPoints -= 50;
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
+    }
+
+    public void buyForcefieldPowerUpgraded()
+    {
+        if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == true)
+        {
+            isForcefieldPowerUpgraded = true;
+            gameManager.CurrentPoints -= 100;
+        }
+        if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == false)
+        {
+            Debug.Log("You don't have the base power");
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
+    }
+
+    public void buyTeleportPowerBase()
+    {
+        if (gameManager.CurrentPoints >= 50)
+        {
+            isTeleportActive = true;
+            gameManager.CurrentPoints -= 50;
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
+    }
+    
+    public void buyTeleportPowerUpgraded()
+    {
+        if ((gameManager.CurrentPoints >= 100) && isTeleportActive == true)
+        {
+            isTeleportUpgraded = true;
+            gameManager.CurrentPoints -= 100;
+        }
+        if ((gameManager.CurrentPoints >= 100) && isTeleportActive == false)
+        {
+            Debug.Log("You don't have the base power");
+        }
+        else
+        {
+            Debug.Log("You don't have enough points.");
+        }
     }
 
     private void OnEnable()
