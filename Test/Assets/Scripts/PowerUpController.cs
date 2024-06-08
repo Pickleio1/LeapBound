@@ -54,6 +54,7 @@ public class PowerUpController : MonoBehaviour
     private Transform playerTransform;
     public Rigidbody2D rb;
     public GameManager gameManager;
+    public PointsController pointsController;
 
 
     private void Awake()
@@ -72,96 +73,160 @@ public class PowerUpController : MonoBehaviour
         touchingDirections = FindObjectOfType<TouchingDirections>();
         rb = FindObjectOfType<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
+        pointsController = FindObjectOfType<PointsController>();
     }
 
     public void buyProjectilepowerBase()
     {
-        if (gameManager.CurrentPoints >= 50)
+        if (gameManager.CurrentPoints >= 50 && isProjectilePowerActive == false)
         {
             isProjectilePowerActive = true;
             gameManager.CurrentPoints -= 50;
+            pointsController.UpdatePointsText();
+            return;
+        }
+        if (isProjectilePowerActive == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
 
     }
 
     public void buyProjectilePowerUpgraded()
     {
-        if ((gameManager.CurrentPoints >= 100) && isProjectilePowerActive == true)
+        if ((gameManager.CurrentPoints >= 100) && isProjectilePowerActive == true && isProjectilePowerUpgraded == false)
         {
             isProjectilePowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
+            pointsController.UpdatePointsText();
+            return;
         }
         if ((gameManager.CurrentPoints >=100) && isProjectilePowerActive == false)
         {
             Debug.Log("You don't have the base power");
+            return;
+        }
+        if (isProjectilePowerUpgraded == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
     }
 
     public void buyForcefieldPowerBase()
     {
-        if (gameManager.CurrentPoints >= 50)
+        if (gameManager.CurrentPoints >= 50 && isForcefieldPowerActive == false)
         {
             isForcefieldPowerActive = true;
             gameManager.CurrentPoints -= 50;
+            pointsController.UpdatePointsText();
+            return;
+        }
+        if (isForcefieldPowerActive == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
     }
 
     public void buyForcefieldPowerUpgraded()
     {
-        if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == true)
+        if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == true && isForcefieldPowerUpgraded == false)
         {
             isForcefieldPowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
+            pointsController.UpdatePointsText();
+            return;
         }
         if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == false)
         {
             Debug.Log("You don't have the base power");
+            return;
+        }
+        if (isForcefieldPowerUpgraded == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
     }
 
     public void buyTeleportPowerBase()
     {
-        if (gameManager.CurrentPoints >= 50)
+        if (gameManager.CurrentPoints >= 50 && isTeleportActive == false)
         {
             isTeleportActive = true;
             gameManager.CurrentPoints -= 50;
+            pointsController.UpdatePointsText();
+            return;
+        }
+        if (isTeleportActive == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
     }
     
     public void buyTeleportPowerUpgraded()
     {
-        if ((gameManager.CurrentPoints >= 100) && isTeleportActive == true)
+        if ((gameManager.CurrentPoints >= 100) && isTeleportActive == true && isTeleportUpgraded == false)
         {
             isTeleportUpgraded = true;
             gameManager.CurrentPoints -= 100;
+            pointsController.UpdatePointsText();
+            return;
         }
         if ((gameManager.CurrentPoints >= 100) && isTeleportActive == false)
         {
             Debug.Log("You don't have the base power");
+            return;
+        }
+        if (isTeleportUpgraded == true)
+        {
+            gameManager.CurrentPoints = gameManager.CurrentPoints;
+            pointsController.UpdatePointsText();
+            Debug.Log("You already have the upgraded power");
+            return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            return;
         }
     }
 

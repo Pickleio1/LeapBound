@@ -44,7 +44,7 @@ public class PointsController : MonoBehaviour
         }
     }
 
-    private void UpdatePointsText()
+    public void UpdatePointsText()
     {
         if (pointsText != null)
         {
