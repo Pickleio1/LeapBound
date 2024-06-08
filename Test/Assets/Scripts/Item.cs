@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Item : MonoBehaviour
 {    
-    public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume, Shop }
+    public enum InteractionType { NONE, PickUp, Examine, GrabDrop, Consume, Shop, Key }
     public enum ItemType { Static, Consumables }
     
     [Header("Attributes")]
@@ -21,10 +21,12 @@ public class Item : MonoBehaviour
     public UnityEvent consumeEvent;
 
     private InteractionSystem interactionSystem; // Reference to InteractionSystem script
+    private LevelLoader levelLoader;
 
     private void Start()
     {
         interactionSystem = FindObjectOfType<InteractionSystem>(); // Find and store the InteractionSystem script reference
+        levelLoader = FindObjectOfType<LevelLoader>(); // Find and store the LevelLoader script reference
     }
 
     private void Reset()
@@ -58,6 +60,17 @@ public class Item : MonoBehaviour
                     }
                 }
                 gameObject.SetActive(false); // Disable the item after consumption
+                break;
+            case InteractionType.Key:
+                consumeEvent.Invoke(); // Trigger the consume event
+                if (type == ItemType.Consumables)
+                {
+                    if (levelLoader != null)
+                    {
+                        levelLoader.KeyItemInteracted(this.gameObject); // Call the KeyItemInteracted method in the LevelLoader script
+                    }
+                }
+                gameObject.SetActive(false); // Disable the item after interaction
                 break;
             case InteractionType.Shop:
                 interactionSystem.ShopItem(this);
