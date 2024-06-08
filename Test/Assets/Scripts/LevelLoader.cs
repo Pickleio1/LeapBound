@@ -17,6 +17,8 @@ public class LevelLoader : MonoBehaviour
     public bool hasInteractedWithAllKeyItems = false; // Track if the player has interacted with all the required key items
     private GameManager gameManager;
     public List<GameObject> interactedKeyItems = new List<GameObject>(); // List to store interacted key items
+    public GameObject killEnemiesCanvas;
+    public GameObject findKeyItemsCanvas;
 
     void Awake()
     {
@@ -36,11 +38,15 @@ public class LevelLoader : MonoBehaviour
                     {
                         LoadLevel(loadLevelIndex + 1);
                         previousPointsCount = gameManager.CurrentPoints;
+                        killEnemiesCanvas.SetActive(false); // Hide the "kill enemies" canvas
+                        findKeyItemsCanvas.SetActive(false); // Hide the "find key items" canvas
                     }
                     else
                     {
                         // Display a message to the player, or do something else
                         Debug.Log($"You must increase your points by at least {requiredPointsIncrease} to load the next level.");
+                        killEnemiesCanvas.SetActive(true); // Show the "kill enemies" canvas
+                        findKeyItemsCanvas.SetActive(false); // Hide the "find key items" canvas
                     }
                 }
                 else if (requireKeyItemInteraction)
@@ -49,17 +55,23 @@ public class LevelLoader : MonoBehaviour
                     if (hasInteractedWithAllKeyItems)
                     {
                         LoadLevel(loadLevelIndex + 1);
+                        killEnemiesCanvas.SetActive(false); // Hide the "kill enemies" canvas
+                        findKeyItemsCanvas.SetActive(false); // Hide the "find key items" canvas
                     }
                     else
                     {
                         // Display a message to the player, or do something else
                         Debug.Log($"You must interact with all the required key items to load the next level.");
+                        killEnemiesCanvas.SetActive(false); // Hide the "kill enemies" canvas
+                        findKeyItemsCanvas.SetActive(true); // Show the "find key items" canvas
                     }
                 }
                 else
                 {
                     // Load the next level without any requirements
                     LoadLevel(loadLevelIndex + 1);
+                    killEnemiesCanvas.SetActive(false); // Hide the "kill enemies" canvas
+                    findKeyItemsCanvas.SetActive(false); // Hide the "find key items" canvas
                 }
             }
         }
@@ -94,5 +106,15 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void HideKillEnemiesCanvas()
+    {
+        killEnemiesCanvas.SetActive(false);
+    }
+
+    public void HideFindKeyItemsCanvas()
+    {
+        findKeyItemsCanvas.SetActive(false);
     }
 }
