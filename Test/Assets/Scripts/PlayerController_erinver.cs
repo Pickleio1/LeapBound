@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections))]
 public class PlayerController : MonoBehaviour
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
     float stunTimer = 0;
     public float landingStunDuration = 1f;
     bool wasInAir = false;
-    bool quickDropInitiated = false;
+    
+    
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayer;
@@ -62,6 +64,20 @@ public class PlayerController : MonoBehaviour
             {   //Speed into Wall = 0
                 return 0;
             }
+        }
+    }
+
+    private bool quickDropInitiated = false;
+
+    public bool quickDrop
+    {
+        get
+        {
+            return quickDropInitiated;
+        } private set
+        {
+            quickDropInitiated = value;
+            animator.SetBool(AnimationStrings.QuickDrop, value);
         }
     }
 
@@ -177,10 +193,10 @@ public class PlayerController : MonoBehaviour
         }
 
         
-        if (touchingDirections.IsGrounded && wasInAir && quickDropInitiated)
+        if (touchingDirections.IsGrounded && wasInAir && quickDrop)
         {
             StartStun(landingStunDuration); 
-            quickDropInitiated = false; 
+            quickDrop = false; 
         }
 
         wasInAir = !touchingDirections.IsGrounded; 
@@ -392,7 +408,8 @@ public class PlayerController : MonoBehaviour
         stunTimer = duration;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
         applyFastDrop = true; 
-        quickDropInitiated = true; 
+        quickDrop = true;
+
     }
 
     public float GetVerticalInput()
@@ -418,11 +435,11 @@ public class PlayerController : MonoBehaviour
 
     void ApplyQuickDrop()
     {
-        if (quickDropInitiated)
+        if (quickDrop)
         {
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Re-confirm rotation lock
-        rb.velocity = new Vector2(0, -fastDropSpeed); // Quick drop only affects vertical speed
-        quickDropInitiated = false;  // Reset quick drop state
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation; // Re-confirm rotation lock
+            rb.velocity = new Vector2(0, -fastDropSpeed); // Quick drop only affects vertical speed
+            quickDrop = false;  // Reset quick drop state
         }
     }
 
