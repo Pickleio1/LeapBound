@@ -11,6 +11,7 @@ public class enemymove : MonoBehaviour
     private Rigidbody2D rigidbody2;
     Collider2D collider2;
     private Transform startingpoint;
+    public enemyhealth enemy;
 
 
     // Start is called before the first frame update
@@ -24,29 +25,32 @@ public class enemymove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+            Vector2 point = startingpoint.transform.position - transform.position;
+            if (startingpoint == PointB.transform)
+            {
+                rigidbody2.velocity = new Vector2(speed, 0);
+            }
+            if (startingpoint == PointA.transform)
+            {
+                rigidbody2.velocity = new Vector2(-speed, 0);
+            }
+            //making it move between two points
+            if (startingpoint == PointA.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
+            {
+                flip();
+                startingpoint = PointB.transform;
+            }
+            if (startingpoint == PointB.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
+            {
+                flip();
+                startingpoint = PointA.transform;
+            }
+
+        
         //move to a point
-        Vector2 point = startingpoint.transform.position - transform.position;
-        if (startingpoint == PointB.transform)
-        {
-            rigidbody2.velocity = new Vector2(speed, 0);
-        }
-        if (startingpoint == PointA.transform)
-        {
-            rigidbody2.velocity = new Vector2(-speed, 0);
-        }
-        //making it move between two points
-        if (startingpoint == PointA.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
-        {
-            flip();
-            startingpoint = PointB.transform;
-        }
-        if (startingpoint == PointB.transform && Vector2.Distance(transform.position, startingpoint.position) < 0.5f)
-        {
-            flip();
-            startingpoint = PointA.transform;
-        }
 
-
+        
     }
 
     private void flip()

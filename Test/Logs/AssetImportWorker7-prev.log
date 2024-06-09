@@ -15,7 +15,7 @@ C:/Users/User/Projects/LeapBound/Test
 -logFile
 Logs/AssetImportWorker7.log
 -srvPort
-54220
+63823
 Successfully changed project path to: C:/Users/User/Projects/LeapBound/Test
 C:/Users/User/Projects/LeapBound/Test
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/User/Projects/LeapBound/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [4740] Host "[IP] 192.168.68.112 [Port] 0 [Flags] 2 [Guid] 1076322531 [EditorId] 1076322531 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [10128] Host "[IP] 10.193.113.229 [Port] 0 [Flags] 2 [Guid] 3812060501 [EditorId] 3812060501 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [4740] Host "[IP] 192.168.68.112 [Port] 0 [Flags] 2 [Guid] 1076322531 [EditorId] 1076322531 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [10128] Host "[IP] 10.193.113.229 [Port] 0 [Flags] 2 [Guid] 3812060501 [EditorId] 3812060501 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
-Refreshing native plugins compatible for Editor in 15.22 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 16.84 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.24f1 (334eb2a0b267)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -70,44 +70,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56052
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007523 seconds.
-- Loaded All Assemblies, in  0.337 seconds
+Registered in 0.009178 seconds.
+- Loaded All Assemblies, in  0.387 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.282 seconds
-Domain Reload Profiling: 614ms
-	BeginReloadAssembly (101ms)
+- Finished resetting the current domain, in  0.279 seconds
+Domain Reload Profiling: 662ms
+	BeginReloadAssembly (121ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (66ms)
-	LoadAllAssembliesAndSetupDomain (120ms)
-		LoadAssemblies (97ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (144ms)
+		LoadAssemblies (116ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (119ms)
-			TypeCache.Refresh (117ms)
-				TypeCache.ScanAssembly (105ms)
+		AnalyzeDomain (141ms)
+			TypeCache.Refresh (140ms)
+				TypeCache.ScanAssembly (126ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (282ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (279ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (222ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (13ms)
-			SetLoadedEditorAssemblies (10ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (146ms)
-			ProcessInitializeOnLoadMethodAttributes (49ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (154ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,55 +115,55 @@ Domain Reload Profiling: 614ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.871 seconds
-Refreshing native plugins compatible for Editor in 11.47 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.833 seconds
+Refreshing native plugins compatible for Editor in 14.24 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.026 seconds
-Domain Reload Profiling: 1889ms
-	BeginReloadAssembly (140ms)
+- Finished resetting the current domain, in  1.030 seconds
+Domain Reload Profiling: 1853ms
+	BeginReloadAssembly (169ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (18ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (638ms)
-		LoadAssemblies (392ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (53ms)
+	LoadAllAssembliesAndSetupDomain (558ms)
+		LoadAssemblies (401ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (328ms)
-			TypeCache.Refresh (259ms)
-				TypeCache.ScanAssembly (235ms)
-			ScanForSourceGeneratedMonoScriptInfo (51ms)
+		AnalyzeDomain (256ms)
+			TypeCache.Refresh (195ms)
+				TypeCache.ScanAssembly (177ms)
+			ScanForSourceGeneratedMonoScriptInfo (42ms)
 			ResolveRequiredComponents (16ms)
-	FinalizeReload (1026ms)
+	FinalizeReload (1031ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (839ms)
+		SetupLoadedEditorAssemblies (815ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (6ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (7ms)
+			SetLoadedEditorAssemblies (5ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (102ms)
-			ProcessInitializeOnLoadAttributes (643ms)
-			ProcessInitializeOnLoadMethodAttributes (71ms)
+			BeforeProcessingInitializeOnLoad (93ms)
+			ProcessInitializeOnLoadAttributes (626ms)
+			ProcessInitializeOnLoadMethodAttributes (73ms)
 			AfterProcessingInitializeOnLoad (11ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 15.09 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 11.68 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6292 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 105 unused Assets / (423.6 KB). Loaded Objects now: 6753.
-Memory consumption went from 241.1 MB to 240.7 MB.
-Total: 8.657000 ms (FindLiveObjects: 0.913100 ms CreateObjectMapping: 0.182000 ms MarkObjects: 7.262900 ms  DeleteObjects: 0.297400 ms)
+Unloading 105 unused Assets / (423.0 KB). Loaded Objects now: 6753.
+Memory consumption went from 241.2 MB to 240.8 MB.
+Total: 4.971600 ms (FindLiveObjects: 0.443600 ms CreateObjectMapping: 0.324100 ms MarkObjects: 3.834700 ms  DeleteObjects: 0.367600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -178,112 +178,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 242205.579369 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0001.png
-  artifactKey: Guid(a3e0006f30e17b6479064db3d46aa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0001.png using Guid(a3e0006f30e17b6479064db3d46aa72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c634f0cb89c4742cb3c551139778213') in 0.103897 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.044681 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0002.png
-  artifactKey: Guid(739b375a8f2d8784f9d3c3c89a7cd41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0002.png using Guid(739b375a8f2d8784f9d3c3c89a7cd41a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e70bc778832ec5c7d443b42a3bbe52dc') in 0.011106 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.948094 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0006.png
-  artifactKey: Guid(41f5c72d44685e84ba123d561eab9918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0006.png using Guid(41f5c72d44685e84ba123d561eab9918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d2233907eba181001485e8415b94642') in 0.008730 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0011.png
-  artifactKey: Guid(e6e5124c5f2676947b808650b8f871b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0011.png using Guid(e6e5124c5f2676947b808650b8f871b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f78967918bbdf3c9a4114f627b7fc81') in 0.009113 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0016.png
-  artifactKey: Guid(1b257553fe7e8e14684eee150a112d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0016.png using Guid(1b257553fe7e8e14684eee150a112d9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db2d3b694f75ca23190055ed2b6341e6') in 0.009072 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000117 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0015.png
-  artifactKey: Guid(1a296323931f6174793a39e3c409621e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0015.png using Guid(1a296323931f6174793a39e3c409621e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2aa6ea03d69046acad5cb378708407a7') in 0.008093 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0018.png
-  artifactKey: Guid(c277b64213508be409b6cfcc698b492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0018.png using Guid(c277b64213508be409b6cfcc698b492d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f99d06f322b89cb2e6a6b2df44fcd11') in 0.008974 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0014.png
-  artifactKey: Guid(8519a1a12d4ffe443907c8875eded16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0014.png using Guid(8519a1a12d4ffe443907c8875eded16e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40101f7917adc10c46bc4296afa5d47f') in 0.008980 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0017.png
-  artifactKey: Guid(fb8e7b223f0c84944a9fd7470b1b0e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0017.png using Guid(fb8e7b223f0c84944a9fd7470b1b0e62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6d98d0c6c9d9e32812ef50720de560d') in 0.008940 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0008.png
-  artifactKey: Guid(79196a31b9334404d81fd6f3e50ad0de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0008.png using Guid(79196a31b9334404d81fd6f3e50ad0de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee8968dbfbdab01165d36284c3e8dde2') in 0.008556 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0012.png
-  artifactKey: Guid(b44d8f81f4d8a57429fa00e931c67f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0012.png using Guid(b44d8f81f4d8a57429fa00e931c67f48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97334f286014c7817964bba15515ea7d') in 0.006770 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.248741 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0023.png
-  artifactKey: Guid(1459e9f779e48b34fa8fa5a624fdd0d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0023.png using Guid(1459e9f779e48b34fa8fa5a624fdd0d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa36528c01af0c8af792fa48c953815a') in 0.011886 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000077 seconds.
-  path: Assets/Art/Character/playerDeath/playerDeath_0024.png
-  artifactKey: Guid(d147f0ef230593346a81b344b867e0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Character/playerDeath/playerDeath_0024.png using Guid(d147f0ef230593346a81b344b867e0f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '716d99529fefe2dc536a8eac8ec4cb39') in 0.009590 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.644 seconds
-Refreshing native plugins compatible for Editor in 10.71 ms, found 4 plugins.

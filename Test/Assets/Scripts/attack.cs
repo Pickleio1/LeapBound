@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -8,7 +9,7 @@ public class attack : MonoBehaviour
     public GameObject bullettt;
     public Transform bulletposition;
     public float range;
-
+    public Animator animator;
     private float spawntime;
     private GameObject player;
     
@@ -16,6 +17,7 @@ public class attack : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -36,7 +38,10 @@ public class attack : MonoBehaviour
 
     void copyshoot()
     {
+        animator.SetTrigger(AnimationStrings.enemyAttack);
+        Time.timeScale = 1f;
         Instantiate(bullettt, bulletposition.position, Quaternion.identity);
+
     }
 
 }
