@@ -12,6 +12,13 @@ public class enemyhealth : MonoBehaviour
     private bool _enemyIsDead = false;
     private Rigidbody rb;
 
+    public PointsController pointsController ;
+
+    public void Awake()
+    {
+        pointsController = FindObjectOfType<PointsController>();
+    }
+
     public bool IsDead
     {
         get { return _enemyIsDead; } private set
@@ -25,7 +32,7 @@ public class enemyhealth : MonoBehaviour
 
     void StartCoroutine()
     {
-        StartCoroutine(Die(4));
+        StartCoroutine(Die(3));
     }
 
     IEnumerator Die(float duration)
@@ -35,6 +42,9 @@ public class enemyhealth : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         Destroy(gameObject);
+
+        pointsController.EnemyKilled(pointsForKill); 
+
     }
 
 

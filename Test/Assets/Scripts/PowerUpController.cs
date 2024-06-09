@@ -4,6 +4,7 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PowerUpController : MonoBehaviour
 {
@@ -55,6 +56,13 @@ public class PowerUpController : MonoBehaviour
     public Rigidbody2D rb;
     public GameManager gameManager;
     public PointsController pointsController;
+    public Button projectileButton;
+    public Button forceFieldButton;
+    public Button teleportButton;
+    public Button projectileupgradedButton;
+    public Button forceFieldupgradedButton;
+    public Button teleportupgradedButton;
+
 
 
     private void Awake()
@@ -74,6 +82,12 @@ public class PowerUpController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
         pointsController = FindObjectOfType<PointsController>();
+        projectileButton =  GameObject.Find("ProjectileButton").GetComponent<Button>();
+        forceFieldButton = GameObject.Find("ForcefieldButton").GetComponent<Button>();
+        teleportButton = GameObject.Find("TeleportButton").GetComponent<Button>();
+        projectileupgradedButton = GameObject.Find("ProjectileUpgradedButton").GetComponent<Button>();
+        forceFieldupgradedButton = GameObject.Find("ForcefieldUpgradedButton").GetComponent<Button>();
+        teleportupgradedButton = GameObject.Find("TeleportUpgradedButton").GetComponent<Button>();
     }
 
     public void buyProjectilepowerBase()
@@ -83,6 +97,7 @@ public class PowerUpController : MonoBehaviour
             isProjectilePowerActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            projectileButton.image.color = Color.gray;
             return;
         }
         if (isProjectilePowerActive == true)
@@ -107,6 +122,7 @@ public class PowerUpController : MonoBehaviour
             isProjectilePowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            projectileupgradedButton.image.color = Color.gray;
             return;
         }
         if ((gameManager.CurrentPoints >=100) && isProjectilePowerActive == false)
@@ -135,6 +151,7 @@ public class PowerUpController : MonoBehaviour
             isForcefieldPowerActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            forceFieldButton.image.color = Color.gray;
             return;
         }
         if (isForcefieldPowerActive == true)
@@ -158,6 +175,7 @@ public class PowerUpController : MonoBehaviour
             isForcefieldPowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            forceFieldupgradedButton.image.color = Color.gray;
             return;
         }
         if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == false)
@@ -186,6 +204,7 @@ public class PowerUpController : MonoBehaviour
             isTeleportActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            teleportButton.image.color = Color.gray;
             return;
         }
         if (isTeleportActive == true)
@@ -209,6 +228,7 @@ public class PowerUpController : MonoBehaviour
             isTeleportUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            teleportupgradedButton.image.color = Color.gray;
             return;
         }
         if ((gameManager.CurrentPoints >= 100) && isTeleportActive == false)

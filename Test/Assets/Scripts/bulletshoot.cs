@@ -44,7 +44,7 @@ public class bulletshoot : MonoBehaviour
     {
 
 
-        if (cooldown > 2)
+        if (cooldown > 2 && enemyhealth.IsDead == true) 
         {
             canattack = false;
             cooldown = 0;
