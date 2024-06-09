@@ -9,6 +9,9 @@ public class GameOverScreen : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public GameManager gameManager;
+    public LevelLoader levelLoader;
+    private int levelIndex = 1;
+
 
     public void Awake()
     {
@@ -24,7 +27,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void TryAgain()
     {
-        GameManager.Instance.RestartGame();
+        levelLoader.LoadLevel(levelIndex);
     }
 
     public void Exit()
@@ -32,8 +35,8 @@ public class GameOverScreen : MonoBehaviour
         Application.Quit();
     }
 
-    public void MainMenu()
+    public void MainMenu(int levelIndex)
     {
-        SceneManager.LoadScene(0);
+        levelLoader.LoadLevel(levelIndex);
     }
 }

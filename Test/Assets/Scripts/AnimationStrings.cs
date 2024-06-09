@@ -11,4 +11,12 @@ internal class AnimationStrings
     internal static string HitTrigger = "IsHit";
     internal static string QuickDrop = "QuickDrop";
     internal static string IsDead = "IsDead";
+    internal static string MainMenu = "MainMenu";
+    internal static string enemyAttack = "enemyAttack";
+    internal static string enemyHit = "enemyHit";
+    internal static string enemyIsDead = "enemyIsDead";
+
+
+
+
 }
