@@ -684,9 +684,9 @@ RectTransform:
   - {fileID: 797922914}
   m_Father: {fileID: 534491283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30.799988, y: 21.699982}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 325.5, y: -196.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &559194721
@@ -10746,6 +10746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SettingsMenuUI: {fileID: 1651484068}
+  levelLoader: {fileID: 0}
 --- !u!1 &1314307841
 GameObject:
   m_ObjectHideFlags: 0
@@ -11277,12 +11278,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3908825163160275629, guid: 7ff094d8ffecf2f46b35bfcf282ab09f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908825163160275629, guid: 7ff094d8ffecf2f46b35bfcf282ab09f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3908825163160275629, guid: 7ff094d8ffecf2f46b35bfcf282ab09f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -0.000061035
+      value: -0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 3908825163160275629, guid: 7ff094d8ffecf2f46b35bfcf282ab09f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -0.000030518
+      value: -0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 3908825163160275629, guid: 7ff094d8ffecf2f46b35bfcf282ab09f, type: 3}
       propertyPath: m_AnchoredPosition.x
