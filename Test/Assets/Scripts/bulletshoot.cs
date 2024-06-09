@@ -11,6 +11,7 @@ public class bulletshoot : MonoBehaviour
 
     private GameObject player;
     private Rigidbody2D rb2d;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class bulletshoot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");                          //direct the
         Vector3 direction = player.transform.position - transform.position;           //attack towards
         rb2d.velocity = new Vector2(direction.x, direction.y).normalized * force;      //the player
+
     }
 
     // Update is called once per frame
@@ -30,7 +32,8 @@ public class bulletshoot : MonoBehaviour
         {
             AttackPlayer();
         }
-        
+
+       
     }
 
    
@@ -38,17 +41,14 @@ public class bulletshoot : MonoBehaviour
     void AttackPlayer()  //attacks and cooldown between attacks
     {
 
+       
+
         if (cooldown > 2)
         {
 
             cooldown = 0;
         }
-        else
-        {
-
-            Vector2 direction = (player.transform.position - transform.position);
-
-        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
