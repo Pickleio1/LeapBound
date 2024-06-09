@@ -11,10 +11,24 @@ public class heartsgopoof : MonoBehaviour
     public GameObject bullet;
     public GameObject[] heart;
     Animator animator;
-    private bool isDead = false;
     public float invincibilityDuration = 2f;
     private bool isInvincible = false;
+    public Animator Death;
 
+    private bool isDead = false;
+
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+        }
+        private set
+        {
+            isDead = value;
+            animator.SetBool(AnimationStrings.IsDead, value);
+        }
+    }
     void Start()
     {
         currentLife = 3; // Set the starting current life
@@ -25,9 +39,9 @@ public class heartsgopoof : MonoBehaviour
 
     void Update()
     {
-        if (currentLife <= 0 && !isDead)
+        if (currentLife <= 0 && !IsDead)
         {
-            isDead = true;
+            IsDead = true;
             SceneManager.LoadScene("Game Over");
             Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
