@@ -48,11 +48,7 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-    public void MainMenu()
-    {
-        SceneManager.LoadScene(0);
-    }
-
+   
     public void Quit()
     {
         Application.Quit();
