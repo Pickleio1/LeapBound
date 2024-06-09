@@ -11,13 +11,9 @@ public class bulletshoot : MonoBehaviour
     public float force;
     public GameObject enemy;
 
-    public float range;
-    public float cooldown;
-    public float force;
-
-    private GameObject player;
-    private Rigidbody2D rb2d;
-    private float timer;
+    [SerializeField] private GameObject player;
+    [SerializeField] private bool canattack;
+    private Rigidbody2D rb;
 
     public enemyhealth enemyhealth;
 
@@ -26,46 +22,47 @@ public class bulletshoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player");                          //direct the
-        Vector3 direction = player.transform.position - transform.position;           //attack towards
-        rb2d.velocity = new Vector2(direction.x, direction.y).normalized * force;      //the player
-
+        rb = GetComponent<Rigidbody2D>(); 
+        player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 direction = player.transform.position - transform.position;
+        rb.velocity = new Vector2 (direction.x, direction.y).normalized * force;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(player.transform.position, transform.position);
+        
+         AttackPlayer();
 
-        if (distance < range)
-        {
-            AttackPlayer();
-        }
+        
 
-       
     }
 
-   
 
-    void AttackPlayer()  //attacks and cooldown between attacks
+    
+     void AttackPlayer()
     {
 
-       
 
-        if (cooldown > 2)
+        if (cooldown > 2 && enemyhealth.IsDead == true) 
         {
-
+            canattack = false;
             cooldown = 0;
         }
-        
+        else
+        {
+            canattack = true;
+            Vector2 direction = (player.transform.position - transform.position);
+
+        }
+
+
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void ResetCooldown()
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        canattack = true;
     }
+
+    
 }
