@@ -10,8 +10,12 @@ public class heartsgopoof : MonoBehaviour
     public int currentLife;
     public GameObject bullet;
     public GameObject[] heart;
+    public timerscript timer;
     Animator animator;
     private bool isDead = false;
+
+    private static bool Initialized;
+
 
     void Start()
     {
@@ -19,13 +23,35 @@ public class heartsgopoof : MonoBehaviour
         maxLives = 5; // Set the maximum lives threshold
         animator = GetComponent<Animator>();
         UpdateHealthUI();
+
+
+        if (Initialized == false)
+        {
+            currentLife = PlayerPrefs.GetInt("lifeu", maxLives);
+            Initialized = true;
+            DontDestroyOnLoad(gameObject);  // Prevent player from being destroyed when loading a new scene
+        }
+        else
+        {
+            currentLife = PlayerPrefs.GetInt("lifeu", currentLife);
+        }
+
+        UpdateHealthUI();
     }
 
     void Update()
     {
+        
         if (currentLife <= 0 && !isDead)
         {
             isDead = true;
+            PlayerPrefs.DeleteKey("lifeu");
+            Initialized = false;
+
+            Destroy(gameObject);    //destroy player
+
+            timerscript.Destroy(timer);    //stops timer when dead
+
             SceneManager.LoadScene("Game Over");
             Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
@@ -52,6 +78,7 @@ public class heartsgopoof : MonoBehaviour
         }
         
         UpdateHealthUI();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,11 +101,20 @@ public class heartsgopoof : MonoBehaviour
             if (i < currentLife)
             {
                 heart[i].SetActive(true);
+                PlayerPrefs.SetInt("lifeu", currentLife);
             }
             else
             {
                 heart[i].SetActive(false);
+                PlayerPrefs.SetInt("lifeu", currentLife);
             }
         }
     }
+
+    void OnApplicationQuit()  //reset life
+    {
+        PlayerPrefs.DeleteKey("lifeu");
+
+    }
+
 }
