@@ -1,57 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class bulletshoot : MonoBehaviour
 {
-    public GameObject bullet;
-    public float cooldown = 2f;
-    public float force;
-    
 
-    [SerializeField] private GameObject player;
-    [SerializeField] private bool canattack;
-    private Rigidbody2D rb;
+    public float range;
+    public float cooldown;
+    public float force;
+
+    private GameObject player;
+    private Rigidbody2D rb2d;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); 
-        player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 direction = player.transform.position - transform.position;
-        rb.velocity = new Vector2 (direction.x, direction.y).normalized * force;
+        rb2d = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");                          //direct the
+        Vector3 direction = player.transform.position - transform.position;           //attack towards
+        rb2d.velocity = new Vector2(direction.x, direction.y).normalized * force;      //the player
     }
 
     // Update is called once per frame
     void Update()
     {
-        AttackPlayer();
-       
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+
+        if (distance < range)
+        {
+            AttackPlayer();
+        }
+        
     }
 
-    void AttackPlayer()
+   
+
+    void AttackPlayer()  //attacks and cooldown between attacks
     {
-        
+
         if (cooldown > 2)
         {
-            canattack = false;
+
             cooldown = 0;
         }
         else
         {
-            canattack = true;
+
             Vector2 direction = (player.transform.position - transform.position);
 
         }
-
-    
     }
 
-    void ResetCooldown()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        canattack = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
-
-    
 }
