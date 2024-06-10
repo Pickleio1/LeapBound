@@ -154,14 +154,20 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D platformRb;
     public Animator animator;
     public enemyhealth enemyHealthScript;
+    public AudioManager audioManager;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         touchingDirections = GetComponent<TouchingDirections>();
         animator = GetComponent<Animator>();
-        powerUpController = FindObjectOfType<PowerUpController>();
         enemyHealthScript = FindObjectOfType<enemyhealth>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        GameObject powerUpObject = GameObject.FindGameObjectWithTag("PowerUp");
+            if (powerUpObject != null)
+            {
+                powerUpController = powerUpObject.GetComponent<PowerUpController>();
+            }
     }
 
 
@@ -185,6 +191,7 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.qKey.wasPressedThisFrame && !isStunned && !touchingDirections.IsGrounded)
         {
             StartAirStun(stunDuration);
+            audioManager.PlaySFX(audioManager.Quickdrop);
         }
 
         if (isStunned)
@@ -260,6 +267,7 @@ public class PlayerController : MonoBehaviour
         if (context.started && touchingDirections.IsGrounded && !isStunned)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            audioManager.PlaySFX(audioManager.jump);
         }
     }
 
@@ -296,6 +304,7 @@ public class PlayerController : MonoBehaviour
                 if (powerUpController.isProjectilePowerActive && !powerUpController.isProjectilePowerUpgraded)
                 {
                     powerUpController.AttemptToShootProjectileBase();
+                    audioManager.PlaySFX(audioManager.projectileshoot);
                     // Single projectile shooting when power is active but not upgraded
                     foreach (Collider2D enemy in hitEnemies)
                     {
@@ -310,6 +319,7 @@ public class PlayerController : MonoBehaviour
                 {
                     // Upgraded projectile shooting when power is both active and upgraded
                     powerUpController.AttemptToShootProjectileUpgraded();
+                    audioManager.PlaySFX(audioManager.projectileshoot);
 
                     foreach (Collider2D enemy in hitEnemies)
                     {
@@ -328,6 +338,7 @@ public class PlayerController : MonoBehaviour
                         if (enemy.CompareTag("Enemy"))
                         {
                             enemy.GetComponent<enemyhealth>().TakeDamage(damage);
+                            audioManager.PlaySFX(audioManager.Melee);
                             Debug.Log("Melee hit " + enemy.name);
                         }
                     }
@@ -341,6 +352,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             TeleportPlayer();
+            audioManager.PlaySFX(audioManager.teleport);
         }
     }
 
@@ -374,6 +386,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             ActivateForcefield();
+            audioManager.PlaySFX(audioManager.forcefield);
         }
     }
 

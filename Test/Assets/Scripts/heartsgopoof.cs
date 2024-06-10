@@ -15,7 +15,8 @@ public class heartsgopoof : MonoBehaviour
     private bool isInvincible = false;
     public Animator Death;
 
-    private bool isDead = false;
+    public bool isDead = false;
+    public AudioManager audioManager;
 
     public bool IsDead
     {
@@ -28,6 +29,11 @@ public class heartsgopoof : MonoBehaviour
             isDead = value;
             animator.SetBool(AnimationStrings.IsDead, value);
         }
+    }
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     void Start()
     {
@@ -42,6 +48,7 @@ public class heartsgopoof : MonoBehaviour
         if (currentLife <= 0 && !IsDead)
         {
             IsDead = true;
+            audioManager.PlaySFX(audioManager.die);
             SceneManager.LoadScene("Game Over");
             Debug.Log("Player is dead. Triggering GameOverScreen.");
         }
@@ -55,6 +62,7 @@ public class heartsgopoof : MonoBehaviour
         {
             currentLife -= damage;
             animator.SetTrigger(AnimationStrings.HitTrigger);
+            audioManager.PlaySFX(audioManager.takedamage);
             UpdateHealthUI();
             StartCoroutine(InvincibilityCooldown());
         }
