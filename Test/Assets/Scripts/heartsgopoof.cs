@@ -71,10 +71,12 @@ public class heartsgopoof : MonoBehaviour
         if (!isInvincible)
         {
             currentLife -= damage;
+            PlayerPrefs.SetInt("lifeu", currentLife);
             animator.SetTrigger(AnimationStrings.HitTrigger);
             UpdateHealthUI();
             StartCoroutine(InvincibilityCooldown());
         }
+        PlayerPrefs.SetInt("lifeu", currentLife);
     }
 
     public void AddLives(int livesToAdd)
@@ -82,10 +84,12 @@ public class heartsgopoof : MonoBehaviour
         if (currentLife + livesToAdd > maxLives)
         {
             currentLife = maxLives;
+            PlayerPrefs.SetInt("lifeu", currentLife);
         }
         else
         {
             currentLife += livesToAdd;
+            PlayerPrefs.SetInt("lifeu", currentLife);
         }
         
         UpdateHealthUI();
@@ -120,6 +124,7 @@ public class heartsgopoof : MonoBehaviour
                 PlayerPrefs.SetInt("lifeu", currentLife);
             }
         }
+        PlayerPrefs.SetInt("lifeu", currentLife);
     }
 
     private IEnumerator InvincibilityCooldown()
