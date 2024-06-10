@@ -60,16 +60,7 @@ public class heartsgopoof : MonoBehaviour
         
         if (currentLife <= 0 && !isDead)
         {
-            isDead = true;
-            PlayerPrefs.DeleteKey("lifeu");
-            Initialized = false;
-
-            Destroy(gameObject);    //destroy player
-
-            timerscript.Destroy(timer);    //stops timer when dead
-
-            SceneManager.LoadScene("Game Over");
-            Debug.Log("Player is dead. Triggering GameOverScreen.");
+            PlayerDeath();
         }
         
         Debug.Log("Current Lives: " + currentLife);
@@ -146,6 +137,19 @@ public class heartsgopoof : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("lifeu");
 
+    }
+
+    private void PlayerDeath()
+    {
+        isDead = true;
+        PlayerPrefs.DeleteKey("lifeu");
+        Initialized = false;
+
+        Destroy(gameObject);    // Destroy player
+        timerscript.Destroy(timer);    // Stops timer when dead
+
+        SceneManager.LoadScene("Game Over");
+        Debug.Log("Player is dead. Triggering GameOverScreen.");
     }
 
 }

@@ -55,7 +55,12 @@ public class bulletshoot : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<heartsgopoof>().currentLife -= 1;
+            other.gameObject.GetComponent<heartsgopoof>().currentLife -= 1; heartsgopoof heartdisappear = other.gameObject.GetComponent<heartsgopoof>();
+            if (heartdisappear != null)
+            {
+                heartdisappear.TakeDamage(0);
+            }
+
             Destroy(gameObject);
         }
     }
