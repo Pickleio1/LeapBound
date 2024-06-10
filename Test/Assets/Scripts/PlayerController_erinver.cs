@@ -335,10 +335,10 @@ public class PlayerController : MonoBehaviour
                     // Default melee attack when power is not active
                     foreach (Collider2D enemy in hitEnemies)
                     {
+                        audioManager.PlaySFX(audioManager.Melee);
                         if (enemy.CompareTag("Enemy"))
                         {
                             enemy.GetComponent<enemyhealth>().TakeDamage(damage);
-                            audioManager.PlaySFX(audioManager.Melee);
                             Debug.Log("Melee hit " + enemy.name);
                         }
                     }

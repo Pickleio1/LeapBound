@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
 
     private static AudioManager instance;
+
     private void Awake()
     {
         if (instance == null)
@@ -34,13 +35,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-
-
-    public void PlaySFX(AudioClip clip)
-    {
-        SFXSource.PlayOneShot(clip);
     }
 
     private void Start()
@@ -58,15 +52,15 @@ public class AudioManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         if (currentScene == "Game Over")
         {
-            if (musicSource.clip != backgroundDead)
+            if (!musicSource.isPlaying || musicSource.clip != backgroundDead)
             {
                 musicSource.clip = backgroundDead;
                 musicSource.Play();
             }
         }
-        if (currentScene == "Main Menu")
+        else if (currentScene == "Main Menu")
         {
-            if (musicSource.clip != backgroundMenu)
+            if (!musicSource.isPlaying || musicSource.clip != backgroundMenu)
             {
                 musicSource.clip = backgroundMenu;
                 musicSource.Play();
@@ -74,11 +68,16 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            if (musicSource.clip != backgroundAlive)
+            if (!musicSource.isPlaying || musicSource.clip != backgroundAlive)
             {
                 musicSource.clip = backgroundAlive;
                 musicSource.Play();
             }
         }
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
     }
 }
