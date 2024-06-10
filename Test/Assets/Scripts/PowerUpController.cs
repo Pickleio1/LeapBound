@@ -76,18 +76,6 @@ public class PowerUpController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Heartsgopoof = FindObjectOfType<heartsgopoof>();
-        touchingDirections = FindObjectOfType<TouchingDirections>();
-        rb = FindObjectOfType<Rigidbody2D>();
-        gameManager = FindObjectOfType<GameManager>();
-        pointsController = FindObjectOfType<PointsController>();
-        projectileButton =  GameObject.Find("ProjectileButton").GetComponent<Button>();
-        forceFieldButton = GameObject.Find("ForcefieldButton").GetComponent<Button>();
-        teleportButton = GameObject.Find("TeleportButton").GetComponent<Button>();
-        projectileupgradedButton = GameObject.Find("ProjectileUpgradedButton").GetComponent<Button>();
-        forceFieldupgradedButton = GameObject.Find("ForcefieldUpgradedButton").GetComponent<Button>();
-        teleportupgradedButton = GameObject.Find("TeleportUpgradedButton").GetComponent<Button>();
     }
 
     public void buyProjectilepowerBase()
@@ -262,27 +250,58 @@ public class PowerUpController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        StartCoroutine(FindPlayerAndShootingPointCoroutine());
+    }
+
+
+    private IEnumerator FindPlayerAndShootingPointCoroutine()
+    {
+        yield return new WaitForSeconds(1f); // Wait for the scene to fully load
+
         FindPlayerAndShootingPoint();
-        FindTilemap();
+        Heartsgopoof = FindObjectOfType<heartsgopoof>();
+        touchingDirections = FindObjectOfType<TouchingDirections>();
+        rb = FindObjectOfType<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
+        pointsController = FindObjectOfType<PointsController>();
+        projectileButton =  GameObject.Find("ProjectileButton").GetComponent<Button>();
+        forceFieldButton = GameObject.Find("ForcefieldButton").GetComponent<Button>();
+        teleportButton = GameObject.Find("TeleportButton").GetComponent<Button>();
+        projectileupgradedButton = GameObject.Find("ProjectileUpgradedButton").GetComponent<Button>();
+        forceFieldupgradedButton = GameObject.Find("ForcefieldUpgradedButton").GetComponent<Button>();
+        teleportupgradedButton = GameObject.Find("TeleportUpgradedButton").GetComponent<Button>();
+        // Add additional component and object finding here
+
+        // Find and assign the UI buttons
     }
 
     private void FindPlayerAndShootingPoint()
     {
         playerController = FindObjectOfType<PlayerController>();
-        if (playerController == null)
-        {
-            Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
-        }
-
         if (playerController != null)
         {
             playerTransform = playerController.transform;
-            shootingPoint = playerTransform.Find("ShootingPoint");
+            shootingPoint = SearchForShootingPoint(playerTransform);
             if (shootingPoint == null)
             {
                 Debug.LogError("ShootingPoint not found under Player. Check the hierarchy.");
             }
         }
+        else
+        {
+            Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
+        }
+                Heartsgopoof = FindObjectOfType<heartsgopoof>();
+        touchingDirections = FindObjectOfType<TouchingDirections>();
+        rb = FindObjectOfType<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
+        pointsController = FindObjectOfType<PointsController>();
+        projectileButton =  GameObject.Find("ProjectileButton").GetComponent<Button>();
+        forceFieldButton = GameObject.Find("ForcefieldButton").GetComponent<Button>();
+        teleportButton = GameObject.Find("TeleportButton").GetComponent<Button>();
+        projectileupgradedButton = GameObject.Find("ProjectileUpgradedButton").GetComponent<Button>();
+        forceFieldupgradedButton = GameObject.Find("ForcefieldUpgradedButton").GetComponent<Button>();
+        teleportupgradedButton = GameObject.Find("TeleportUpgradedButton").GetComponent<Button>();
     }
 
     private Transform SearchForShootingPoint(Transform parent)
