@@ -18,18 +18,9 @@ public class heartsgopoof : MonoBehaviour
     public bool isDead = false;
     public AudioManager audioManager;
 
-    public bool IsDead
-    {
-        get
-        {
-            return isDead;
-        }
-        private set
-        {
-            isDead = value;
-            animator.SetBool(AnimationStrings.IsDead, value);
-        }
-    }
+    private static bool Initialized;
+
+    
 
     private void Awake()
     {
@@ -40,6 +31,18 @@ public class heartsgopoof : MonoBehaviour
         currentLife = 3; // Set the starting current life
         maxLives = 5; // Set the maximum lives threshold
         animator = GetComponent<Animator>();
+
+        if (Initialized == false)
+        {
+            currentLife = PlayerPrefs.GetInt("lifeu", maxLives);
+            Initialized = true;
+            DontDestroyOnLoad(gameObject);  // Prevent this object from being destroyed when loading a new scene
+        }
+        else
+        {
+            currentLife = PlayerPrefs.GetInt("lifeu", currentLife);
+        }
+
         UpdateHealthUI();
     }
 
@@ -61,6 +64,8 @@ public class heartsgopoof : MonoBehaviour
         if (!isInvincible)
         {
             currentLife -= damage;
+            PlayerPrefs.SetInt("lifeu", currentLife);
+
             animator.SetTrigger(AnimationStrings.HitTrigger);
             audioManager.PlaySFX(audioManager.takedamage);
             UpdateHealthUI();
@@ -110,6 +115,25 @@ public class heartsgopoof : MonoBehaviour
         }
     }
 
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+            
+        }
+        private set
+        {
+            isDead = value;
+            PlayerPrefs.DeleteKey("lifeu");
+            Initialized = false;
+
+            animator.SetBool(AnimationStrings.IsDead, value);
+
+        }
+        
+    }
+
     private IEnumerator InvincibilityCooldown()
     {
         isInvincible = true;
@@ -121,4 +145,11 @@ public class heartsgopoof : MonoBehaviour
     {
         StartCoroutine(InvincibilityCooldown());
     }
+
+    void OnApplicationQuit()  //reset life
+    {
+        PlayerPrefs.DeleteKey("lifeu");
+
+    }
+
 }
