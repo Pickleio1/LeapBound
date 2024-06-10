@@ -23,6 +23,7 @@ public class LevelLoader : MonoBehaviour
     void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+            
     }
 
     void OnTriggerEnter2D(Collider2D other)

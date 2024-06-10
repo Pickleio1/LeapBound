@@ -7,7 +7,7 @@ using UnityEngine;
 public class bulletshoot : MonoBehaviour
 {
     public GameObject bullet;
-    public float cooldown = 2f;
+    public float cooldown;
     public float force;
     public GameObject enemy;
 
