@@ -15,9 +15,15 @@ C:/Users/mirfa/Projects/LeapBound/Test
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< HEAD
 53461
 Successfully changed project path to: C:/Users/mirfa/Projects/LeapBound/Test
 C:/Users/mirfa/Projects/LeapBound/Test
+=======
+52140
+Successfully changed project path to: C:/Users/User/Projects/LeapBound/Test
+C:/Users/User/Projects/LeapBound/Test
+>>>>>>> origin/game-check,-shop-and-items
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,12 +55,21 @@ C:/Users/mirfa/Projects/LeapBound/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< HEAD
 Player connection [11900] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 4145151120 [EditorId] 4145151120 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
 Player connection [11900] Host "[IP] 192.168.50.33 [Port] 0 [Flags] 2 [Guid] 4145151120 [EditorId] 4145151120 [Version] 1048832 [Id] WindowsEditor(7,BigBoiBlaptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
 Refreshing native plugins compatible for Editor in 12.92 ms, found 4 plugins.
+=======
+Player connection [17104] Host "[IP] 172.20.10.3 [Port] 0 [Flags] 2 [Guid] 2436065930 [EditorId] 2436065930 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [17104] Host "[IP] 172.20.10.3 [Port] 0 [Flags] 2 [Guid] 2436065930 [EditorId] 2436065930 [Version] 1048832 [Id] WindowsEditor(7,AAAAA) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 19 workers.
+Refreshing native plugins compatible for Editor in 19.68 ms, found 4 plugins.
+>>>>>>> origin/game-check,-shop-and-items
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.24f1 (334eb2a0b267)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -70,6 +85,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56956
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -81,11 +97,25 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.271 seconds
 Domain Reload Profiling: 640ms
 	BeginReloadAssembly (110ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56568
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007331 seconds.
+- Loaded All Assemblies, in  0.330 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.287 seconds
+Domain Reload Profiling: 614ms
+	BeginReloadAssembly (114ms)
+>>>>>>> origin/game-check,-shop-and-items
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 	RebuildCommonClasses (33ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (74ms)
@@ -98,6 +128,20 @@ Domain Reload Profiling: 640ms
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
 	FinalizeReload (272ms)
+=======
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (58ms)
+	LoadAllAssembliesAndSetupDomain (115ms)
+		LoadAssemblies (110ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (114ms)
+			TypeCache.Refresh (112ms)
+				TypeCache.ScanAssembly (101ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (288ms)
+>>>>>>> origin/game-check,-shop-and-items
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
 		SetupLoadedEditorAssemblies (217ms)
@@ -106,8 +150,13 @@ Domain Reload Profiling: 640ms
 			SetLoadedEditorAssemblies (7ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
+<<<<<<< HEAD
 			ProcessInitializeOnLoadAttributes (152ms)
 			ProcessInitializeOnLoadMethodAttributes (48ms)
+=======
+			ProcessInitializeOnLoadAttributes (177ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
+>>>>>>> origin/game-check,-shop-and-items
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,21 +164,33 @@ Domain Reload Profiling: 640ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 - Loaded All Assemblies, in  0.831 seconds
 Refreshing native plugins compatible for Editor in 6.30 ms, found 4 plugins.
+=======
+- Loaded All Assemblies, in  1.096 seconds
+Refreshing native plugins compatible for Editor in 21.65 ms, found 4 plugins.
+>>>>>>> origin/game-check,-shop-and-items
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Finished resetting the current domain, in  0.984 seconds
 Domain Reload Profiling: 1811ms
 	BeginReloadAssembly (168ms)
+=======
+- Finished resetting the current domain, in  1.949 seconds
+Domain Reload Profiling: 3035ms
+	BeginReloadAssembly (184ms)
+>>>>>>> origin/game-check,-shop-and-items
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
+<<<<<<< HEAD
 		CreateAndSetChildDomain (24ms)
 	RebuildCommonClasses (37ms)
 	RebuildNativeTypeToScriptingClass (15ms)
@@ -164,6 +225,42 @@ Unloading 6295 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 105 unused Assets / (423.2 KB). Loaded Objects now: 6760.
 Memory consumption went from 241.7 MB to 241.2 MB.
 Total: 5.479000 ms (FindLiveObjects: 0.531900 ms CreateObjectMapping: 0.502900 ms MarkObjects: 4.180100 ms  DeleteObjects: 0.262200 ms)
+=======
+		CreateAndSetChildDomain (22ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (60ms)
+	LoadAllAssembliesAndSetupDomain (795ms)
+		LoadAssemblies (465ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (439ms)
+			TypeCache.Refresh (354ms)
+				TypeCache.ScanAssembly (325ms)
+			ScanForSourceGeneratedMonoScriptInfo (59ms)
+			ResolveRequiredComponents (23ms)
+	FinalizeReload (1950ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1565ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (197ms)
+			ProcessInitializeOnLoadAttributes (1158ms)
+			ProcessInitializeOnLoadMethodAttributes (156ms)
+			AfterProcessingInitializeOnLoad (30ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 19.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6295 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (422.9 KB). Loaded Objects now: 6757.
+Memory consumption went from 241.4 MB to 241.0 MB.
+Total: 6.514300 ms (FindLiveObjects: 0.465300 ms CreateObjectMapping: 0.245900 ms MarkObjects: 5.520500 ms  DeleteObjects: 0.281200 ms)
+>>>>>>> origin/game-check,-shop-and-items
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -179,6 +276,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+<<<<<<< HEAD
 ========================================================================
 Received Import Request.
   Time since last request: 633946.172155 seconds.
@@ -201,6 +299,8 @@ Preloading 0 native plugins for Editor in 0.00 ms.
  -> (artifact id: '9514d04bc777a445de54ef9be676123a') in 0.055500 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 186
+=======
+>>>>>>> origin/game-check,-shop-and-items
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
 AssetImportWorker is now disconnected from the server
