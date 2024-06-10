@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class PowerUpController : MonoBehaviour
 {
@@ -55,6 +57,16 @@ public class PowerUpController : MonoBehaviour
     public Rigidbody2D rb;
     public GameManager gameManager;
     public PointsController pointsController;
+    public Button projectileButton;
+    public Button forceFieldButton;
+    public Button teleportButton;
+    public Button projectileupgradedButton;
+    public Button forceFieldupgradedButton;
+    public Button teleportupgradedButton;
+    public Canvas thumbsUpCanvas;
+    public Canvas thumbsDownCanvas;
+    
+
 
 
     private void Awake()
@@ -68,12 +80,6 @@ public class PowerUpController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Heartsgopoof = FindObjectOfType<heartsgopoof>();
-        touchingDirections = FindObjectOfType<TouchingDirections>();
-        rb = FindObjectOfType<Rigidbody2D>();
-        gameManager = FindObjectOfType<GameManager>();
-        pointsController = FindObjectOfType<PointsController>();
     }
 
     public void buyProjectilepowerBase()
@@ -83,6 +89,8 @@ public class PowerUpController : MonoBehaviour
             isProjectilePowerActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            projectileButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if (isProjectilePowerActive == true)
@@ -90,11 +98,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
 
@@ -107,11 +117,14 @@ public class PowerUpController : MonoBehaviour
             isProjectilePowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            projectileupgradedButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if ((gameManager.CurrentPoints >=100) && isProjectilePowerActive == false)
         {
             Debug.Log("You don't have the base power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         if (isProjectilePowerUpgraded == true)
@@ -119,11 +132,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
     }
@@ -135,6 +150,8 @@ public class PowerUpController : MonoBehaviour
             isForcefieldPowerActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            forceFieldButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if (isForcefieldPowerActive == true)
@@ -142,11 +159,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
     }
@@ -158,11 +177,14 @@ public class PowerUpController : MonoBehaviour
             isForcefieldPowerUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            forceFieldupgradedButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if ((gameManager.CurrentPoints >= 100) && isForcefieldPowerActive == false)
         {
             Debug.Log("You don't have the base power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         if (isForcefieldPowerUpgraded == true)
@@ -170,11 +192,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
     }
@@ -186,6 +210,8 @@ public class PowerUpController : MonoBehaviour
             isTeleportActive = true;
             gameManager.CurrentPoints -= 50;
             pointsController.UpdatePointsText();
+            teleportButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if (isTeleportActive == true)
@@ -193,11 +219,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
     }
@@ -209,11 +237,14 @@ public class PowerUpController : MonoBehaviour
             isTeleportUpgraded = true;
             gameManager.CurrentPoints -= 100;
             pointsController.UpdatePointsText();
+            teleportupgradedButton.image.color = Color.gray;
+            ActivateCanvasForSeconds(thumbsUpCanvas, 2f);
             return;
         }
         if ((gameManager.CurrentPoints >= 100) && isTeleportActive == false)
         {
             Debug.Log("You don't have the base power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         if (isTeleportUpgraded == true)
@@ -221,11 +252,13 @@ public class PowerUpController : MonoBehaviour
             gameManager.CurrentPoints = gameManager.CurrentPoints;
             pointsController.UpdatePointsText();
             Debug.Log("You already have the upgraded power");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
         else
         {
             Debug.Log("You don't have enough points.");
+            ActivateCanvasForSeconds(thumbsDownCanvas, 2f);
             return;
         }
     }
@@ -242,26 +275,115 @@ public class PowerUpController : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        StartCoroutine(FindPlayerAndShootingPointCoroutine());
+    }
+
+    private void Start()
+    {
+        Debug.Log("Start method called");
+        StartCoroutine(DebugCanvasAndButtons());
+    }
+
+        private IEnumerator DebugCanvasAndButtons()
+    {
+        yield return new WaitForSeconds(2f); // Adjust the delay as needed
+
+        Debug.Log("Attempting to find canvases and buttons...");
+
+        if (thumbsUpCanvas == null || thumbsDownCanvas == null)
+        {
+            Debug.LogError("Thumbs up or Thumbs down canvas not found in the scene.");
+        }
+        else
+        {
+            Debug.Log("Canvases and buttons found successfully.");
+        }
+    }
+
+
+    private IEnumerator FindPlayerAndShootingPointCoroutine()
+    {
+        yield return new WaitForSeconds(1f); // Wait for the scene to fully load
+
         FindPlayerAndShootingPoint();
-        FindTilemap();
+        Heartsgopoof = FindObjectOfType<heartsgopoof>();
+        touchingDirections = FindObjectOfType<TouchingDirections>();
+        rb = FindObjectOfType<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
+        pointsController = FindObjectOfType<PointsController>();
+        FindCanvasObjects();
+        projectileButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ProjectileButton").GetComponent<Button>();
+        forceFieldButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ForcefieldButton").GetComponent<Button>();
+        teleportButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/TeleportButton").GetComponent<Button>();
+        projectileupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ProjectileUpgradedButton").GetComponent<Button>();
+        forceFieldupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ForcefieldUpgradedButton").GetComponent<Button>();
+        teleportupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/TeleportUpgradedButton").GetComponent<Button>();
     }
 
     private void FindPlayerAndShootingPoint()
     {
         playerController = FindObjectOfType<PlayerController>();
-        if (playerController == null)
-        {
-            Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
-        }
-
         if (playerController != null)
         {
             playerTransform = playerController.transform;
-            shootingPoint = playerTransform.Find("ShootingPoint");
+            shootingPoint = SearchForShootingPoint(playerTransform);
             if (shootingPoint == null)
             {
                 Debug.LogError("ShootingPoint not found under Player. Check the hierarchy.");
             }
+        }
+        else
+        {
+            Debug.LogError("PlayerController not found. Ensure it is present in the scene.");
+        }
+        Heartsgopoof = FindObjectOfType<heartsgopoof>();
+        touchingDirections = FindObjectOfType<TouchingDirections>();
+        rb = FindObjectOfType<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
+        pointsController = FindObjectOfType<PointsController>();
+        FindCanvasObjects();
+        projectileButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ProjectileButton").GetComponent<Button>();
+        forceFieldButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ForcefieldButton").GetComponent<Button>();
+        teleportButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/TeleportButton").GetComponent<Button>();
+        projectileupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ProjectileUpgradedButton").GetComponent<Button>();
+        forceFieldupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/ForcefieldUpgradedButton").GetComponent<Button>();
+        teleportupgradedButton = GameObject.Find("UI/Shop Screen/Scrolling(dim)/Assets/Buttons/TeleportUpgradedButton").GetComponent<Button>();
+    }
+
+    private void ActivateCanvasForSeconds(Canvas canvas, float duration)
+    {
+        canvas.gameObject.SetActive(true);
+        StartCoroutine(DeactivateCanvasAfterSeconds(canvas, duration));
+    }
+
+    private IEnumerator DeactivateCanvasAfterSeconds(Canvas canvas, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        canvas.gameObject.SetActive(false);
+    }
+
+    private void FindCanvasObjects()
+    {
+        Canvas[] canvases = FindObjectsOfType<Canvas>();
+        
+        Debug.Log("Number of canvases found in the scene: " + canvases.Length);
+
+        foreach (Canvas canvas in canvases)
+        {
+            Debug.Log("Canvas Name: " + canvas.name);
+        }
+
+        thumbsUpCanvas = canvases.FirstOrDefault(x => x.name == "Thumbs up");
+        thumbsDownCanvas = canvases.FirstOrDefault(x => x.name == "Thumbs down");
+
+        if (thumbsUpCanvas == null || thumbsDownCanvas == null)
+        {
+            Debug.LogError("Thumbs up or Thumbs down canvas not found in the scene.");
+        }
+        else
+        {
+            thumbsUpCanvas.gameObject.SetActive(false);
+            thumbsDownCanvas.gameObject.SetActive(false);
         }
     }
 
