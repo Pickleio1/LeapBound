@@ -19,12 +19,14 @@ public class MainMenu : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         mainMenu = true;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     public void PlayGame()
     {
         mainMenu = false;
-        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1));    
+        SceneManager.LoadScene("Level 1");
+        gameManager.ResetPoints();
         
     }
 

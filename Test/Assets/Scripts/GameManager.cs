@@ -72,6 +72,6 @@ public class GameManager : MonoBehaviour
         ResetPoints(); // Reset the current points to 0
         
         // Load the first scene
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Level 1");
     }
 }

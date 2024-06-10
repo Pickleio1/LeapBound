@@ -15,7 +15,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void Awake()
     {
-
+        gameManager = FindObjectOfType<GameManager>();  
     }
 
 
@@ -27,7 +27,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void TryAgain()
     {
-        levelLoader.LoadLevel(levelIndex);
+        gameManager.RestartGame();
     }
 
     public void Exit()
@@ -37,6 +37,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void MainMenu(int levelIndex)
     {
-        levelLoader.LoadLevel(levelIndex);
+        gameManager.ResetPoints();
+        SceneManager.LoadScene("Main Menu");
     }
 }
