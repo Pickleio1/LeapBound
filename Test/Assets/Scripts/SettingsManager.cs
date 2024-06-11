@@ -14,7 +14,6 @@ public class SettingsManager : MonoBehaviour
     public static bool GamePaused = false;
     public GameObject SettingsMenuUI;
     public LevelLoader levelLoader;
-    private int levelIndex = 0;
 
 
 
@@ -62,12 +61,12 @@ public class SettingsManager : MonoBehaviour
 
     }
 
-    public void MainMenu(int levelIndex)
+    public void MainMenu()
     {
         SettingsMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
-        levelLoader.LoadLevel(levelIndex);
+        SceneManager.LoadScene("Main Menu");
     }
 
 
