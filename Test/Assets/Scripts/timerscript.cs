@@ -32,8 +32,8 @@ public class timerscript : MonoBehaviour
 
         PlayerPrefs.SetFloat("time", elapsedtime);
 
-        float minutes = elapsedtime / 60;
-        float seconds = elapsedtime % 60;
+        float minutes = Mathf.FloorToInt(elapsedtime / 60);
+        float seconds = Mathf.FloorToInt(elapsedtime % 60);
         timertext.text = string.Format("{0:00}:{1:00}", minutes, seconds);   // make timer look like 0:00
     }
 

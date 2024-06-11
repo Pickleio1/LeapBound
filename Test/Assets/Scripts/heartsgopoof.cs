@@ -37,11 +37,13 @@ public class heartsgopoof : MonoBehaviour
             currentLife = PlayerPrefs.GetInt("lifeu", maxLives);
             Initialized = true;
             DontDestroyOnLoad(gameObject);  // Prevent this object from being destroyed when loading a new scene
+
         }
         else
         {
             currentLife = PlayerPrefs.GetInt("lifeu", currentLife);
         }
+        
 
         UpdateHealthUI();
     }
@@ -113,6 +115,7 @@ public class heartsgopoof : MonoBehaviour
                 heart[i].SetActive(false);
             }
         }
+        Debug.Log("Current Lives: " + currentLife);
     }
 
     public bool IsDead
