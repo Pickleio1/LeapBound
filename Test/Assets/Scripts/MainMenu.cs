@@ -7,24 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject Options;
-    public Animator animator;
 
-    private bool _mainMenu;
-
-    public bool mainMenu {  
-        get { return _mainMenu; } private set {  _mainMenu = value; animator.SetBool(AnimationStrings.MainMenu, value);}
-    }
-
+   
     public void Awake()
     {
-        animator = GetComponent<Animator>();
-        mainMenu = true;
         gameManager = FindObjectOfType<GameManager>();
     }
 
     public void PlayGame()
     {
-        mainMenu = false;
         SceneManager.LoadScene("Level 1");
         gameManager.ResetPoints();
         
@@ -32,7 +23,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        mainMenu = false;
 
         Application.Quit();
     }
