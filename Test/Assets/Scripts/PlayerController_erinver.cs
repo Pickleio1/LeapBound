@@ -352,7 +352,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             TeleportPlayer();
-            audioManager.PlaySFX(audioManager.teleport);
+            
         }
     }
 
@@ -386,7 +386,6 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             ActivateForcefield();
-            audioManager.PlaySFX(audioManager.forcefield);
         }
     }
 
