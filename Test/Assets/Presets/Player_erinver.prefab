@@ -531,7 +531,7 @@ MonoBehaviour:
   jumpImpulse: 10
   airWalkSpeed: 3
   smallJump: 0.7
-  damage: 2
+  damage: 1
   enemyHealth: {fileID: 469064957334833727, guid: 1da9d7a02ab6e144082b860e1f76cac3, type: 3}
   fastDropSpeed: 20
   stunDuration: 0.3
@@ -548,6 +548,7 @@ MonoBehaviour:
   platformRb: {fileID: 0}
   animator: {fileID: 284920256186698082}
   enemyHealthScript: {fileID: 0}
+  audioManager: {fileID: 0}
   allowMeleeAttack: 1
 --- !u!114 &3037450313121389250
 MonoBehaviour:
@@ -634,6 +635,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   invincibilityDuration: 1.5
+  Death: {fileID: 0}
+  isDead: 0
+  audioManager: {fileID: 0}
 --- !u!1 &8028739072005560763
 GameObject:
   m_ObjectHideFlags: 0

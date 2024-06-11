@@ -13,10 +13,12 @@ public class enemyhealth : MonoBehaviour
     private Rigidbody rb;
     
     public PointsController pointsController ;
+    public bulletshoot Bulletshoot;
 
     public void Awake()
     {
         pointsController = FindObjectOfType<PointsController>();
+        Bulletshoot = GetComponent<bulletshoot>();
     }
 
     public bool IsDead
@@ -32,12 +34,13 @@ public class enemyhealth : MonoBehaviour
 
     void StartCoroutine()
     {
-        StartCoroutine(Die(3));
+        StartCoroutine(Die(2));
     }
 
     IEnumerator Die(float duration)
     {
         IsDead = true;
+        
 
         yield return new WaitForSeconds(duration);
 

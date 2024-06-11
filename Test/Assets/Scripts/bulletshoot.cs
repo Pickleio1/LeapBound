@@ -12,6 +12,7 @@ public class bulletshoot : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb2d;
     private float timer;
+    public enemyhealth Enemyhealth;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class bulletshoot : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");                          //direct the
         Vector3 direction = player.transform.position - transform.position;           //attack towards
         rb2d.velocity = new Vector2(direction.x, direction.y).normalized * force;      //the player
+        Enemyhealth = GetComponent<enemyhealth>();
 
     }
 
@@ -28,7 +30,7 @@ public class bulletshoot : MonoBehaviour
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
 
-        if (distance < range)
+        if (distance < range && Enemyhealth.IsDead == false)
         {
             AttackPlayer();
         }
