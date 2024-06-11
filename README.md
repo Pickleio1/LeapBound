@@ -5,9 +5,14 @@ itch.io link: https://pickleio.itch.io/leapbound
 Play the game however which way you want: 
 
 -Safe
+
 -Try out every power-up
+
 -Find every easter egg 
+
 -Even try to speed run!
+ 
 
 The game is still in a demo state and will HOPEFULLY be more fledged out in the upcoming future.
+
 (LeapBound is a game that's been developed by university students for a project)
