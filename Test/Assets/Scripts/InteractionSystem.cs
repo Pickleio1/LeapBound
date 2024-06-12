@@ -26,6 +26,13 @@ public class InteractionSystem : MonoBehaviour
     public bool isExamining;
     public bool isGrabbing;
     public heartsgopoof healthScript;
+    public SettingsManager SettingsManager;
+
+    void Awake()
+    {
+        SettingsManager = GameObject.Find("UI").GetComponent<SettingsManager>();
+        healthScript = GetComponent<heartsgopoof>();
+    }
 
     void Update()
     {
