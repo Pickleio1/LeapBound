@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class heartsgopoof : MonoBehaviour
 {
@@ -15,12 +16,28 @@ public class heartsgopoof : MonoBehaviour
     private bool isInvincible = false;
     public Animator Death;
 
-    public bool isDead = false;
+    private bool isDead = false;
+
+    public bool IsDead
+    {
+        get
+        {
+            return isDead;
+
+        }
+        private set
+        {
+            isDead = value;
+            animator.SetBool(AnimationStrings.IsDead, value);
+
+        }
+
+    }
+
     public AudioManager audioManager;
 
     private static bool Initialized;
-
-    
+    private bool deathAnim = false;
 
     private void Awake()
     {
@@ -48,17 +65,44 @@ public class heartsgopoof : MonoBehaviour
         UpdateHealthUI();
     }
 
+    void StartCoroutine()
+    {
+        StartCoroutine(playerDies(2));
+    }
+
+    IEnumerator playerDies(float duration)
+    {
+        IsDead = true;
+
+        yield return new WaitForSeconds(duration);
+
+        deathAnim = true;
+
+    }
+
+
     void Update()
     {
         if (currentLife <= 0 && !IsDead)
         {
-            IsDead = true;
-            audioManager.PlaySFX(audioManager.die);
-            SceneManager.LoadScene("Game Over");
-            Debug.Log("Player is dead. Triggering GameOverScreen.");
+            StartCoroutine();
+
+            
+        } else if (currentLife <= 0 && IsDead) 
+        {
+                if (deathAnim)
+                {
+                    audioManager.PlaySFX(audioManager.die);
+                    SceneManager.LoadScene("Game Over");
+                    Debug.Log("Player is dead. Triggering GameOverScreen.");
+                    PlayerPrefs.DeleteKey("lifeu");
+                    Initialized = false;
+                }
         }
         
         Debug.Log("Current Lives: " + currentLife);
+        
+        
     }
 
     public void TakeDamage(int damage)
@@ -116,25 +160,6 @@ public class heartsgopoof : MonoBehaviour
             }
         }
         Debug.Log("Current Lives: " + currentLife);
-    }
-
-    public bool IsDead
-    {
-        get
-        {
-            return isDead;
-            
-        }
-        private set
-        {
-            isDead = value;
-            PlayerPrefs.DeleteKey("lifeu");
-            Initialized = false;
-
-            animator.SetBool(AnimationStrings.IsDead, value);
-
-        }
-        
     }
 
     private IEnumerator InvincibilityCooldown()

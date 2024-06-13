@@ -37,31 +37,51 @@ public class PlayerController : MonoBehaviour
 
     public PowerUpController powerUpController;
 
+    private bool canmove = true;
+    public bool CanMove
+    {
+        get
+        {
+            return canmove;
+        } private set
+        {
+            canmove = value;
+            animator.GetBool(AnimationStrings.canMove);
+        }
+        }
 
     public float CurrentMoveSpeed
     {
         get
         {
-            if (IsMoving && !touchingDirections.IsOnWall)
+            if (CanMove)
             {
-                if (touchingDirections.IsGrounded)
+                if (IsMoving && !touchingDirections.IsOnWall)
                 {
-                    if (IsRunning)
+                    if (touchingDirections.IsGrounded)
                     {
-                        return runSpeed;
+                        if (IsRunning)
+                        {
+                            return runSpeed;
+                        }
+                        else
+                        {
+                            return walkSpeed;
+                        }
                     }
                     else
                     {
-                        return walkSpeed;
+                        return airWalkSpeed;
                     }
                 }
                 else
-                {
-                    return airWalkSpeed;
+                {   //Speed into Wall = 0
+                    return 0;
                 }
             }
             else
-            {   //Speed into Wall = 0
+            {
+                //Movementlocked
                 return 0;
             }
         }
@@ -181,6 +201,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CanMove)
+        {
+            Debug.Log("CanMove");
+
+        }
         if (isOnPlatform)
         {
         
@@ -264,7 +289,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && touchingDirections.IsGrounded && !isStunned)
+        if (context.started && touchingDirections.IsGrounded && !isStunned && CanMove)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
             audioManager.PlaySFX(audioManager.jump);

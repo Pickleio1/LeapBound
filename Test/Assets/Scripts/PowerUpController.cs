@@ -57,7 +57,7 @@ public class PowerUpController : MonoBehaviour
     public GameManager gameManager;
     public PointsController pointsController;
     public AudioManager audioManager;
-    
+    public Animator animator;
 
 
 
@@ -74,6 +74,7 @@ public class PowerUpController : MonoBehaviour
         }
 
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     public void buyProjectilepowerBase()
@@ -694,6 +695,7 @@ public class PowerUpController : MonoBehaviour
     {
         if (Time.time - lastTeleportTime >= (isTeleportUpgraded ? teleportCooldownUpgraded : teleportCooldownBase))
         {
+            animator.SetTrigger(AnimationStrings.Teleport);
             Vector2 facingDirection = playerController.GetFacingDirection();
             float verticalInput = playerController.GetVerticalInput();
             PerformTeleport(playerController.transform, facingDirection, verticalInput);
@@ -734,6 +736,10 @@ public class PowerUpController : MonoBehaviour
     {
         // Display circle forcefield around the player
         ShowForcefield();
+
+        //Display animation
+        animator.SetTrigger(AnimationStrings.Forcefield);
+
 
         // Store the player's current velocity to restore later
         Vector2 originalVelocity = playerController.rb.velocity;
