@@ -15,7 +15,7 @@ C:/Users/Anna Nabila/Documents/GitHub/LeapBound/Test
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-51653
+52067
 Successfully changed project path to: C:/Users/Anna Nabila/Documents/GitHub/LeapBound/Test
 C:/Users/Anna Nabila/Documents/GitHub/LeapBound/Test
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/Anna Nabila/Documents/GitHub/LeapBound/Test
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [18568] Host "[IP] 192.168.11.230 [Port] 0 [Flags] 2 [Guid] 1286119556 [EditorId] 1286119556 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-OQVHHBMK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [3696] Host "[IP] 192.168.11.230 [Port] 0 [Flags] 2 [Guid] 976243366 [EditorId] 976243366 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-OQVHHBMK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [18568] Host "[IP] 192.168.11.230 [Port] 0 [Flags] 2 [Guid] 1286119556 [EditorId] 1286119556 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-OQVHHBMK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [3696] Host "[IP] 192.168.11.230 [Port] 0 [Flags] 2 [Guid] 976243366 [EditorId] 976243366 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-OQVHHBMK) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 888.13 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 18.97 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.24f1 (334eb2a0b267)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
@@ -72,44 +72,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56392
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.434747 seconds.
-- Loaded All Assemblies, in 17.552 seconds
+Registered in 0.008529 seconds.
+- Loaded All Assemblies, in  0.649 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.542 seconds
-Domain Reload Profiling: 18092ms
-	BeginReloadAssembly (12879ms)
+- Finished resetting the current domain, in  0.423 seconds
+Domain Reload Profiling: 1070ms
+	BeginReloadAssembly (231ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (1217ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (538ms)
-	LoadAllAssembliesAndSetupDomain (2899ms)
-		LoadAssemblies (12876ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (66ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (92ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (229ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (2894ms)
-			TypeCache.Refresh (2891ms)
-				TypeCache.ScanAssembly (2171ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (2ms)
-	FinalizeReload (542ms)
+		AnalyzeDomain (241ms)
+			TypeCache.Refresh (239ms)
+				TypeCache.ScanAssembly (214ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (423ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (433ms)
+		SetupLoadedEditorAssemblies (339ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (19ms)
-			SetLoadedEditorAssemblies (14ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (10ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (4ms)
-			ProcessInitializeOnLoadAttributes (298ms)
-			ProcessInitializeOnLoadMethodAttributes (99ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (236ms)
+			ProcessInitializeOnLoadMethodAttributes (77ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,55 +117,55 @@ Domain Reload Profiling: 18092ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in 23.119 seconds
-Refreshing native plugins compatible for Editor in 8.99 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.191 seconds
+Refreshing native plugins compatible for Editor in 6.91 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.691 seconds
-Domain Reload Profiling: 24804ms
-	BeginReloadAssembly (422ms)
+- Finished resetting the current domain, in  1.317 seconds
+Domain Reload Profiling: 2506ms
+	BeginReloadAssembly (256ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (16ms)
+		DisableScriptedObjects (17ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (56ms)
-	RebuildCommonClasses (84ms)
-	RebuildNativeTypeToScriptingClass (30ms)
-	initialDomainReloadingComplete (113ms)
-	LoadAllAssembliesAndSetupDomain (22463ms)
-		LoadAssemblies (20895ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (800ms)
+		LoadAssemblies (537ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1810ms)
-			TypeCache.Refresh (1636ms)
-				TypeCache.ScanAssembly (1444ms)
-			ScanForSourceGeneratedMonoScriptInfo (145ms)
-			ResolveRequiredComponents (27ms)
-	FinalizeReload (1693ms)
+		AnalyzeDomain (402ms)
+			TypeCache.Refresh (329ms)
+				TypeCache.ScanAssembly (305ms)
+			ScanForSourceGeneratedMonoScriptInfo (52ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1318ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1336ms)
+		SetupLoadedEditorAssemblies (1040ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (12ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (171ms)
-			ProcessInitializeOnLoadAttributes (961ms)
-			ProcessInitializeOnLoadMethodAttributes (173ms)
-			AfterProcessingInitializeOnLoad (12ms)
-			EditorAssembliesLoaded (1ms)
+			BeforeProcessingInitializeOnLoad (151ms)
+			ProcessInitializeOnLoadAttributes (736ms)
+			ProcessInitializeOnLoadMethodAttributes (124ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
-Refreshing native plugins compatible for Editor in 10.13 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (15ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 6.53 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6296 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 105 unused Assets / (424.6 KB). Loaded Objects now: 6758.
-Memory consumption went from 242.8 MB to 242.4 MB.
-Total: 7.367200 ms (FindLiveObjects: 0.454000 ms CreateObjectMapping: 0.215300 ms MarkObjects: 6.363500 ms  DeleteObjects: 0.332900 ms)
+Unloading 105 unused Assets / (423.3 KB). Loaded Objects now: 6758.
+Memory consumption went from 242.5 MB to 242.1 MB.
+Total: 6.785600 ms (FindLiveObjects: 0.549900 ms CreateObjectMapping: 0.324600 ms MarkObjects: 5.499600 ms  DeleteObjects: 0.409500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -182,230 +182,71 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 327965.186288 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk
-  artifactKey: Guid(26bb1e9e64d07794a81d6b493a8e8a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk using Guid(26bb1e9e64d07794a81d6b493a8e8a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70d5421846a810f836640a5fa5024100') in 0.002336 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 5.866141 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0000.png
-  artifactKey: Guid(14d7ac9ffaa2e884084dc91b2deca52f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0000.png using Guid(14d7ac9ffaa2e884084dc91b2deca52f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c09450ea5d09d990bc12bebecd21fc3a') in 0.216940 seconds
+  Time since last request: 330826.769174 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/book_02b.png
+  artifactKey: Guid(f40dbf328c6b805489c8ed135b009cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/book_02b.png using Guid(f40dbf328c6b805489c8ed135b009cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9e4e2955cea857a1072314039268f33') in 0.260978 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 12.673105 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0001.png
-  artifactKey: Guid(06b30a3beb816cb4699fca724850dbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0001.png using Guid(06b30a3beb816cb4699fca724850dbe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19d1979c99ba2d8848784cc4139393e5') in 0.028601 seconds
+  Time since last request: 0.000041 seconds.
+  path: Assets/Art/freeknight/Colour2/Outline/120x80_PNGSheets/_Hit.png
+  artifactKey: Guid(67ae1f658b9b6f84b8ea29b7a4226de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour2/Outline/120x80_PNGSheets/_Hit.png using Guid(67ae1f658b9b6f84b8ea29b7a4226de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7305bc312b7b9acea82315cd3610036b') in 0.029631 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 2.695739 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0002.png
-  artifactKey: Guid(6bf3c18bb45df664fa0daecaa61d4306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0002.png using Guid(6bf3c18bb45df664fa0daecaa61d4306) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2437f05672407200e1cf6dca5d6d21ea') in 0.060457 seconds
+  Time since last request: 0.000053 seconds.
+  path: Assets/Art/freeknight/Colour2/Outline/120x80_PNGSheets/_Fall.png
+  artifactKey: Guid(62d75e40b55c4a9439b598b2c37a1d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour2/Outline/120x80_PNGSheets/_Fall.png using Guid(62d75e40b55c4a9439b598b2c37a1d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fe2016fbc631fade594a97d377796fe') in 0.031531 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 2.502614 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0003.png
-  artifactKey: Guid(49844121f58221f46bce6583da5ace1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0003.png using Guid(49844121f58221f46bce6583da5ace1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97708592ec7fc17c51046bf0538ea089') in 0.028299 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/Art/kyrises-rpg-icon-pack/icons/16x16/book_02c.png
+  artifactKey: Guid(7bc0453e079a0654b8c304609bdf3bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/kyrises-rpg-icon-pack/icons/16x16/book_02c.png using Guid(7bc0453e079a0654b8c304609bdf3bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f89ff859be0db53916b37a31c64a5d3f') in 0.032231 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 6.273637 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0004.png
-  artifactKey: Guid(5dd3a1d17f390ba499c6d11a180e3607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0004.png using Guid(5dd3a1d17f390ba499c6d11a180e3607) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a56f064e6d308ce9fbab1f6062dea43d') in 0.045596 seconds
+  Time since last request: 0.000026 seconds.
+  path: Assets/Art/freeknight/Colour2/NoOutline/120x80_PNGSheets/_Hit.png
+  artifactKey: Guid(c0f8000ef3876e74cacc268e6507db08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour2/NoOutline/120x80_PNGSheets/_Hit.png using Guid(c0f8000ef3876e74cacc268e6507db08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ff55891eda30ba6752dc20e13a4e471') in 0.031696 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 2.342678 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0005.png
-  artifactKey: Guid(001101289fa12634c890606b4062155f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0005.png using Guid(001101289fa12634c890606b4062155f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9450a2110624062b2238f6589a9ba35') in 0.037443 seconds
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/freeknight/Colour1/NoOutline/120x80_PNGSheets/_Hit.png
+  artifactKey: Guid(f9becf349641fe74e965f417c161ab6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour1/NoOutline/120x80_PNGSheets/_Hit.png using Guid(f9becf349641fe74e965f417c161ab6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81b86f1dab533e7cd4bf62eabbfe41ae') in 0.031476 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 2.555764 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0006.png
-  artifactKey: Guid(2a0740b5f60e9684b84c0798953be1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0006.png using Guid(2a0740b5f60e9684b84c0798953be1d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75f9ea5fb29a3f475700dcb388796bb0') in 0.099381 seconds
+  Time since last request: 0.000032 seconds.
+  path: Assets/Art/freeknight/Colour1/Outline/120x80_PNGSheets/_Fall.png
+  artifactKey: Guid(b482bb1670e64c14489e0ad4d114ca07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour1/Outline/120x80_PNGSheets/_Fall.png using Guid(b482bb1670e64c14489e0ad4d114ca07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db5f1777fc16f8494c4cb597a55d1a9d') in 0.027580 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 3.442349 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0007.png
-  artifactKey: Guid(4c3799a9851d38240bbdd9d161acfb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0007.png using Guid(4c3799a9851d38240bbdd9d161acfb12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4327f110c0c258cacd47234a57947991') in 0.062499 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 10.786301 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0008.png
-  artifactKey: Guid(86900602ec111bb48a0d6ca400490407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0008.png using Guid(86900602ec111bb48a0d6ca400490407) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c43dc21c2746636525ed1495c4cea155') in 0.088995 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 7.071636 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0009.png
-  artifactKey: Guid(eeb778858db9e8748bbc047cd3431695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0009.png using Guid(eeb778858db9e8748bbc047cd3431695) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6b373e1d90942053c86973346fa899c') in 0.025749 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.674647 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0010.png
-  artifactKey: Guid(86e54780a4f0cec4aac6f0b5ac7ce3bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0010.png using Guid(86e54780a4f0cec4aac6f0b5ac7ce3bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '912d62a1b5a0b2f2b2ba1f104afa17d6') in 0.099582 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.194505 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0011.png
-  artifactKey: Guid(d3382cf18bc0a7149943c1f1793d84fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0011.png using Guid(d3382cf18bc0a7149943c1f1793d84fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c94581768e99afa4bbd6edb0561ee33') in 0.029112 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.016797 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0012.png
-  artifactKey: Guid(96a5785dca7fbc247a6cdb15575e6240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0012.png using Guid(96a5785dca7fbc247a6cdb15575e6240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08858118f4dfd666eccac042804d1fe3') in 0.074549 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 9.824870 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0013.png
-  artifactKey: Guid(15b2785f38b51244fa6954cab7e22719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0013.png using Guid(15b2785f38b51244fa6954cab7e22719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcb73eb5bab318c6286714c2ac937a94') in 0.027075 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.627058 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0014.png
-  artifactKey: Guid(aaba8d868e5dce347a9ca01ab3fab0e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0014.png using Guid(aaba8d868e5dce347a9ca01ab3fab0e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1b571654b623b3a85524f8be25e151') in 0.051611 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.652355 seconds.
-  path: Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0015.png
-  artifactKey: Guid(80b5a8e54dc233e4db0a3d01284a7db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MantisEnemy/mantis walk/enemy1Walk_0015.png using Guid(80b5a8e54dc233e4db0a3d01284a7db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1aaeac2dced31e01581f7c082891221c') in 0.063064 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 12.661076 seconds.
-  path: Assets/Art/a.mp4
-  artifactKey: Guid(70ecd7865cc65bb4bb02c877fc879c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/a.mp4 using Guid(70ecd7865cc65bb4bb02c877fc879c1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27eec72e592cec304ffa270b03eef1f4') in 0.002389 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Art/MAINMENU.asset
-  artifactKey: Guid(68abe0e61ee118d48ae04b1346636f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/MAINMENU.asset using Guid(68abe0e61ee118d48ae04b1346636f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd156be54f3368a168297fe12cc57a2d0') in 0.077782 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Art/leapbound.png
-  artifactKey: Guid(bf258c3ba665b754eabe229f2123932b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/leapbound.png using Guid(bf258c3ba665b754eabe229f2123932b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd827d580dc2e542b9deedc1ad63a75bf') in 0.043652 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.712864 seconds.
-  path: Assets/Art/victory screen.mp4
-  artifactKey: Guid(635e1f66a388a65469eec98d949e5707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/victory screen.mp4 using Guid(635e1f66a388a65469eec98d949e5707) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c27331c267f21ed6006404110282ff4d') in 0.002948 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 12.469044 seconds.
-  path: Assets/Art/enemy_1.png
-  artifactKey: Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/enemy_1.png using Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2270e4ca4339e3a4baffeda897b42078') in 0.084740 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 109.377348 seconds.
-  path: Assets/Art/enemy_1.png
-  artifactKey: Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/enemy_1.png using Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b13ddd27769ed9a81dbbd5959a30399') in 0.024920 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 19.181586 seconds.
-  path: Assets/Art/enemy_1.png
-  artifactKey: Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/enemy_1.png using Guid(6dd20b1363831ee43aaf9ac7d97acd35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca5600d2b156a425018c4b18309d4782') in 0.052710 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 97.855591 seconds.
-  path: Assets/Art/freeknight/Colour2/Outline/120x80_gifs/__Hit.gif
-  artifactKey: Guid(f525a6581d3cc5c41b62b0caedd6141f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freeknight/Colour2/Outline/120x80_gifs/__Hit.gif using Guid(f525a6581d3cc5c41b62b0caedd6141f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60863985a419fe6bb4665f72dd865529') in 0.239864 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Art/freeknight/Colour2/NoOutline/120x80_gifs/__Idle.gif
-  artifactKey: Guid(1e9af8be6fd61554095dbfe0542035a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freeknight/Colour2/NoOutline/120x80_gifs/__Idle.gif using Guid(1e9af8be6fd61554095dbfe0542035a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c87db47d2307e3b11c17a398c04b541c') in 0.055442 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000517 seconds.
-  path: Assets/Art/freeknight/Colour2/NoOutline/120x80_gifs/__Hit.gif
-  artifactKey: Guid(c89ed570efa3bde41895feff32a18deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freeknight/Colour2/NoOutline/120x80_gifs/__Hit.gif using Guid(c89ed570efa3bde41895feff32a18deb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43783633dd6c8f7affb45a104ca36c45') in 0.061150 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000258 seconds.
-  path: Assets/Art/freeknight/Colour1/Outline/120x80_gifs/__Idle.gif
-  artifactKey: Guid(b651d2abd905e4144b850f0e9f1e2012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/freeknight/Colour1/Outline/120x80_gifs/__Idle.gif using Guid(b651d2abd905e4144b850f0e9f1e2012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e987102545e0c110b17d58216bfeba9c') in 0.052771 seconds
+  Time since last request: 0.000039 seconds.
+  path: Assets/Art/freeknight/Colour2/NoOutline/120x80_PNGSheets/_Fall.png
+  artifactKey: Guid(2774e83b2b9e89c4b81fcb4343d4ccef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/freeknight/Colour2/NoOutline/120x80_PNGSheets/_Fall.png using Guid(2774e83b2b9e89c4b81fcb4343d4ccef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33cef274c7c6d614ceb59a978b310085') in 0.030901 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
 AssetImportWorker is now disconnected from the server
 Process exiting
 Exiting without the bug reporter. Application will terminate with return code 0
