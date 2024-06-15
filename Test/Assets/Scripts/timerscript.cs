@@ -41,6 +41,12 @@ public class timerscript : MonoBehaviour
         counting = false;
     }
 
+    public void ResetTimer()
+    {
+        elapsedtime = 0f;
+        PlayerPrefs.SetFloat("time", elapsedtime);
+    }
+
     private void OnApplicationQuit()  //reset timer
     {
         PlayerPrefs.DeleteKey("time");

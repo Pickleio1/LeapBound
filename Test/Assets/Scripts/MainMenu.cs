@@ -7,17 +7,20 @@ public class MainMenu : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject Options;
+    public timerscript timerScript;
 
    
     public void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
+        timerScript = FindObjectOfType<timerscript>();
     }
 
     public void PlayGame()
     {
         SceneManager.LoadScene("Level 1");
         gameManager.ResetPoints();
+        timerScript.ResetTimer();
         
     }
 
