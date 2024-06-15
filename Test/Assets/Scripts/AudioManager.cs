@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip projectileshoot;
     public AudioClip forcefield;
     public AudioClip jump;
+    public AudioClip HealthUp;
 
     private static AudioManager instance;
 
