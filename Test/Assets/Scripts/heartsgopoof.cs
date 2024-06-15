@@ -80,10 +80,12 @@ public class heartsgopoof : MonoBehaviour
         if (currentLife + livesToAdd > maxLives)
         {
             currentLife = maxLives;
+            audioManager.PlaySFX(audioManager.HealthUp);
         }
         else
         {
             currentLife += livesToAdd;
+            audioManager.PlaySFX(audioManager.HealthUp);
         }
         
         UpdateHealthUI();

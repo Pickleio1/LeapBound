@@ -54,10 +54,7 @@ public class Item : MonoBehaviour
                 consumeEvent.Invoke(); // Trigger the consume event
                 if (type == ItemType.Consumables)
                 {
-                    if (interactionSystem != null)
-                    {
-                        interactionSystem.AddLives(1); // Add 1 life when the consumable is consumed
-                    }
+                    
                 }
                 gameObject.SetActive(false); // Disable the item after consumption
                 break;
