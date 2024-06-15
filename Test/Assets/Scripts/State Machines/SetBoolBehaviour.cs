@@ -7,6 +7,7 @@ public class SetBoolBehaviour : StateMachineBehaviour
     public string boolName;
     public bool updateOnState;
     public bool updateOnStateMachine;
+
     public bool valueOnEnter, valueOnExit;
 
     // OnStateEnter is called before OnStateEnter is called on any state inside this state machine

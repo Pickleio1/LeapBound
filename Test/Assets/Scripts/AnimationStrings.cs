@@ -15,8 +15,7 @@ internal class AnimationStrings
     internal static string enemyAttack = "enemyAttack";
     internal static string enemyHit = "enemyHit";
     internal static string enemyIsDead = "enemyIsDead";
-
-
-
-
+    internal static string canMove = "canMove";
+    internal static string Forcefield = "Forcefield";
+    internal static string Teleport = "Teleport";
 }
