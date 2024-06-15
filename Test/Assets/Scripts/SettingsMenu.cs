@@ -38,6 +38,15 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
     }
+
+   
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
     public void SetVolume (float volume)
     {
         audioMixer.SetFloat("volume", volume);
@@ -48,9 +57,10 @@ public class SettingsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityIndex);
     }
 
-   
-    public void Quit()
+    public void SetFullscreen(bool isFullscreen)
     {
-        Application.Quit();
+        Screen.fullScreen = isFullscreen;
+
+        
     }
 }

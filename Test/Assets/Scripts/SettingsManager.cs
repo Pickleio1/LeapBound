@@ -13,13 +13,14 @@ public class SettingsManager : MonoBehaviour
     public static bool GamePaused = false;
     public GameObject SettingsMenuUI;
     public LevelLoader levelLoader;
-
-
+    public SettingsMenu settingsMenu;
+    public int resolutionIndex;
 
     private void Awake()
     {
         GamePaused = false;
         SettingsMenuUI.SetActive(false);
+        settingsMenu = GetComponent<SettingsMenu>();
     }
 
     private void Update()
@@ -57,7 +58,7 @@ public class SettingsManager : MonoBehaviour
 
     public void SaveChanges()
     {
-
+        Input.GetKeyDown(KeyCode.Escape);
     }
 
     public void MainMenu()
@@ -68,6 +69,9 @@ public class SettingsManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
-
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }
