@@ -73,6 +73,8 @@ public class heartsgopoof : MonoBehaviour
     IEnumerator playerDies(float duration)
     {
         IsDead = true;
+        
+        audioManager.PlaySFX(audioManager.die);
 
         yield return new WaitForSeconds(duration);
 
@@ -92,7 +94,7 @@ public class heartsgopoof : MonoBehaviour
         {
                 if (deathAnim)
                 {
-                    audioManager.PlaySFX(audioManager.die);
+                    
                     SceneManager.LoadScene("Game Over");
                     Debug.Log("Player is dead. Triggering GameOverScreen.");
                     PlayerPrefs.DeleteKey("lifeu");

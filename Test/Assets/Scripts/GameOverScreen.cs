@@ -11,11 +11,13 @@ public class GameOverScreen : MonoBehaviour
     public GameManager gameManager;
     public LevelLoader levelLoader;
     private int levelIndex = 1;
+    public timerscript timerScript;
 
 
     public void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();  
+        timerScript = FindObjectOfType<timerscript>();
     }
 
 
@@ -28,6 +30,7 @@ public class GameOverScreen : MonoBehaviour
     public void TryAgain()
     {
         gameManager.RestartGame();
+        timerScript.ResetTimer();
     }
 
     public void Exit()
