@@ -74,7 +74,7 @@ public class PowerUpController : MonoBehaviour
         }
 
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+
     }
 
     public void buyProjectilepowerBase()
@@ -280,6 +280,7 @@ public class PowerUpController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
         pointsController = FindObjectOfType<PointsController>();
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     private void FindPlayerAndShootingPoint()
@@ -303,6 +304,7 @@ public class PowerUpController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         gameManager = FindObjectOfType<GameManager>();
         pointsController = FindObjectOfType<PointsController>();
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
     }
 
     private Transform SearchForShootingPoint(Transform parent)
